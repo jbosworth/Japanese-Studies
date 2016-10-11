@@ -27,19 +27,28 @@
    			android:layout_width="match_parent"
     		android:layout_height="wrap_content">
     		<Button
+    		  android:id="@+id/vrb1"
 	          android:layout_width="wrap_content"
 	          android:layout_height="wrap_content"
 	          android:text="@string/start"
 	          android:onClick="review" />
 	        <Button
+	          android:id="@+id/vrb2"
 	          android:layout_width="wrap_content"
 	          android:layout_height="wrap_content"
 	          android:text="@string/insert"
 	          android:onClick="enteredAnswer" />
 	        <Button
+	          android:id="@+id/vrb3"
 	          android:layout_width="wrap_content"
 	          android:layout_height="wrap_content"
 	          android:text="@string/continu"
 	          android:onClick="proceed" />
+	        <Button
+	          android:id="@+id/vrb4"
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:text="@string/return_home"
+	          android:onClick="returnHome" />
 	    </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.gmail.jbosworth2.japanese_studies;
 
+//Item represents a single Kanji or Vocab word
 public class Item {
 	private int ID;
 	private int Level;

@@ -21,9 +21,9 @@ public class VocabStartReadingActivity extends Activity {
 	private EditText et;
 
 	//Settings
-	private int startLevel;
-	private int endLevel;
-	private int amount;
+	private static int startLevel;
+	private static int endLevel;
+	private static int amount;
 	
 	//Pool of items
 	private static ArrayList<Item> in = new ArrayList<Item>();
@@ -77,5 +77,9 @@ public class VocabStartReadingActivity extends Activity {
 	
 	public static ArrayList<Item> getIn(){
 		return in;
+	}
+	
+	public static int getAmount(){
+		return amount;
 	}
 }
