@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="$com.gmail.jbosworth2.japanese_studies.$VocabReadingActivity"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="@string/vocab" />
+        <TextView
+          android:id="@+id/vrtv"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="9"
+          android:text="@string/nothing" />
+        <EditText
+          android:id="@+id/vret"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:hint="@string/answer" />
+        <LinearLayout
+           	android:orientation="horizontal"
+   			android:layout_width="match_parent"
+    		android:layout_height="wrap_content">
+    		<Button
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:text="@string/start"
+	          android:onClick="review" />
+	        <Button
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:text="@string/insert"
+	          android:onClick="enteredAnswer" />
+	        <Button
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:text="@string/continu"
+	          android:onClick="proceed" />
+	    </LinearLayout>
+</LinearLayout>

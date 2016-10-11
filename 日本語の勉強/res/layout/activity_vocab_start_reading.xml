@@ -1,0 +1,59 @@
+<ScrollView	
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="$com.gmail.jbosworth2.japanese_studies.$VocabStartReadingActivity"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+	<LinearLayout 
+	    android:id="@+id/vrll"
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	        <TextView
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:layout_weight="1"
+	          android:text="@string/read" />
+	        <LinearLayout
+	          android:id="@+id/vrll2"
+	          android:orientation="vertical"
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:layout_weight="9" >
+	          	<TextView 
+	          	    android:layout_width="match_parent"
+	          	    android:layout_height="wrap_content"
+	          	    android:text="@string/vrri" />
+	          	<LinearLayout
+	          	    android:orientation="horizontal"
+	          	    android:layout_width="match_parent"
+	          	    android:layout_height="wrap_content">
+	          	    <com.gmail.jbosworth2.japanese_studies.MyNumberPicker
+	          	        android:id="@+id/vrrnp1"
+	          	        android:layout_width="wrap_content"
+	          	        android:layout_height="match_parent"
+	          	        min="1"
+	          	        max="60" />
+	          	    <com.gmail.jbosworth2.japanese_studies.MyNumberPicker
+	          	        android:id="@+id/vrrnp2"
+	          	        android:layout_width="wrap_content"
+	          	        android:layout_height="match_parent"
+	          	        android:layout_weight="1" 
+	          	        min="1"
+	          	        max="60" />
+	          	    <EditText
+	          	        android:id="@+id/vrret"
+	          	        android:layout_width="wrap_content"
+	          	        android:layout_height="match_parent"
+	          	        android:layout_weight="1"
+	          	        android:inputType="number"
+	          	        android:hint="@string/numitems" />
+	          	</LinearLayout>
+	          	<Button
+	          	    android:layout_width="match_parent"
+	          	    android:layout_height="wrap_content"
+	          	    android:text="@string/review"
+	          	    android:onClick="startVRA" />
+	        </LinearLayout>
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">日本語の勉強</string>
+    <string name="main_title">日本語の勉強</string>
+    <string name="kanji">漢字</string>
+    <string name="vocab">単語</string>
+    <string name="read">読む</string>
+	<string name="write">書く</string>
+	<string name="listen">聞く</string>
+	<string name="id">list</string>
+	<string name="llid">llid</string>
+	<string name="vrri">Select a range of levels and the number of items to be reviewed.</string>
+	<string name="review">復習う</string>
+	<string name="numitems">Enter number of items</string>
+	<string name="insert">入れる</string>
+	<string name="continu">続く</string>
+	<string name="answer">答え</string>
+	<string name="start">始めて</string>
+	<string name="nothing">なにも</string>
+</resources>
