@@ -21,13 +21,21 @@ public class VocabReadingActivity extends Activity {
 	private ArrayList<Item> out = new ArrayList<Item>();
 	//Current Item
 	private Item i;
+	//Random number generator
 	private Random r = new Random();
-	private boolean correct = false;
+	//Booleans to track correct/incorrect responses
+	private boolean m_correct = false;
+	private boolean r_correct = false;
+	//Strings to present to user
+	private String result;
+	private String final_result;
 	//Scorekeeping
-	private int sc;
+	private int msc;
+	private int rsc;
 	//Views
 	private TextView tv;
-	private EditText et;
+	private EditText et1;
+	private EditText et2;
 	private Button b1;
 	private Button b2;
 	private Button b3;
@@ -38,8 +46,12 @@ public class VocabReadingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vocab_reading);
 		
+		result = "";
+		final_result = "";
+		
 		tv = (TextView) findViewById(R.id.vrtv);
-		et = (EditText) findViewById(R.id.vret);
+		et1 = (EditText) findViewById(R.id.vret1);
+		et2 = (EditText) findViewById(R.id.vret2);
 		b1 = (Button) findViewById(R.id.vrb1);
 		b2 = (Button) findViewById(R.id.vrb2);
 		b3 = (Button) findViewById(R.id.vrb3);
@@ -63,21 +75,39 @@ public class VocabReadingActivity extends Activity {
 	}
 	
 	public void checkAnswer(){
-		String answer = et.getText().toString();
-		if(answer.equals(i.getKana())){
-			correct = true;
+		String meaning = et1.getText().toString();
+		String reading = et2.getText().toString();
+		for(String m : i.getMeaning()){
+			if(meaning.equals(m)){
+				m_correct = true;
+			}
+		}
+		if(reading.equals(i.getKana())){
+			r_correct = true;
 		}
 	}
 	
 	public void enteredAnswer(View v){
 		b2.setEnabled(false);
+		result = "";
 		checkAnswer();
-		if(correct){
-			tv.setText("Correct");
-			sc++;
+		if(m_correct){
+			result+="Correct meaning\n";
+			//tv.setText("Correct meaning");
+			msc++;
 		}else{
-			tv.setText("Incorrect: " + i.getKana());
+			result += "Incorrect meaning: " + i.getMeaning() + "\n";
+			//tv.setText("Incorrect meaning: " + i.getMeaning());
 		}
+		if(r_correct){
+			result += "Correct reading";
+			//tv.setText("Correct reading");
+			rsc++;
+		}else{
+			result += "Incorrect reading: " + i.getKana();
+			//tv.setText("Incorrect reading: " + i.getKana());
+		}
+		tv.setText(result);
 		out.add(i);
 		b3.setEnabled(true);
 	}
@@ -88,8 +118,12 @@ public class VocabReadingActivity extends Activity {
 	}
 	
 	public void finish(){
-		tv.setText("End of Review. " + sc + "/" + VocabStartReadingActivity.getAmount()
-		+ " correct.");
+		final_result += "End of Review.\n" + msc + "/" + VocabStartReadingActivity.getAmount()
+		+ " meanings correct.\n" + rsc + "/" + VocabStartReadingActivity.getAmount()
+		+ " readings correct.";
+		//tv.setText("End of Review. " + msc + "/" + VocabStartReadingActivity.getAmount()
+		//+ " meanings correct.");
+		tv.setText(final_result);
 	}
 	
 	public void returnHome(View v){

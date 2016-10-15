@@ -44,8 +44,9 @@ public class XMLReader {
 		for(int j=0; j<input.get(0).size(); j++){
 			int ID = Integer.parseInt(input.get(0).get(j));
 			int level = Integer.parseInt(input.get(1).get(j));
+			ArrayList<String> meaning = parseMeaning(input.get(3).get(j));
 			Item i = new Item(ID, level, input.get(2).get(j), 
-					input.get(3).get(j), input.get(4).get(j));
+					meaning, input.get(4).get(j));
 
 			if(fn == "kanji.xml"){
 				kanji.add(i);
@@ -53,6 +54,17 @@ public class XMLReader {
 				vocab.add(i);
 			}
 		}
+	}
+	
+	public ArrayList<String> parseMeaning(String s){
+		ArrayList<String> result = new ArrayList<String>();
+		if(s != null){
+			String[] split = s.split(",");
+			for(int i=0; i<split.length; i++){
+				result.add(split[i].trim());
+			}
+		}
+		return result;
 	}
 	
 	//-----------Kanji Functions

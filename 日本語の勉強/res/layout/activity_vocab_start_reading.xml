@@ -33,14 +33,14 @@
 	          	        android:layout_width="wrap_content"
 	          	        android:layout_height="match_parent"
 	          	        min="1"
-	          	        max="60" />
+	          	        max="30" />
 	          	    <com.gmail.jbosworth2.japanese_studies.MyNumberPicker
 	          	        android:id="@+id/vrrnp2"
 	          	        android:layout_width="wrap_content"
 	          	        android:layout_height="match_parent"
 	          	        android:layout_weight="1" 
 	          	        min="1"
-	          	        max="60" />
+	          	        max="30" />
 	          	    <EditText
 	          	        android:id="@+id/vrret"
 	          	        android:layout_width="wrap_content"
