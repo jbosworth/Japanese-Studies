@@ -1,22 +1,20 @@
 package com.gmail.jbosworth2.japanese_studies;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.LocaleList;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-public class VocabActivity extends Activity {
-	private InputStream in;
-	private String fn = "vocab.xml";
-	private XMLReader reader = XMLReader.getInstance();
+public class ChangeLocaleActivity extends Activity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,29 +43,27 @@ public class VocabActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_vocab);
-		
-		try {
-			in = getAssets().open(fn);
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder sb = new StringBuilder();
-	        String inline = "";
-	        while ((inline = inputReader.readLine()) != null) {
-	          sb.append(inline);
-	        }
-			reader.readFile(sb, fn);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		setContentView(R.layout.activity_change_locale);
 	}
 	
-	public void startVocabReading(View view){
-		Intent intent = new Intent(this, VocabStartReadingActivity.class);
-		startActivity(intent);
+	@SuppressWarnings("deprecation")
+	public void changeLocale(String lang) { 
+		Resources res = getResources();
+		Configuration conf = res.getConfiguration();
+		Locale myLocale = new Locale(lang); 
+		conf.locale = myLocale;
+	    DisplayMetrics dm = res.getDisplayMetrics();
+	    res.updateConfiguration(conf, dm); 
+	    finish();
+	} 
+	
+	public void en(View v){
+		String s = "en";
+		changeLocale(s);
 	}
 	
-	public void startVocabListening(View view){
-		Intent intent = new Intent(this, VocabListeningActivity.class);
-		startActivity(intent);
+	public void jp(View v){
+		String s = "jp";
+		changeLocale(s);
 	}
 }

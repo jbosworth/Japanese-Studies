@@ -38,6 +38,8 @@
             android:name=".VocabReadingActivity" />
         <activity
             android:name=".VocabListeningActivity" />
+        <activity
+            android:name=".ChangeLocaleActivity" />
     </application>
 
 </manifest>

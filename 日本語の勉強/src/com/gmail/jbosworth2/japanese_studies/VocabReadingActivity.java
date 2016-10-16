@@ -7,8 +7,12 @@ import java.util.concurrent.TimeUnit;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +44,30 @@ public class VocabReadingActivity extends Activity {
 	private Button b2;
 	private Button b3;
 	private Button b4;
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.lang:
+	            Intent i = new Intent(this, ChangeLocaleActivity.class);
+	            startActivity(i);
+	            return true;
+	        case R.id.return_home:
+	        	Intent j = new Intent(this, MainActivity.class);
+	        	startActivity(j);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,22 +118,19 @@ public class VocabReadingActivity extends Activity {
 	public void enteredAnswer(View v){
 		b2.setEnabled(false);
 		result = "";
+		Resources res = getResources();
 		checkAnswer();
 		if(m_correct){
-			result+="Correct meaning\n";
-			//tv.setText("Correct meaning");
+			result += res.getString(R.string.correct_meaning) + "\n";
 			msc++;
 		}else{
-			result += "Incorrect meaning: " + i.getMeaning() + "\n";
-			//tv.setText("Incorrect meaning: " + i.getMeaning());
+			result += res.getString(R.string.incorrect_meaning) +": " + i.getMeaning() + "\n";
 		}
 		if(r_correct){
-			result += "Correct reading";
-			//tv.setText("Correct reading");
+			result += res.getString(R.string.correct_reading);
 			rsc++;
 		}else{
-			result += "Incorrect reading: " + i.getKana();
-			//tv.setText("Incorrect reading: " + i.getKana());
+			result += res.getString(R.string.incorrect_reading) + ": " + i.getKana();
 		}
 		tv.setText(result);
 		out.add(i);
@@ -118,11 +143,10 @@ public class VocabReadingActivity extends Activity {
 	}
 	
 	public void finish(){
-		final_result += "End of Review.\n" + msc + "/" + VocabStartReadingActivity.getAmount()
-		+ " meanings correct.\n" + rsc + "/" + VocabStartReadingActivity.getAmount()
-		+ " readings correct.";
-		//tv.setText("End of Review. " + msc + "/" + VocabStartReadingActivity.getAmount()
-		//+ " meanings correct.");
+		Resources res = getResources();
+		final_result += res.getString(R.string.end_of_review) + "\n" + msc + "/" + VocabStartReadingActivity.getAmount()
+		+ " " + res.getString(R.string.correct_meaning) + "\n" + rsc + "/" + VocabStartReadingActivity.getAmount()
+		+ " " + res.getString(R.string.correct_reading);
 		tv.setText(final_result);
 	}
 	

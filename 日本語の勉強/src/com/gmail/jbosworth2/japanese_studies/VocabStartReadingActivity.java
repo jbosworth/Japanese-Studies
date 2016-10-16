@@ -7,6 +7,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -29,6 +32,30 @@ public class VocabStartReadingActivity extends Activity {
 	private static ArrayList<Item> in = new ArrayList<Item>();
 	//Current Item
 	private Item i;
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.lang:
+	            Intent i = new Intent(this, ChangeLocaleActivity.class);
+	            startActivity(i);
+	            return true;
+	        case R.id.return_home:
+	        	Intent j = new Intent(this, MainActivity.class);
+	        	startActivity(j);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

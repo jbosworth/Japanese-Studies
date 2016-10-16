@@ -4,7 +4,8 @@
     tools:context="$com.gmail.jbosworth2.japanese_studies.$KanjiWritingActivity"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait" >
         <TextView
           android:id="@+id/kwtvid"
           android:layout_width="match_parent"

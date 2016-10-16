@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">日本語の勉強</string>
-    <string name="main_title">日本語の勉強</string>
-    <string name="kanji">漢字</string>
-    <string name="vocab">単語</string>
-    <string name="read">読む</string>
-	<string name="write">書く</string>
-	<string name="listen">聞く</string>
+    <string name="app_name">Japanese Studies</string>
+    <string name="main_title">Japanese Studies</string>
+    <string name="kanji">Kanji</string>
+    <string name="vocab">Vocab</string>
+    <string name="read">Read</string>
+	<string name="write">Write</string>
+	<string name="listen">Listen</string>
 	<string name="id">list</string>
 	<string name="llid">llid</string>
 	<string name="vrri">Select a range of levels and the number of items to be reviewed.</string>
-	<string name="review">復習う</string>
+	<string name="review">Review</string>
 	<string name="numitems">Enter number of items</string>
-	<string name="insert">入れる</string>
-	<string name="continu">続く</string>
-	<string name="answer">答え</string>
-	<string name="start">始めて</string>
-	<string name="nothing">なにも</string>
-	<string name="return_home">帰る</string>
-	<string name="meaning">意味</string>
-	<string name="reading">読み</string>
+	<string name="insert">Insert</string>
+	<string name="continu">Continue</string>
+	<string name="answer">Answer</string>
+	<string name="start">Start</string>
+	<string name="nothing">Nothing</string>
+	<string name="return_home">Home</string>
+	<string name="meaning">Meaning</string>
+	<string name="reading">Reading</string>
+	<string name="choose_language">Choose Language</string>
+	<string name="language">Language</string>
+	<string name="pref_locale">jp</string>
+	<string name="english">English</string>
+	<string name="japanese">日本語</string>
+	<string name="correct_meaning">Correct Meaning</string>
+	<string name="correct_reading">Correct Reading</string>
+	<string name="incorrect_meaning">Incorrect Meaning</string>
+	<string name="incorrect_reading">Incorrect Reading</string>
+	<string name="end_of_review">End of Review</string>
 </resources>
