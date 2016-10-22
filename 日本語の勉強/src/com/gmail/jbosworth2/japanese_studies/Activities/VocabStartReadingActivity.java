@@ -1,7 +1,16 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import com.gmail.jbosworth2.japanese_studies.Item;
+import com.gmail.jbosworth2.japanese_studies.MyNumberPicker;
+import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.R.id;
+import com.gmail.jbosworth2.japanese_studies.R.layout;
+import com.gmail.jbosworth2.japanese_studies.R.menu;
+import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;

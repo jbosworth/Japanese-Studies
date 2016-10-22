@@ -1,4 +1,10 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.Activities;
+
+import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.R.id;
+import com.gmail.jbosworth2.japanese_studies.R.layout;
+import com.gmail.jbosworth2.japanese_studies.R.menu;
+import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class VocabListeningActivity extends Activity {
+public class KanjiWritingActivity extends Activity {
 	private TextView readList = null;
 	private XMLReader reader = XMLReader.getInstance();
 	
@@ -37,13 +43,13 @@ public class VocabListeningActivity extends Activity {
 	}
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_vocab_listening);
+		setContentView(R.layout.activity_kanji_writing);
 		
 		String s = "";
-	    readList = (TextView)findViewById(R.id.vltvid);
-	    readList.setText(s);
+		readList = (TextView)findViewById(R.id.kwtvid);
+    	readList.setText(s);
 	}
 	
 }

@@ -1,6 +1,11 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import java.util.Locale;
+
+import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.R.id;
+import com.gmail.jbosworth2.japanese_studies.R.layout;
+import com.gmail.jbosworth2.japanese_studies.R.menu;
 
 import android.app.Activity;
 import android.content.Intent;

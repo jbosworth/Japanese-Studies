@@ -1,8 +1,10 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
+
+import com.gmail.jbosworth2.japanese_studies.Item;
+import com.gmail.jbosworth2.japanese_studies.R;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -23,6 +25,7 @@ public class VocabReadingActivity extends Activity {
 	//Pools of items
 	private ArrayList<Item> in = new ArrayList<Item>();
 	private ArrayList<Item> out = new ArrayList<Item>();
+	private ArrayList<Item> incorrect = new ArrayList<Item>();
 	//Current Item
 	private Item i;
 	//Random number generator
@@ -32,6 +35,7 @@ public class VocabReadingActivity extends Activity {
 	private boolean r_correct = false;
 	//Strings to present to user
 	private String result;
+	private String incorrect_items;
 	private String final_result;
 	//Scorekeeping
 	private int msc;
@@ -75,6 +79,7 @@ public class VocabReadingActivity extends Activity {
 		setContentView(R.layout.activity_vocab_reading);
 		
 		result = "";
+		incorrect_items = "";
 		final_result = "";
 		
 		tv = (TextView) findViewById(R.id.vrtv);
@@ -103,10 +108,12 @@ public class VocabReadingActivity extends Activity {
 	}
 	
 	public void checkAnswer(){
-		String meaning = et1.getText().toString();
+		String meaning = et1.getText().toString().toLowerCase();
 		String reading = et2.getText().toString();
+		m_correct = false;
+		r_correct = false;
 		for(String m : i.getMeaning()){
-			if(meaning.equals(m)){
+			if(meaning.equals(m.toLowerCase())){
 				m_correct = true;
 			}
 		}
@@ -120,17 +127,23 @@ public class VocabReadingActivity extends Activity {
 		result = "";
 		Resources res = getResources();
 		checkAnswer();
+		et1.setText(null);
+		et2.setText(null);
 		if(m_correct){
 			result += res.getString(R.string.correct_meaning) + "\n";
 			msc++;
 		}else{
 			result += res.getString(R.string.incorrect_meaning) +": " + i.getMeaning() + "\n";
+			incorrect.add(i);
 		}
 		if(r_correct){
 			result += res.getString(R.string.correct_reading);
 			rsc++;
 		}else{
 			result += res.getString(R.string.incorrect_reading) + ": " + i.getKana();
+			if(!incorrect.contains(i)){
+				incorrect.add(i);
+			}
 		}
 		tv.setText(result);
 		out.add(i);
@@ -144,9 +157,16 @@ public class VocabReadingActivity extends Activity {
 	
 	public void finish(){
 		Resources res = getResources();
-		final_result += res.getString(R.string.end_of_review) + "\n" + msc + "/" + VocabStartReadingActivity.getAmount()
-		+ " " + res.getString(R.string.correct_meaning) + "\n" + rsc + "/" + VocabStartReadingActivity.getAmount()
-		+ " " + res.getString(R.string.correct_reading);
+		float m_score = (msc/VocabStartReadingActivity.getAmount())*100;
+		float r_score = (rsc/VocabStartReadingActivity.getAmount())*100;
+		for(Item j : incorrect){
+			incorrect_items += j.getCharacter() + "-";
+			incorrect_items += j.getMeaning() + "-";
+			incorrect_items += j.getKana() + ", ";
+		}
+		final_result += res.getString(R.string.end_of_review) + "\n" + m_score + "%"
+		+ " " + res.getString(R.string.correct_meanings) + "\n" + r_score + "%"
+		+ " " + res.getString(R.string.correct_readings) + "\n\n" + incorrect_items;
 		tv.setText(final_result);
 	}
 	

@@ -1,9 +1,10 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.Activities;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.R.id;
+import com.gmail.jbosworth2.japanese_studies.R.layout;
+import com.gmail.jbosworth2.japanese_studies.R.menu;
+import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,11 +12,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.TextView;
 
-public class VocabActivity extends Activity {
-	private InputStream in;
-	private String fn = "vocab.xml";
+public class VocabListeningActivity extends Activity {
+	private TextView readList = null;
 	private XMLReader reader = XMLReader.getInstance();
 	
 	@Override
@@ -45,29 +45,11 @@ public class VocabActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_vocab);
+		setContentView(R.layout.activity_vocab_listening);
 		
-		try {
-			in = getAssets().open(fn);
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder sb = new StringBuilder();
-	        String inline = "";
-	        while ((inline = inputReader.readLine()) != null) {
-	          sb.append(inline);
-	        }
-			reader.readFile(sb, fn);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		String s = "";
+	    readList = (TextView)findViewById(R.id.vltvid);
+	    readList.setText(s);
 	}
 	
-	public void startVocabReading(View view){
-		Intent intent = new Intent(this, VocabStartReadingActivity.class);
-		startActivity(intent);
-	}
-	
-	public void startVocabListening(View view){
-		Intent intent = new Intent(this, VocabListeningActivity.class);
-		startActivity(intent);
-	}
 }

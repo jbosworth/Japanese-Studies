@@ -24,6 +24,8 @@
 	<string name="language">言語</string>
 	<string name="english">English</string>
 	<string name="japanese">日本語</string>
+	<string name="correct_meaning">正確な意味</string>
+	<string name="correct_reading">正確な読み</string>
 	<string name="correct_meanings">正確な意味</string>
 	<string name="correct_readings">正確な読み</string>
 	<string name="incorrect_meaning">意味は不正解だ</string>

@@ -28,6 +28,8 @@
 	<!-- VocabReadingActivity -->
 	<string name="correct_meaning">Correct Meaning</string>
 	<string name="correct_reading">Correct Reading</string>
+	<string name="correct_meanings">Meanings Correct</string>
+	<string name="correct_readings">Readings Correct</string>
 	<string name="incorrect_meaning">Incorrect Meaning</string>
 	<string name="incorrect_reading">Incorrect Reading</string>
 	<string name="end_of_review">End of Review</string>

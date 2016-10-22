@@ -1,4 +1,4 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.xml;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

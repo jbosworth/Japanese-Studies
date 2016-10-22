@@ -1,7 +1,9 @@
-package com.gmail.jbosworth2.japanese_studies;
+package com.gmail.jbosworth2.japanese_studies.xml;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import com.gmail.jbosworth2.japanese_studies.Item;
 
 
 public class XMLReader {
