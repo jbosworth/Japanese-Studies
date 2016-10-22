@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="$Activities$MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,23 +23,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="$Activities$KanjiActivity"
+            android:name=".Activities.KanjiActivity"
             android:label="@string/kanji" />
         <activity
-            android:name="$Activities$KanjiReadingActivity" />
+            android:name=".Activities.KanjiReadingActivity" />
         <activity
-			android:name="$Activities$KanjiWriting" />
+			android:name=".Activities.KanjiWriting" />
 		<activity
-		    android:name="$Activities$VocabActivity"
+		    android:name=".Activities.VocabActivity"
 		    android:label="@string/vocab" />
 		<activity
-		    android:name="$Activities$VocabStartReadingActivity" />
+		    android:name=".Activities.VocabStartReadingActivity" />
         <activity
-            android:name="$Activities$VocabReadingActivity" />
+            android:name=".Activities.VocabReadingActivity" />
         <activity
-            android:name="$Activities$VocabListeningActivity" />
+            android:name=".Activities.VocabListeningActivity" />
         <activity
-            android:name="$Activities$ChangeLocaleActivity" />
+            android:name=".Activities.ChangeLocaleActivity" />
     </application>
 
 </manifest>
