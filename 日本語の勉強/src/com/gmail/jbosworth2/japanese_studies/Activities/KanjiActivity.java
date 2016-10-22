@@ -6,9 +6,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.R.id;
-import com.gmail.jbosworth2.japanese_studies.R.layout;
-import com.gmail.jbosworth2.japanese_studies.R.menu;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;

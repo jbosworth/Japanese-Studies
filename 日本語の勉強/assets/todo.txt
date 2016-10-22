@@ -1,7 +1,0 @@
-TODO
-Write all instructions in Japanese
-Store data in a mysql database instead of lists to improve access time
-Implement current activities
-Add grammar section
-Useful links
-Search feature for items

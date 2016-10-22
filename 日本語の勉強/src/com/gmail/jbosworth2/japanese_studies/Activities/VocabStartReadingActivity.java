@@ -6,9 +6,6 @@ import java.util.Random;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.MyNumberPicker;
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.R.id;
-import com.gmail.jbosworth2.japanese_studies.R.layout;
-import com.gmail.jbosworth2.japanese_studies.R.menu;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.annotation.TargetApi;
@@ -21,13 +18,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class VocabStartReadingActivity extends Activity {
 	private XMLReader reader = XMLReader.getInstance();
-	private LinearLayout ll;
-	private LinearLayout ll2;
 	private MyNumberPicker np1;
 	private MyNumberPicker np2;
 	private EditText et;
@@ -39,8 +33,6 @@ public class VocabStartReadingActivity extends Activity {
 	
 	//Pool of items
 	private static ArrayList<Item> in = new ArrayList<Item>();
-	//Current Item
-	private Item i;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,8 +63,6 @@ public class VocabStartReadingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vocab_start_reading);
 		
-		ll = (LinearLayout) findViewById(R.id.vrll);
-		ll2 = (LinearLayout) findViewById(R.id.vrll2);
 		np1 = (MyNumberPicker) findViewById(R.id.vrrnp1);
 		np2 = (MyNumberPicker) findViewById(R.id.vrrnp2);
 		et = (EditText) findViewById(R.id.vrret);

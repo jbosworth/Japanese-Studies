@@ -3,16 +3,12 @@ package com.gmail.jbosworth2.japanese_studies.Activities;
 import java.util.Locale;
 
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.R.id;
-import com.gmail.jbosworth2.japanese_studies.R.layout;
-import com.gmail.jbosworth2.japanese_studies.R.menu;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.LocaleList;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;

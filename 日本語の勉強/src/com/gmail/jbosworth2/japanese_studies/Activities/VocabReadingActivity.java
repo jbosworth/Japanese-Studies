@@ -1,6 +1,7 @@
 package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 
 import com.gmail.jbosworth2.japanese_studies.Item;
@@ -47,7 +48,6 @@ public class VocabReadingActivity extends Activity {
 	private Button b1;
 	private Button b2;
 	private Button b3;
-	private Button b4;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,7 +88,6 @@ public class VocabReadingActivity extends Activity {
 		b1 = (Button) findViewById(R.id.vrb1);
 		b2 = (Button) findViewById(R.id.vrb2);
 		b3 = (Button) findViewById(R.id.vrb3);
-		b4 = (Button) findViewById(R.id.vrb4);
 		
 		b2.setEnabled(false);
 		b3.setEnabled(false);
@@ -108,7 +107,7 @@ public class VocabReadingActivity extends Activity {
 	}
 	
 	public void checkAnswer(){
-		String meaning = et1.getText().toString().toLowerCase();
+		String meaning = et1.getText().toString().toLowerCase(Locale.ENGLISH);
 		String reading = et2.getText().toString();
 		m_correct = false;
 		r_correct = false;
