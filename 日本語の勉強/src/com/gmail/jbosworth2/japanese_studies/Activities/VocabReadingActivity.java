@@ -39,8 +39,9 @@ public class VocabReadingActivity extends Activity {
 	private String incorrect_items;
 	private String final_result;
 	//Scorekeeping
-	private int msc;
-	private int rsc;
+	private float msc;
+	private float rsc;
+	private int numItems;
 	//Views
 	private TextView tv;
 	private EditText et1;
@@ -82,10 +83,11 @@ public class VocabReadingActivity extends Activity {
 		incorrect_items = "";
 		final_result = "";
 		
+		numItems = VocabStartReadingActivity.getAmount();
+		
 		tv = (TextView) findViewById(R.id.vrtv);
 		et1 = (EditText) findViewById(R.id.vret1);
 		et2 = (EditText) findViewById(R.id.vret2);
-		b1 = (Button) findViewById(R.id.vrb1);
 		b2 = (Button) findViewById(R.id.vrb2);
 		b3 = (Button) findViewById(R.id.vrb3);
 		
@@ -93,10 +95,10 @@ public class VocabReadingActivity extends Activity {
 		b3.setEnabled(false);
 		
 		in = VocabStartReadingActivity.getIn();
+		review();
 	}
 	
-	public void review(View v){
-		b1.setEnabled(false);
+	public void review(){
 		if(in.size()>0){
 			i = in.remove(r.nextInt(in.size()));
 			tv.setText(i.getCharacter());
@@ -151,13 +153,13 @@ public class VocabReadingActivity extends Activity {
 	
 	public void proceed(View v){
 		b3.setEnabled(false);
-		review(v);
+		review();
 	}
 	
 	public void finish(){
 		Resources res = getResources();
-		float m_score = (msc/VocabStartReadingActivity.getAmount())*100;
-		float r_score = (rsc/VocabStartReadingActivity.getAmount())*100;
+		int m_score = Math.round((msc/numItems) * 100);
+		int r_score = Math.round((rsc/numItems) * 100);
 		for(Item j : incorrect){
 			incorrect_items += j.getCharacter() + "-";
 			incorrect_items += j.getMeaning() + "-";

@@ -51,10 +51,15 @@
 	          	        android:hint="@string/numitems" />
 	          	</LinearLayout>
 	          	<Button
+	          	    android:id="@+id/vrrb"
 	          	    android:layout_width="match_parent"
 	          	    android:layout_height="wrap_content"
 	          	    android:text="@string/review"
 	          	    android:onClick="startVRA" />
+	          	<TextView
+	          	        android:id="@+id/vrrtv2"
+	          	        android:layout_width="match_parent"
+	          	        android:layout_height="wrap_content" />
 	        </LinearLayout>
 	</LinearLayout>
 </ScrollView>
