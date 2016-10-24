@@ -6,6 +6,7 @@ import java.util.Random;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.MyNumberPicker;
 import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.sqlite.WKVocabDbHelper;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.annotation.TargetApi;
@@ -33,9 +34,6 @@ public class VocabStartReadingActivity extends Activity {
 	private static int startLevel;
 	private static int endLevel;
 	private static int amount;
-	
-	//Pool of items
-	private static ArrayList<Item> in = new ArrayList<Item>();
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -81,28 +79,8 @@ public class VocabStartReadingActivity extends Activity {
 			startLevel = np1.getValue();
 			endLevel = np2.getValue();
 			amount = Integer.parseInt(et.getText().toString());
-			
-			//Pools of items
-			ArrayList<Item> total = reader.getVocab();
-			ArrayList<Item> pool = new ArrayList<Item>();
-			
-			
-			//Create review pool based on chosen level range
-			for(Item i : total){
-				if((startLevel <= i.getLevel()) && (i.getLevel() <= endLevel)){
-					pool.add(i);
-				}
-			}
-			total.clear();
-			
-			//Randomly select items to be reviewed using @param amount
-			Random r = new Random();
-			if(amount > pool.size()){
-				amount = pool.size();
-			}
-			for(int i=0; i<amount; i++){
-				in.add(pool.remove(r.nextInt(pool.size())));
-			}
+			WKVocabDbHelper vdb = new WKVocabDbHelper(getBaseContext());
+			vdb.selectFromRange(startLevel, endLevel, amount);
 			
 			//Start Review Activity
 			Intent intent = new Intent(this, VocabReadingActivity.class);
@@ -114,10 +92,6 @@ public class VocabStartReadingActivity extends Activity {
 		//Set text warning
 		String warning = "***Please enter an amount in the text box.***";
 		tv.setText(warning);
-	}
-	
-	public static ArrayList<Item> getIn(){
-		return in;
 	}
 	
 	public static int getAmount(){

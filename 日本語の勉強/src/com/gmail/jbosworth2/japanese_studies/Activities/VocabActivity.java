@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
+import com.gmail.jbosworth2.japanese_studies.sqlite.WKVocabDbHelper;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
@@ -50,17 +53,31 @@ public class VocabActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vocab);
 		
-		try {
-			in = getAssets().open(fn);
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder sb = new StringBuilder();
-	        String inline = "";
-	        while ((inline = inputReader.readLine()) != null) {
-	          sb.append(inline);
-	        }
-			reader.readFile(sb, fn);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(WKVocabDbHelper.getLastUpdate() == null){
+			try {
+				in = getAssets().open(fn);
+				BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+		        StringBuilder sb = new StringBuilder();
+		        String inline = "";
+		        while ((inline = inputReader.readLine()) != null) {
+		          sb.append(inline);
+		        }
+				reader.readFile(sb, fn);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			//Insert vocab from list into a table
+			String level = "";
+			String meanings = "";
+			WKVocabDbHelper vdb = new WKVocabDbHelper(getBaseContext());
+			for(Item i : reader.getVocab()){
+				level += i.getLevel();
+				for(String s : i.getMeaning()){
+					meanings += s;
+					meanings += ",";
+				}
+				vdb.insertVocab(level, i.getCharacter(), meanings, i.getKana());
+			}
 		}
 	}
 	

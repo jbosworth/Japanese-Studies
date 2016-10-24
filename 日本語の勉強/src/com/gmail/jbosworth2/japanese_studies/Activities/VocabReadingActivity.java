@@ -6,6 +6,7 @@ import java.util.Random;
 
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -23,6 +24,8 @@ import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class VocabReadingActivity extends Activity {
+	//XMLReader
+	XMLReader reader = XMLReader.getInstance();
 	//Pools of items
 	private ArrayList<Item> in = new ArrayList<Item>();
 	private ArrayList<Item> out = new ArrayList<Item>();
@@ -94,7 +97,7 @@ public class VocabReadingActivity extends Activity {
 		b2.setEnabled(false);
 		b3.setEnabled(false);
 		
-		in = VocabStartReadingActivity.getIn();
+		in = reader.getVocab();
 		review();
 	}
 	

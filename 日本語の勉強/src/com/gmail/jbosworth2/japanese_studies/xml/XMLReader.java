@@ -74,6 +74,10 @@ public class XMLReader {
 		this.kanji = kanji;
 	}
 	
+	public void setWKVocab(ArrayList<Item> vocab){
+		this.vocab = vocab;
+	}
+	
 	//-----------Kanji Functions
 	public String listKanji(){
 		String s = "Character\tMeaning\tKana\n";
