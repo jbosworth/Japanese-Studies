@@ -5,10 +5,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -50,17 +53,33 @@ public class KanjiActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_kanji);
 		
-		try {
-			in = getAssets().open(fn);
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder sb = new StringBuilder();
-	        String inline = "";
-	        while ((inline = inputReader.readLine()) != null) {
-	          sb.append(inline);
-	        }
-			reader.readFile(sb, fn);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(KanjiDbHelper.getLastUpdate() == null){
+			//Read kanji from XML file and put them into a list
+			try {
+				in = getAssets().open(fn);
+				BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+		        StringBuilder sb = new StringBuilder();
+		        String inline = "";
+		        while ((inline = inputReader.readLine()) != null) {
+		          sb.append(inline);
+		        }
+				reader.readFile(sb, fn);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			//Insert kanji from list into a table
+			String level = "";
+			String meanings = "";
+			KanjiDbHelper kdb = new KanjiDbHelper(getBaseContext());
+			for(Item i : reader.getKanji()){
+				level += i.getLevel();
+				for(String s : i.getMeaning()){
+					meanings += s;
+					meanings += ",";
+				}
+				kdb.insertKanji(level, i.getCharacter(), meanings, i.getKana());
+			}
 		}
 	}
 	

@@ -8,8 +8,9 @@ import com.gmail.jbosworth2.japanese_studies.Item;
 
 public class XMLReader {
 
-	//Store kanji and vocab in lists 
-	//to be retrieved by GUI through the use of special functions.
+	//Store kanji and vocab in lists to be retrieved by GUI through the use of special functions.
+	//Originally made to hold xml data only- now data is put into SQLite tables and read back
+	//into these lists as needed.
 	private ArrayList<Item> kanji = new ArrayList<Item>();
 	private ArrayList<Item> vocab = new ArrayList<Item>();
 		
@@ -67,6 +68,10 @@ public class XMLReader {
 			}
 		}
 		return result;
+	}
+	
+	public void setKanji(ArrayList<Item> kanji){
+		this.kanji = kanji;
 	}
 	
 	//-----------Kanji Functions
