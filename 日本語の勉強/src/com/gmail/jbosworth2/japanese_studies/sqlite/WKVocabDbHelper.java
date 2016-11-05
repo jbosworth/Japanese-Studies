@@ -120,22 +120,25 @@ public class WKVocabDbHelper extends SQLiteOpenHelper {
 	    	String meaning;
 	    	ArrayList<String> meanings;
 	    	String kana;
+	    	ArrayList<String> kanas;
 	    	//Item to hold data; be put into WKVocab list
 	    	Item i;
 
 	    	//Read first record
-	    	c.moveToFirst();
-	    	id = c.getLong(c.getColumnIndexOrThrow(WKVocab._ID));
-	    	int_id = (int) id;
-	    	level = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_LEVEL));
-	    	int_level = Integer.parseInt(level);
-	    	character = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_CHARACTER));
-	    	meaning = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_MEANING));
-	    	meanings = reader.parseMeaning(meaning);
-	    	kana = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_KANA));
-	    	//Form item and add to list
-	    	i = new Item(int_id, int_level, character, meanings, kana);
-	    	temp.add(i);
+	    	if (c != null && c.moveToFirst()) {
+		    	id = c.getLong(c.getColumnIndexOrThrow(WKVocab._ID));
+		    	int_id = (int) id;
+		    	level = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_LEVEL));
+		    	int_level = Integer.parseInt(level);
+		    	character = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_CHARACTER));
+		    	meaning = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_MEANING));
+		    	meanings = reader.parseMR(meaning);
+		    	kana = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_KANA));
+		    	kanas = reader.parseMR(kana);
+		    	//Form item and add to list
+		    	i = new Item(int_id, int_level, character, meanings, kanas);
+		    	temp.add(i);
+	    	}
 	    	//Read in the rest of the records
 	    	while(c.moveToNext()){
 	    		id = c.getLong(c.getColumnIndexOrThrow(WKVocab._ID));
@@ -144,10 +147,11 @@ public class WKVocabDbHelper extends SQLiteOpenHelper {
 	        	int_level = Integer.parseInt(level);
 	        	character = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_CHARACTER));
 	        	meaning = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_MEANING));
-	        	meanings = reader.parseMeaning(meaning);
+	        	meanings = reader.parseMR(meaning);
 	        	kana = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_KANA));
+	        	kanas = reader.parseMR(kana);
 	        	//Form item and add to list
-	        	i = new Item(int_id, int_level, character, meanings, kana);
+	        	i = new Item(int_id, int_level, character, meanings, kanas);
 	        	temp.add(i);
 	    	}
 	    	

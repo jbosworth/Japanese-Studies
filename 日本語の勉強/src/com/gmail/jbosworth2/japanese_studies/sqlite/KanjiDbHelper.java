@@ -114,21 +114,24 @@ public class KanjiDbHelper extends SQLiteOpenHelper {
     	String meaning;
     	ArrayList<String> meanings;
     	String kana;
+    	ArrayList<String> kanas;
     	//Item to hold data; be put into kanji list
     	Item i;
 
     	//Read first record
     	c.moveToFirst();
+    	c.moveToNext();
     	id = c.getLong(c.getColumnIndexOrThrow(Kanji._ID));
     	int_id = (int) id;
     	level = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_LEVEL));
     	int_level = Integer.parseInt(level);
     	character = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_CHARACTER));
     	meaning = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_MEANING));
-    	meanings = reader.parseMeaning(meaning);
+    	meanings = reader.parseMR(meaning);
     	kana = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_KANA));
+    	kanas = reader.parseMR(kana);
     	//Form item and add to list
-    	i = new Item(int_id, int_level, character, meanings, kana);
+    	i = new Item(int_id, int_level, character, meanings, kanas);
     	kanji.add(i);
     	//Read in the rest of the records
     	while(c.moveToNext()){
@@ -138,10 +141,11 @@ public class KanjiDbHelper extends SQLiteOpenHelper {
         	int_level = Integer.parseInt(level);
         	character = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_CHARACTER));
         	meaning = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_MEANING));
-        	meanings = reader.parseMeaning(meaning);
+        	meanings = reader.parseMR(meaning);
         	kana = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_KANA));
+        	kanas = reader.parseMR(kana);
         	//Form item and add to list
-        	i = new Item(int_id, int_level, character, meanings, kana);
+        	i = new Item(int_id, int_level, character, meanings, kanas);
         	kanji.add(i);
     	}
     	reader.setKanji(kanji);

@@ -1,27 +1,26 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="$com.gmail.jbosworth2.japanese_studies.$VocabActivity"
+    tools:context="$com.gmail.jbosworth2.japanese_studies.$InstallationActivity"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait" >
         <TextView
-          android:id="@+id/vtv"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_weight="2"
-          android:text="@string/vocab" />
+          android:layout_weight="1"
+          android:text="@string/installation_head" />
         <Button
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_weight="4"
-          android:text="@string/read"
-          android:onClick="startVocabReading" />
+          android:text="@string/kanji"
+          android:onClick="installKanji" />
         <Button
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_weight="4"
-          android:text="@string/listen"
-          android:onClick="startVocabListening" />
+          android:text="@string/vocab"
+          android:onClick="installVocab" />
 </LinearLayout>

@@ -8,9 +8,9 @@ public class Item {
 	private int Level;
 	private String Character;
 	private ArrayList<String> Meaning;
-	private String Kana;
+	private ArrayList<String> Kana;
 	
-	public Item (int ID, int Level, String Character, ArrayList<String> Meaning, String Kana){
+	public Item (int ID, int Level, String Character, ArrayList<String> Meaning, ArrayList<String> Kana){
 		this.ID = ID;
 		this.Level = Level;
 		this.Character = Character;
@@ -34,7 +34,7 @@ public class Item {
 		return Meaning;
 	}
 
-	public String getKana() {
+	public ArrayList<String> getKana() {
 		return Kana;
 	}
 }

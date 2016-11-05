@@ -5,24 +5,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
 import com.gmail.jbosworth2.japanese_studies.sqlite.WKVocabDbHelper;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class VocabActivity extends Activity {
-	private InputStream in;
-	private String fn = "vocab.xml";
+	private TextView tv;
 	private XMLReader reader = XMLReader.getInstance();
+	private InputStream in;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,6 +43,10 @@ public class VocabActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
+	        case R.id.install:
+	        	Intent k = new Intent(this, InstallationActivity.class);
+	        	startActivity(k);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -53,6 +57,9 @@ public class VocabActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vocab);
 		
+		tv = (TextView) findViewById(R.id.vtv);
+		
+		String fn = "vocab.xml";
 		if(WKVocabDbHelper.getLastUpdate() == null){
 			try {
 				in = getAssets().open(fn);
@@ -66,24 +73,17 @@ public class VocabActivity extends Activity {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			//Insert vocab from list into a table
-			String level = "";
-			String meanings = "";
-			WKVocabDbHelper vdb = new WKVocabDbHelper(getBaseContext());
-			for(Item i : reader.getVocab()){
-				level += i.getLevel();
-				for(String s : i.getMeaning()){
-					meanings += s;
-					meanings += ",";
-				}
-				vdb.insertVocab(level, i.getCharacter(), meanings, i.getKana());
-			}
 		}
 	}
 	
 	public void startVocabReading(View view){
-		Intent intent = new Intent(this, VocabStartReadingActivity.class);
-		startActivity(intent);
+	Resources res = getResources();
+		//if(InstallationActivity.isV_installed()){
+			Intent intent = new Intent(this, VocabStartReadingActivity.class);
+			startActivity(intent);
+		//}else{
+		//	tv.setText(res.getString(R.string.vinstall));
+		//}
 	}
 	
 	public void startVocabListening(View view){

@@ -25,6 +25,7 @@ import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class VocabStartReadingActivity extends Activity {
 	private XMLReader reader = XMLReader.getInstance();
+	private ArrayList<Item> vocab = reader.getVocab();
 	private MyNumberPicker np1;
 	private MyNumberPicker np2;
 	private EditText et;
@@ -54,6 +55,10 @@ public class VocabStartReadingActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
+	        case R.id.install:
+	        	Intent k = new Intent(this, InstallationActivity.class);
+	        	startActivity(k);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -79,9 +84,29 @@ public class VocabStartReadingActivity extends Activity {
 			startLevel = np1.getValue();
 			endLevel = np2.getValue();
 			amount = Integer.parseInt(et.getText().toString());
-			WKVocabDbHelper vdb = new WKVocabDbHelper(getBaseContext());
-			vdb.selectFromRange(startLevel, endLevel, amount);
+			//Commented until I figure out how to fix error
+			//WKVocabDbHelper vdb = new WKVocabDbHelper(getBaseContext());
+			//vdb.selectFromRange(startLevel, endLevel, amount);
 			
+			//Choose from range
+			ArrayList<Item> temp = new ArrayList<Item>();
+			for(Item i : vocab){
+				if(startLevel <= i.getLevel() && i.getLevel() <= endLevel){
+					temp.add(i);
+				}
+			}
+			//Clear vocab list
+			vocab.clear();
+			
+			//Choose a specific amount of items at random from list to be stored in another list
+			Random r = new Random();
+			if(amount > temp.size()){
+				amount = temp.size();
+			}
+			for(int j=0; j<amount; j++){
+				vocab.add(temp.remove(r.nextInt(temp.size())));
+			}
+			reader.setWKVocab(vocab);
 			//Start Review Activity
 			Intent intent = new Intent(this, VocabReadingActivity.class);
 			startActivity(intent);

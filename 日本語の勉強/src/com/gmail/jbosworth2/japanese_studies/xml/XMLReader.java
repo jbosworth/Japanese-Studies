@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.gmail.jbosworth2.japanese_studies.Item;
+import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
+
+import android.content.Context;
 
 
 public class XMLReader {
@@ -12,7 +15,7 @@ public class XMLReader {
 	//Originally made to hold xml data only- now data is put into SQLite tables and read back
 	//into these lists as needed.
 	private ArrayList<Item> kanji = new ArrayList<Item>();
-	private ArrayList<Item> vocab = new ArrayList<Item>();
+	private static ArrayList<Item> vocab = new ArrayList<Item>();
 		
 	//Singleton XMLReader- only one reader necessary
 	private static final XMLReader INSTANCE = new XMLReader();
@@ -43,13 +46,17 @@ public class XMLReader {
 		XMLFileReader reader = XMLFileReader.getInstance();
 		reader.read(sb);
 		input = reader.getReadable();
+		ArrayList<String> meaning = new ArrayList<String>();
+		ArrayList<String> kana = new ArrayList<String>();
 		
 		for(int j=0; j<input.get(0).size(); j++){
 			int ID = Integer.parseInt(input.get(0).get(j));
 			int level = Integer.parseInt(input.get(1).get(j));
-			ArrayList<String> meaning = parseMeaning(input.get(3).get(j));
+			meaning = parseMR(input.get(3).get(j));
+			kana = parseMR(input.get(4).get(j));
+			
 			Item i = new Item(ID, level, input.get(2).get(j), 
-					meaning, input.get(4).get(j));
+					meaning, kana);
 
 			if(fn == "kanji.xml"){
 				kanji.add(i);
@@ -59,7 +66,7 @@ public class XMLReader {
 		}
 	}
 	
-	public ArrayList<String> parseMeaning(String s){
+	public ArrayList<String> parseMR(String s){
 		ArrayList<String> result = new ArrayList<String>();
 		if(s != null){
 			String[] split = s.split(",");
@@ -79,15 +86,12 @@ public class XMLReader {
 	}
 	
 	//-----------Kanji Functions
-	public String listKanji(){
-		String s = "Character\tMeaning\tKana\n";
+	public String listKanji(Context context){
+		//KanjiDbHelper kdb = new KanjiDbHelper(context);
+		//kdb.selectAll();
+		String s = "";
 		for(Item i : kanji){
 			s += i.getCharacter();
-			s += "\t";
-			s += i.getMeaning();
-			s += "\t";
-			s += i.getKana();
-			s += "\n";
 		}
 		return s;
 	}

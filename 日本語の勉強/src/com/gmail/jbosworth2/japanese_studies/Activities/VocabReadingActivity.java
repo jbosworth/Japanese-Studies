@@ -72,6 +72,10 @@ public class VocabReadingActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
+	        case R.id.install:
+	        	Intent k = new Intent(this, InstallationActivity.class);
+	        	startActivity(k);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -117,12 +121,16 @@ public class VocabReadingActivity extends Activity {
 		m_correct = false;
 		r_correct = false;
 		for(String m : i.getMeaning()){
-			if(meaning.equals(m.toLowerCase())){
+			m.trim();
+			m.toLowerCase();
+			if(meaning.equals(m)){
 				m_correct = true;
 			}
 		}
-		if(reading.equals(i.getKana())){
-			r_correct = true;
+		for(String k : i.getKana()){
+			if(reading.equals(k)){
+				r_correct = true;
+			}
 		}
 	}
 	

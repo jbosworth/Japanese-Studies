@@ -15,8 +15,7 @@
           android:id="@+id/vrtv"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_weight="7"
-          android:text="@string/nothing" />
+          android:layout_weight="7" />
         <EditText
           android:id="@+id/vret1"
           android:layout_width="match_parent"

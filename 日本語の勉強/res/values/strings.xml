@@ -16,13 +16,11 @@
 	<string name="continu">Continue</string>
 	<string name="answer">Answer</string>
 	<string name="start">Start</string>
-	<string name="nothing">Nothing</string>
 	<string name="return_home">Home</string>
 	<string name="meaning">Meaning</string>
 	<string name="reading">Reading</string>
 	<string name="choose_language">Choose Language</string>
 	<string name="language">Language</string>
-	<string name="pref_locale">jp</string>
 	<string name="english">English</string>
 	<string name="japanese">日本語</string>
 	<!-- VocabReadingActivity -->
@@ -33,4 +31,8 @@
 	<string name="incorrect_meaning">Incorrect Meaning</string>
 	<string name="incorrect_reading">Incorrect Reading</string>
 	<string name="end_of_review">End of Review</string>
+	<string name="install">Install</string>
+	<string name="installation_head">Please install the necessary resources.</string>
+	<string name="kinstall">Please install kanji.</string>
+	<string name="vinstall">Please install vocab.</string>
 </resources>

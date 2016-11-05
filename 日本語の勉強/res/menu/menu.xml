@@ -5,4 +5,6 @@
     <item android:id="@+id/lang"
           android:icon="@drawable/lang"
           android:title="@string/language" />
+    <item android:id="@+id/install"
+          android:title="@string/install" />
 </menu>

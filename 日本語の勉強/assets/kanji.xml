@@ -4924,548 +4924,548 @@
 	<record>
 		<ID>703</ID>
 		<Level>21</Level>
-		<Character>務</Character>
-		<Meaning>task</Meaning>
-		<Kana>む</Kana>
-	</record>
-	<record>
-		<ID>704</ID>
-		<Level>21</Level>
-		<Character>件</Character>
-		<Meaning>matter, affair</Meaning>
-		<Kana>けん</Kana>
-	</record>
-	<record>
-		<ID>705</ID>
-		<Level>21</Level>
 		<Character>認</Character>
 		<Meaning>recognize, recognise</Meaning>
 		<Kana>にん</Kana>
 	</record>
 	<record>
-		<ID>706</ID>
+		<ID>704</ID>
 		<Level>21</Level>
 		<Character>義</Character>
 		<Meaning>righteousness</Meaning>
 		<Kana>ぎ</Kana>
 	</record>
 	<record>
-		<ID>707</ID>
+		<ID>705</ID>
 		<Level>21</Level>
 		<Character>審</Character>
 		<Meaning>judge</Meaning>
 		<Kana>しん</Kana>
 	</record>
 	<record>
-		<ID>708</ID>
+		<ID>706</ID>
 		<Level>21</Level>
 		<Character>断</Character>
 		<Meaning>cut off</Meaning>
 		<Kana>だん</Kana>
 	</record>
 	<record>
-		<ID>709</ID>
+		<ID>707</ID>
 		<Level>21</Level>
 		<Character>税</Character>
 		<Meaning>tax</Meaning>
 		<Kana>ぜい</Kana>
 	</record>
 	<record>
-		<ID>710</ID>
+		<ID>708</ID>
 		<Level>21</Level>
 		<Character>条</Character>
 		<Meaning>clause</Meaning>
 		<Kana>じょう</Kana>
 	</record>
 	<record>
-		<ID>711</ID>
+		<ID>709</ID>
 		<Level>21</Level>
 		<Character>派</Character>
 		<Meaning>sect</Meaning>
 		<Kana>は</Kana>
 	</record>
 	<record>
-		<ID>712</ID>
+		<ID>710</ID>
 		<Level>21</Level>
 		<Character>制</Character>
 		<Meaning>control</Meaning>
 		<Kana>せい</Kana>
 	</record>
 	<record>
-		<ID>713</ID>
+		<ID>711</ID>
 		<Level>21</Level>
 		<Character>敵</Character>
 		<Meaning>enemy</Meaning>
 		<Kana>てき</Kana>
 	</record>
 	<record>
-		<ID>714</ID>
+		<ID>712</ID>
 		<Level>21</Level>
 		<Character>批</Character>
 		<Meaning>criticism</Meaning>
 		<Kana>ひ</Kana>
 	</record>
 	<record>
-		<ID>715</ID>
+		<ID>713</ID>
 		<Level>21</Level>
 		<Character>際</Character>
 		<Meaning>occasion</Meaning>
 		<Kana>さい</Kana>
 	</record>
 	<record>
-		<ID>716</ID>
+		<ID>714</ID>
 		<Level>21</Level>
 		<Character>済</Character>
 		<Meaning>come to an end</Meaning>
 		<Kana>さい</Kana>
 	</record>
 	<record>
+		<ID>715</ID>
+		<Level>21</Level>
+		<Character>委</Character>
+		<Meaning>committee</Meaning>
+		<Kana>い</Kana>
+	</record>
+	<record>
+		<ID>716</ID>
+		<Level>21</Level>
+		<Character>責</Character>
+		<Meaning>blame</Meaning>
+		<Kana>せき</Kana>
+	</record>
+	<record>
 		<ID>717</ID>
-		<Level>22</Level>
-		<Character>提</Character>
-		<Meaning>present, submit</Meaning>
-		<Kana>てい</Kana>
+		<Level>21</Level>
+		<Character>検</Character>
+		<Meaning>examine</Meaning>
+		<Kana>けん</Kana>
 	</record>
 	<record>
 		<ID>718</ID>
-		<Level>22</Level>
-		<Character>姿</Character>
-		<Meaning>figure, shape, form</Meaning>
-		<Kana>し</Kana>
+		<Level>21</Level>
+		<Character>解</Character>
+		<Meaning>untie, solve</Meaning>
+		<Kana>かい</Kana>
 	</record>
 	<record>
 		<ID>719</ID>
-		<Level>22</Level>
-		<Character>域</Character>
-		<Meaning>region, regional boundary, boundary</Meaning>
-		<Kana>いき</Kana>
-	</record>
-	<record>
-		<ID>720</ID>
 		<Level>22</Level>
 		<Character>態</Character>
 		<Meaning>appearance</Meaning>
 		<Kana>たい</Kana>
 	</record>
 	<record>
-		<ID>721</ID>
+		<ID>720</ID>
 		<Level>22</Level>
 		<Character>観</Character>
 		<Meaning>view</Meaning>
 		<Kana>かん</Kana>
 	</record>
 	<record>
-		<ID>722</ID>
+		<ID>721</ID>
 		<Level>22</Level>
 		<Character>勢</Character>
 		<Meaning>force</Meaning>
 		<Kana>せい</Kana>
 	</record>
 	<record>
-		<ID>723</ID>
+		<ID>722</ID>
 		<Level>22</Level>
 		<Character>過</Character>
 		<Meaning>surpass</Meaning>
 		<Kana>か</Kana>
 	</record>
 	<record>
-		<ID>724</ID>
+		<ID>723</ID>
 		<Level>22</Level>
 		<Character>策</Character>
 		<Meaning>plan</Meaning>
 		<Kana>さく</Kana>
 	</record>
 	<record>
-		<ID>725</ID>
+		<ID>724</ID>
 		<Level>22</Level>
 		<Character>藤</Character>
 		<Meaning>wisteria</Meaning>
 		<Kana>ふじ</Kana>
 	</record>
 	<record>
-		<ID>726</ID>
+		<ID>725</ID>
 		<Level>22</Level>
 		<Character>領</Character>
 		<Meaning>territory</Meaning>
 		<Kana>りょう</Kana>
 	</record>
 	<record>
-		<ID>727</ID>
+		<ID>726</ID>
 		<Level>22</Level>
 		<Character>寝</Character>
 		<Meaning>lie down, lay down, sleep</Meaning>
 		<Kana>ね</Kana>
 	</record>
 	<record>
-		<ID>728</ID>
+		<ID>727</ID>
 		<Level>22</Level>
 		<Character>坊</Character>
 		<Meaning>monk</Meaning>
 		<Kana>ぼう</Kana>
 	</record>
 	<record>
-		<ID>729</ID>
+		<ID>728</ID>
 		<Level>22</Level>
 		<Character>吸</Character>
 		<Meaning>suck, inhale</Meaning>
 		<Kana>きゅう</Kana>
 	</record>
 	<record>
-		<ID>730</ID>
+		<ID>729</ID>
 		<Level>22</Level>
 		<Character>各</Character>
 		<Meaning>each</Meaning>
 		<Kana>かく</Kana>
 	</record>
 	<record>
-		<ID>731</ID>
+		<ID>730</ID>
 		<Level>22</Level>
 		<Character>賀</Character>
 		<Meaning>congratulations</Meaning>
 		<Kana>が</Kana>
 	</record>
 	<record>
-		<ID>732</ID>
+		<ID>731</ID>
 		<Level>22</Level>
 		<Character>応</Character>
 		<Meaning>respond</Meaning>
 		<Kana>おう</Kana>
 	</record>
 	<record>
-		<ID>733</ID>
+		<ID>732</ID>
 		<Level>22</Level>
 		<Character>価</Character>
 		<Meaning>value</Meaning>
 		<Kana>か</Kana>
 	</record>
 	<record>
-		<ID>734</ID>
+		<ID>733</ID>
 		<Level>22</Level>
 		<Character>罰</Character>
 		<Meaning>penalty, punishment</Meaning>
 		<Kana>ばつ</Kana>
 	</record>
 	<record>
-		<ID>735</ID>
+		<ID>734</ID>
 		<Level>22</Level>
 		<Character>状</Character>
 		<Meaning>condition</Meaning>
 		<Kana>じょう</Kana>
 	</record>
 	<record>
-		<ID>736</ID>
+		<ID>735</ID>
 		<Level>22</Level>
 		<Character>示</Character>
 		<Meaning>indicate, show</Meaning>
 		<Kana>じ, し</Kana>
 	</record>
 	<record>
-		<ID>737</ID>
+		<ID>736</ID>
 		<Level>22</Level>
 		<Character>値</Character>
 		<Meaning>value</Meaning>
 		<Kana>ね, あたい</Kana>
 	</record>
 	<record>
-		<ID>738</ID>
+		<ID>737</ID>
 		<Level>22</Level>
 		<Character>誕</Character>
 		<Meaning>birth</Meaning>
 		<Kana>たん</Kana>
 	</record>
 	<record>
-		<ID>739</ID>
+		<ID>738</ID>
 		<Level>22</Level>
 		<Character>置</Character>
 		<Meaning>put</Meaning>
 		<Kana>ち</Kana>
 	</record>
 	<record>
-		<ID>740</ID>
+		<ID>739</ID>
 		<Level>22</Level>
 		<Character>援</Character>
 		<Meaning>aid, assist</Meaning>
 		<Kana>えん</Kana>
 	</record>
 	<record>
-		<ID>741</ID>
+		<ID>740</ID>
 		<Level>22</Level>
 		<Character>副</Character>
 		<Meaning>vice, side</Meaning>
 		<Kana>ふく</Kana>
 	</record>
 	<record>
-		<ID>742</ID>
+		<ID>741</ID>
 		<Level>22</Level>
 		<Character>案</Character>
 		<Meaning>plan</Meaning>
 		<Kana>あん</Kana>
 	</record>
 	<record>
-		<ID>743</ID>
+		<ID>742</ID>
 		<Level>22</Level>
 		<Character>費</Character>
 		<Meaning>expense, cost</Meaning>
 		<Kana>ひ</Kana>
 	</record>
 	<record>
-		<ID>744</ID>
+		<ID>743</ID>
 		<Level>22</Level>
 		<Character>脱</Character>
 		<Meaning>undress</Meaning>
 		<Kana>だつ</Kana>
 	</record>
 	<record>
-		<ID>745</ID>
+		<ID>744</ID>
 		<Level>22</Level>
 		<Character>営</Character>
 		<Meaning>manage</Meaning>
 		<Kana>えい</Kana>
 	</record>
 	<record>
-		<ID>746</ID>
+		<ID>745</ID>
 		<Level>22</Level>
 		<Character>宮</Character>
 		<Meaning>shinto shrine, shrine, palace</Meaning>
 		<Kana>みや</Kana>
 	</record>
 	<record>
-		<ID>747</ID>
+		<ID>746</ID>
 		<Level>22</Level>
 		<Character>統</Character>
 		<Meaning>unite</Meaning>
 		<Kana>とう</Kana>
 	</record>
 	<record>
+		<ID>747</ID>
+		<Level>22</Level>
+		<Character>姿</Character>
+		<Meaning>figure, shape, form</Meaning>
+		<Kana>し</Kana>
+	</record>
+	<record>
 		<ID>748</ID>
-		<Level>23</Level>
-		<Character>停</Character>
-		<Meaning>halt</Meaning>
-		<Kana>てい</Kana>
+		<Level>22</Level>
+		<Character>域</Character>
+		<Meaning>region, regional boundary, boundary</Meaning>
+		<Kana>いき</Kana>
 	</record>
 	<record>
 		<ID>749</ID>
-		<Level>23</Level>
-		<Character>鬼</Character>
-		<Meaning>demon</Meaning>
-		<Kana>き</Kana>
+		<Level>22</Level>
+		<Character>提</Character>
+		<Meaning>present, submit</Meaning>
+		<Kana>てい</Kana>
 	</record>
 	<record>
 		<ID>750</ID>
-		<Level>23</Level>
-		<Character>導</Character>
-		<Meaning>lead</Meaning>
-		<Kana>どう</Kana>
-	</record>
-	<record>
-		<ID>751</ID>
-		<Level>23</Level>
-		<Character>演</Character>
-		<Meaning>perform, performance</Meaning>
-		<Kana>えん</Kana>
-	</record>
-	<record>
-		<ID>752</ID>
-		<Level>23</Level>
-		<Character>革</Character>
-		<Meaning>leather</Meaning>
-		<Kana>かく</Kana>
-	</record>
-	<record>
-		<ID>753</ID>
-		<Level>23</Level>
-		<Character>裁</Character>
-		<Meaning>judge</Meaning>
-		<Kana>さい</Kana>
-	</record>
-	<record>
-		<ID>754</ID>
-		<Level>23</Level>
-		<Character>宅</Character>
-		<Meaning>house, home</Meaning>
-		<Kana>たく</Kana>
-	</record>
-	<record>
-		<ID>755</ID>
-		<Level>23</Level>
-		<Character>贅</Character>
-		<Meaning>luxury</Meaning>
-		<Kana>ぜい</Kana>
-	</record>
-	<record>
-		<ID>756</ID>
-		<Level>23</Level>
-		<Character>備</Character>
-		<Meaning>provide, equip</Meaning>
-		<Kana>び</Kana>
-	</record>
-	<record>
-		<ID>757</ID>
-		<Level>23</Level>
-		<Character>律</Character>
-		<Meaning>law</Meaning>
-		<Kana>りつ</Kana>
-	</record>
-	<record>
-		<ID>758</ID>
-		<Level>23</Level>
-		<Character>現</Character>
-		<Meaning>present time, present</Meaning>
-		<Kana>げん</Kana>
-	</record>
-	<record>
-		<ID>759</ID>
-		<Level>23</Level>
-		<Character>沢</Character>
-		<Meaning>swamp</Meaning>
-		<Kana>たく</Kana>
-	</record>
-	<record>
-		<ID>760</ID>
-		<Level>23</Level>
-		<Character>看</Character>
-		<Meaning>watch over</Meaning>
-		<Kana>かん</Kana>
-	</record>
-	<record>
-		<ID>761</ID>
 		<Level>23</Level>
 		<Character>施</Character>
 		<Meaning>carry out</Meaning>
 		<Kana>し</Kana>
 	</record>
 	<record>
-		<ID>762</ID>
+		<ID>751</ID>
 		<Level>23</Level>
-		<Character>規</Character>
-		<Meaning>standard</Meaning>
-		<Kana>き</Kana>
+		<Character>宅</Character>
+		<Meaning>house, home</Meaning>
+		<Kana>たく</Kana>
 	</record>
 	<record>
-		<ID>763</ID>
+		<ID>752</ID>
+		<Level>23</Level>
+		<Character>贅</Character>
+		<Meaning>luxury</Meaning>
+		<Kana>ぜい</Kana>
+	</record>
+	<record>
+		<ID>753</ID>
+		<Level>23</Level>
+		<Character>備</Character>
+		<Meaning>provide, equip</Meaning>
+		<Kana>び</Kana>
+	</record>
+	<record>
+		<ID>754</ID>
 		<Level>23</Level>
 		<Character>準</Character>
 		<Meaning>standard</Meaning>
 		<Kana>じゅん</Kana>
 	</record>
 	<record>
-		<ID>764</ID>
+		<ID>755</ID>
 		<Level>23</Level>
 		<Character>幹</Character>
 		<Meaning>tree trunk</Meaning>
 		<Kana>かん</Kana>
 	</record>
 	<record>
-		<ID>765</ID>
+		<ID>756</ID>
 		<Level>23</Level>
 		<Character>張</Character>
 		<Meaning>stretch</Meaning>
 		<Kana>ちょう</Kana>
 	</record>
 	<record>
-		<ID>766</ID>
+		<ID>757</ID>
 		<Level>23</Level>
 		<Character>優</Character>
 		<Meaning>superior, gentle</Meaning>
 		<Kana>ゆう</Kana>
 	</record>
 	<record>
-		<ID>767</ID>
+		<ID>758</ID>
 		<Level>23</Level>
 		<Character>職</Character>
 		<Meaning>employment</Meaning>
 		<Kana>しょく</Kana>
 	</record>
 	<record>
-		<ID>768</ID>
+		<ID>759</ID>
 		<Level>23</Level>
 		<Character>則</Character>
 		<Meaning>rule</Meaning>
 		<Kana>そく</Kana>
 	</record>
 	<record>
-		<ID>769</ID>
+		<ID>760</ID>
 		<Level>23</Level>
 		<Character>師</Character>
 		<Meaning>teacher, expert, master</Meaning>
 		<Kana>し</Kana>
 	</record>
 	<record>
-		<ID>770</ID>
+		<ID>761</ID>
 		<Level>23</Level>
 		<Character>割</Character>
 		<Meaning>divide</Meaning>
 		<Kana>わり, わ</Kana>
 	</record>
 	<record>
-		<ID>771</ID>
+		<ID>762</ID>
 		<Level>23</Level>
 		<Character>護</Character>
 		<Meaning>defend</Meaning>
 		<Kana>ご</Kana>
 	</record>
 	<record>
-		<ID>772</ID>
+		<ID>763</ID>
 		<Level>23</Level>
 		<Character>秀</Character>
 		<Meaning>excel</Meaning>
 		<Kana>しゅう</Kana>
 	</record>
 	<record>
-		<ID>773</ID>
+		<ID>764</ID>
 		<Level>23</Level>
 		<Character>呼</Character>
 		<Meaning>call</Meaning>
 		<Kana>よ</Kana>
 	</record>
 	<record>
-		<ID>774</ID>
+		<ID>765</ID>
 		<Level>23</Level>
 		<Character>俳</Character>
 		<Meaning>haiku</Meaning>
 		<Kana>はい</Kana>
 	</record>
 	<record>
-		<ID>775</ID>
-		<Level>23</Level>
-		<Character>崎</Character>
-		<Meaning>cape</Meaning>
-		<Kana>さき</Kana>
-	</record>
-	<record>
-		<ID>776</ID>
-		<Level>23</Level>
-		<Character>城</Character>
-		<Meaning>castle</Meaning>
-		<Kana>しろ</Kana>
-	</record>
-	<record>
-		<ID>777</ID>
+		<ID>766</ID>
 		<Level>23</Level>
 		<Character>乳</Character>
 		<Meaning>milk</Meaning>
 		<Kana>にゅう</Kana>
 	</record>
 	<record>
-		<ID>778</ID>
+		<ID>767</ID>
+		<Level>23</Level>
+		<Character>崎</Character>
+		<Meaning>cape</Meaning>
+		<Kana>さき</Kana>
+	</record>
+	<record>
+		<ID>768</ID>
+		<Level>23</Level>
+		<Character>城</Character>
+		<Meaning>castle</Meaning>
+		<Kana>しろ</Kana>
+	</record>
+	<record>
+		<ID>769</ID>
 		<Level>23</Level>
 		<Character>収</Character>
 		<Meaning>obtain</Meaning>
 		<Kana>しゅう</Kana>
 	</record>
 	<record>
+		<ID>770</ID>
+		<Level>23</Level>
+		<Character>導</Character>
+		<Meaning>lead</Meaning>
+		<Kana>どう</Kana>
+	</record>
+	<record>
+		<ID>771</ID>
+		<Level>23</Level>
+		<Character>演</Character>
+		<Meaning>perform, performance</Meaning>
+		<Kana>えん</Kana>
+	</record>
+	<record>
+		<ID>772</ID>
+		<Level>23</Level>
+		<Character>停</Character>
+		<Meaning>halt</Meaning>
+		<Kana>てい</Kana>
+	</record>
+	<record>
+		<ID>773</ID>
+		<Level>23</Level>
+		<Character>鬼</Character>
+		<Meaning>demon</Meaning>
+		<Kana>き</Kana>
+	</record>
+	<record>
+		<ID>774</ID>
+		<Level>23</Level>
+		<Character>革</Character>
+		<Meaning>leather</Meaning>
+		<Kana>かく</Kana>
+	</record>
+	<record>
+		<ID>775</ID>
+		<Level>23</Level>
+		<Character>裁</Character>
+		<Meaning>judge</Meaning>
+		<Kana>さい</Kana>
+	</record>
+	<record>
+		<ID>776</ID>
+		<Level>23</Level>
+		<Character>律</Character>
+		<Meaning>law</Meaning>
+		<Kana>りつ</Kana>
+	</record>
+	<record>
+		<ID>777</ID>
+		<Level>23</Level>
+		<Character>現</Character>
+		<Meaning>present time, present</Meaning>
+		<Kana>げん</Kana>
+	</record>
+	<record>
+		<ID>778</ID>
+		<Level>23</Level>
+		<Character>看</Character>
+		<Meaning>watch over</Meaning>
+		<Kana>かん</Kana>
+	</record>
+	<record>
 		<ID>779</ID>
-		<Level>24</Level>
-		<Character>額</Character>
-		<Meaning>amount, framed picture, forehead</Meaning>
-		<Kana>がく</Kana>
+		<Level>23</Level>
+		<Character>規</Character>
+		<Meaning>standard</Meaning>
+		<Kana>き</Kana>
 	</record>
 	<record>
 		<ID>780</ID>
-		<Level>24</Level>
-		<Character>視</Character>
-		<Meaning>look at</Meaning>
-		<Kana>し</Kana>
+		<Level>23</Level>
+		<Character>沢</Character>
+		<Meaning>swamp</Meaning>
+		<Kana>たく</Kana>
 	</record>
 	<record>
 		<ID>781</ID>
@@ -5477,79 +5477,79 @@
 	<record>
 		<ID>782</ID>
 		<Level>24</Level>
+		<Character>差</Character>
+		<Meaning>distinction</Meaning>
+		<Kana>さ</Kana>
+	</record>
+	<record>
+		<ID>783</ID>
+		<Level>24</Level>
 		<Character>狭</Character>
 		<Meaning>narrow</Meaning>
 		<Kana>せま, せば</Kana>
 	</record>
 	<record>
-		<ID>783</ID>
-		<Level>24</Level>
-		<Character>載</Character>
-		<Meaning>publish</Meaning>
-		<Kana>さい</Kana>
-	</record>
-	<record>
 		<ID>784</ID>
-		<Level>24</Level>
-		<Character>述</Character>
-		<Meaning>mention</Meaning>
-		<Kana>じゅつ</Kana>
-	</record>
-	<record>
-		<ID>785</ID>
-		<Level>24</Level>
-		<Character>祝</Character>
-		<Meaning>celebrate</Meaning>
-		<Kana>しゅく</Kana>
-	</record>
-	<record>
-		<ID>786</ID>
 		<Level>24</Level>
 		<Character>販</Character>
 		<Meaning>sell</Meaning>
 		<Kana>はん</Kana>
 	</record>
 	<record>
-		<ID>787</ID>
+		<ID>785</ID>
 		<Level>24</Level>
 		<Character>質</Character>
 		<Meaning>quality</Meaning>
 		<Kana>しつ, しち</Kana>
 	</record>
 	<record>
-		<ID>788</ID>
+		<ID>786</ID>
 		<Level>24</Level>
 		<Character>届</Character>
 		<Meaning>deliver</Meaning>
 		<Kana>とど</Kana>
 	</record>
 	<record>
-		<ID>789</ID>
+		<ID>787</ID>
 		<Level>24</Level>
 		<Character>腰</Character>
 		<Meaning>waist</Meaning>
 		<Kana>こし</Kana>
 	</record>
 	<record>
-		<ID>790</ID>
+		<ID>788</ID>
 		<Level>24</Level>
 		<Character>肩</Character>
 		<Meaning>shoulder</Meaning>
 		<Kana>かた</Kana>
 	</record>
 	<record>
-		<ID>791</ID>
+		<ID>789</ID>
 		<Level>24</Level>
 		<Character>庁</Character>
 		<Meaning>agency, government office</Meaning>
 		<Kana>ちょう</Kana>
 	</record>
 	<record>
-		<ID>792</ID>
+		<ID>790</ID>
 		<Level>24</Level>
 		<Character>型</Character>
 		<Meaning>model, type</Meaning>
 		<Kana>けい</Kana>
+	</record>
+	<record>
+		<ID>791</ID>
+		<Level>24</Level>
+		<Character>載</Character>
+		<Meaning>publish</Meaning>
+		<Kana>さい</Kana>
+	</record>
+	<record>
+		<ID>792</ID>
+		<Level>24</Level>
+		<Character>述</Character>
+		<Meaning>mention</Meaning>
+		<Kana>じゅつ</Kana>
 	</record>
 	<record>
 		<ID>793</ID>
@@ -5568,23 +5568,23 @@
 	<record>
 		<ID>795</ID>
 		<Level>24</Level>
+		<Character>祝</Character>
+		<Meaning>celebrate</Meaning>
+		<Kana>しゅく</Kana>
+	</record>
+	<record>
+		<ID>796</ID>
+		<Level>24</Level>
 		<Character>象</Character>
 		<Meaning>elephant, phenomenon</Meaning>
 		<Kana>しょう, ぞう</Kana>
 	</record>
 	<record>
-		<ID>796</ID>
+		<ID>797</ID>
 		<Level>24</Level>
 		<Character>管</Character>
 		<Meaning>pipe</Meaning>
 		<Kana>かん</Kana>
-	</record>
-	<record>
-		<ID>797</ID>
-		<Level>24</Level>
-		<Character>差</Character>
-		<Meaning>distinction</Meaning>
-		<Kana>さ</Kana>
 	</record>
 	<record>
 		<ID>798</ID>
@@ -5645,16 +5645,16 @@
 	<record>
 		<ID>806</ID>
 		<Level>24</Level>
-		<Character>違</Character>
-		<Meaning>different</Meaning>
-		<Kana>ちが</Kana>
+		<Character>製</Character>
+		<Meaning>manufacture</Meaning>
+		<Kana>せい</Kana>
 	</record>
 	<record>
 		<ID>807</ID>
 		<Level>24</Level>
-		<Character>製</Character>
-		<Meaning>manufacture</Meaning>
-		<Kana>せい</Kana>
+		<Character>輸</Character>
+		<Meaning>transport</Meaning>
+		<Kana>ゆ</Kana>
 	</record>
 	<record>
 		<ID>808</ID>
@@ -5666,282 +5666,282 @@
 	<record>
 		<ID>809</ID>
 		<Level>24</Level>
-		<Character>輸</Character>
-		<Meaning>transport</Meaning>
-		<Kana>ゆ</Kana>
+		<Character>違</Character>
+		<Meaning>different</Meaning>
+		<Kana>ちが</Kana>
 	</record>
 	<record>
 		<ID>810</ID>
-		<Level>25</Level>
-		<Character>効</Character>
-		<Meaning>effective</Meaning>
-		<Kana>こう</Kana>
+		<Level>24</Level>
+		<Character>額</Character>
+		<Meaning>amount, framed picture, forehead</Meaning>
+		<Kana>がく</Kana>
 	</record>
 	<record>
 		<ID>811</ID>
-		<Level>25</Level>
-		<Character>抜</Character>
-		<Meaning>extract</Meaning>
-		<Kana>ぬ</Kana>
+		<Level>24</Level>
+		<Character>視</Character>
+		<Meaning>look at</Meaning>
+		<Kana>し</Kana>
 	</record>
 	<record>
 		<ID>812</ID>
-		<Level>25</Level>
-		<Character>満</Character>
-		<Meaning>full</Meaning>
-		<Kana>まん</Kana>
-	</record>
-	<record>
-		<ID>813</ID>
-		<Level>25</Level>
-		<Character>絞</Character>
-		<Meaning>strangle</Meaning>
-		<Kana>こう</Kana>
-	</record>
-	<record>
-		<ID>814</ID>
 		<Level>25</Level>
 		<Character>模</Character>
 		<Meaning>imitation</Meaning>
 		<Kana>も, ぼ</Kana>
 	</record>
 	<record>
-		<ID>815</ID>
+		<ID>813</ID>
 		<Level>25</Level>
-		<Character>影</Character>
-		<Meaning>shadow</Meaning>
-		<Kana>えい</Kana>
-	</record>
-	<record>
-		<ID>816</ID>
-		<Level>25</Level>
-		<Character>景</Character>
-		<Meaning>scene</Meaning>
-		<Kana>けい</Kana>
-	</record>
-	<record>
-		<ID>817</ID>
-		<Level>25</Level>
-		<Character>構</Character>
-		<Meaning>set up, care</Meaning>
+		<Character>効</Character>
+		<Meaning>effective</Meaning>
 		<Kana>こう</Kana>
 	</record>
 	<record>
-		<ID>818</ID>
-		<Level>25</Level>
-		<Character>渡</Character>
-		<Meaning>transit</Meaning>
-		<Kana>わた</Kana>
-	</record>
-	<record>
-		<ID>819</ID>
-		<Level>25</Level>
-		<Character>属</Character>
-		<Meaning>belong</Meaning>
-		<Kana>ぞく</Kana>
-	</record>
-	<record>
-		<ID>820</ID>
-		<Level>25</Level>
-		<Character>輩</Character>
-		<Meaning>comrade</Meaning>
-		<Kana>はい</Kana>
-	</record>
-	<record>
-		<ID>821</ID>
-		<Level>25</Level>
-		<Character>居</Character>
-		<Meaning>alive</Meaning>
-		<Kana>きょ</Kana>
-	</record>
-	<record>
-		<ID>822</ID>
-		<Level>25</Level>
-		<Character>慣</Character>
-		<Meaning>accustomed</Meaning>
-		<Kana>かん</Kana>
-	</record>
-	<record>
-		<ID>823</ID>
-		<Level>25</Level>
-		<Character>替</Character>
-		<Meaning>replace</Meaning>
-		<Kana>か</Kana>
-	</record>
-	<record>
-		<ID>824</ID>
-		<Level>25</Level>
-		<Character>肥</Character>
-		<Meaning>obese</Meaning>
-		<Kana>ひ</Kana>
-	</record>
-	<record>
-		<ID>825</ID>
-		<Level>25</Level>
-		<Character>響</Character>
-		<Meaning>echo, reverberation, resound</Meaning>
-		<Kana>きょう</Kana>
-	</record>
-	<record>
-		<ID>826</ID>
-		<Level>25</Level>
-		<Character>含</Character>
-		<Meaning>include</Meaning>
-		<Kana>がん</Kana>
-	</record>
-	<record>
-		<ID>827</ID>
-		<Level>25</Level>
-		<Character>況</Character>
-		<Meaning>condition</Meaning>
-		<Kana>きょう</Kana>
-	</record>
-	<record>
-		<ID>828</ID>
-		<Level>25</Level>
-		<Character>限</Character>
-		<Meaning>limit</Meaning>
-		<Kana>げん</Kana>
-	</record>
-	<record>
-		<ID>829</ID>
-		<Level>25</Level>
-		<Character>掛</Character>
-		<Meaning>hang</Meaning>
-		<Kana>か</Kana>
-	</record>
-	<record>
-		<ID>830</ID>
-		<Level>25</Level>
-		<Character>逮</Character>
-		<Meaning>apprehend</Meaning>
-		<Kana>たい</Kana>
-	</record>
-	<record>
-		<ID>831</ID>
-		<Level>25</Level>
-		<Character>訟</Character>
-		<Meaning>lawsuit</Meaning>
-		<Kana>しょう</Kana>
-	</record>
-	<record>
-		<ID>832</ID>
-		<Level>25</Level>
-		<Character>鮮</Character>
-		<Meaning>fresh</Meaning>
-		<Kana>せん</Kana>
-	</record>
-	<record>
-		<ID>833</ID>
-		<Level>25</Level>
-		<Character>隠</Character>
-		<Meaning>hide</Meaning>
-		<Kana>いん</Kana>
-	</record>
-	<record>
-		<ID>834</ID>
-		<Level>25</Level>
-		<Character>豊</Character>
-		<Meaning>plentiful</Meaning>
-		<Kana>ほう</Kana>
-	</record>
-	<record>
-		<ID>835</ID>
+		<ID>814</ID>
 		<Level>25</Level>
 		<Character>与</Character>
 		<Meaning>give</Meaning>
 		<Kana>よ</Kana>
 	</record>
 	<record>
-		<ID>836</ID>
+		<ID>815</ID>
 		<Level>25</Level>
-		<Character>候</Character>
-		<Meaning>climate, candidate</Meaning>
-		<Kana>こう</Kana>
+		<Character>渡</Character>
+		<Meaning>transit</Meaning>
+		<Kana>わた</Kana>
 	</record>
 	<record>
-		<ID>837</ID>
-		<Level>25</Level>
-		<Character>巻</Character>
-		<Meaning>scroll</Meaning>
-		<Kana>かん</Kana>
-	</record>
-	<record>
-		<ID>838</ID>
-		<Level>25</Level>
-		<Character>訴</Character>
-		<Meaning>sue</Meaning>
-		<Kana>そ</Kana>
-	</record>
-	<record>
-		<ID>839</ID>
-		<Level>25</Level>
-		<Character>票</Character>
-		<Meaning>ballot</Meaning>
-		<Kana>ひょう</Kana>
-	</record>
-	<record>
-		<ID>840</ID>
+		<ID>816</ID>
 		<Level>25</Level>
 		<Character>捜</Character>
 		<Meaning>search</Meaning>
 		<Kana>そう</Kana>
 	</record>
 	<record>
-		<ID>841</ID>
+		<ID>817</ID>
+		<Level>25</Level>
+		<Character>属</Character>
+		<Meaning>belong</Meaning>
+		<Kana>ぞく</Kana>
+	</record>
+	<record>
+		<ID>818</ID>
+		<Level>25</Level>
+		<Character>替</Character>
+		<Meaning>replace</Meaning>
+		<Kana>か</Kana>
+	</record>
+	<record>
+		<ID>819</ID>
+		<Level>25</Level>
+		<Character>居</Character>
+		<Meaning>alive</Meaning>
+		<Kana>きょ</Kana>
+	</record>
+	<record>
+		<ID>820</ID>
+		<Level>25</Level>
+		<Character>慣</Character>
+		<Meaning>accustomed</Meaning>
+		<Kana>かん</Kana>
+	</record>
+	<record>
+		<ID>821</ID>
+		<Level>25</Level>
+		<Character>肥</Character>
+		<Meaning>obese</Meaning>
+		<Kana>ひ</Kana>
+	</record>
+	<record>
+		<ID>822</ID>
+		<Level>25</Level>
+		<Character>響</Character>
+		<Meaning>echo, reverberation, resound</Meaning>
+		<Kana>きょう</Kana>
+	</record>
+	<record>
+		<ID>823</ID>
+		<Level>25</Level>
+		<Character>含</Character>
+		<Meaning>include</Meaning>
+		<Kana>がん</Kana>
+	</record>
+	<record>
+		<ID>824</ID>
+		<Level>25</Level>
+		<Character>況</Character>
+		<Meaning>condition</Meaning>
+		<Kana>きょう</Kana>
+	</record>
+	<record>
+		<ID>825</ID>
+		<Level>25</Level>
+		<Character>限</Character>
+		<Meaning>limit</Meaning>
+		<Kana>げん</Kana>
+	</record>
+	<record>
+		<ID>826</ID>
+		<Level>25</Level>
+		<Character>掛</Character>
+		<Meaning>hang</Meaning>
+		<Kana>か</Kana>
+	</record>
+	<record>
+		<ID>827</ID>
+		<Level>25</Level>
+		<Character>逮</Character>
+		<Meaning>apprehend</Meaning>
+		<Kana>たい</Kana>
+	</record>
+	<record>
+		<ID>828</ID>
+		<Level>25</Level>
+		<Character>訟</Character>
+		<Meaning>lawsuit</Meaning>
+		<Kana>しょう</Kana>
+	</record>
+	<record>
+		<ID>829</ID>
+		<Level>25</Level>
+		<Character>鮮</Character>
+		<Meaning>fresh</Meaning>
+		<Kana>せん</Kana>
+	</record>
+	<record>
+		<ID>830</ID>
+		<Level>25</Level>
+		<Character>隠</Character>
+		<Meaning>hide</Meaning>
+		<Kana>いん</Kana>
+	</record>
+	<record>
+		<ID>831</ID>
+		<Level>25</Level>
+		<Character>豊</Character>
+		<Meaning>plentiful</Meaning>
+		<Kana>ほう</Kana>
+	</record>
+	<record>
+		<ID>832</ID>
+		<Level>25</Level>
+		<Character>候</Character>
+		<Meaning>climate, candidate</Meaning>
+		<Kana>こう</Kana>
+	</record>
+	<record>
+		<ID>833</ID>
+		<Level>25</Level>
+		<Character>巻</Character>
+		<Meaning>scroll</Meaning>
+		<Kana>かん</Kana>
+	</record>
+	<record>
+		<ID>834</ID>
+		<Level>25</Level>
+		<Character>訴</Character>
+		<Meaning>sue</Meaning>
+		<Kana>そ</Kana>
+	</record>
+	<record>
+		<ID>835</ID>
+		<Level>25</Level>
+		<Character>票</Character>
+		<Meaning>ballot</Meaning>
+		<Kana>ひょう</Kana>
+	</record>
+	<record>
+		<ID>836</ID>
 		<Level>25</Level>
 		<Character>補</Character>
 		<Meaning>supplement</Meaning>
 		<Kana>ほ</Kana>
 	</record>
 	<record>
-		<ID>842</ID>
+		<ID>837</ID>
 		<Level>25</Level>
 		<Character>捕</Character>
 		<Meaning>catch</Meaning>
 		<Kana>ほ</Kana>
 	</record>
 	<record>
+		<ID>838</ID>
+		<Level>25</Level>
+		<Character>影</Character>
+		<Meaning>shadow</Meaning>
+		<Kana>えい</Kana>
+	</record>
+	<record>
+		<ID>839</ID>
+		<Level>25</Level>
+		<Character>景</Character>
+		<Meaning>scene</Meaning>
+		<Kana>けい</Kana>
+	</record>
+	<record>
+		<ID>840</ID>
+		<Level>25</Level>
+		<Character>抜</Character>
+		<Meaning>extract</Meaning>
+		<Kana>ぬ</Kana>
+	</record>
+	<record>
+		<ID>841</ID>
+		<Level>25</Level>
+		<Character>絞</Character>
+		<Meaning>strangle</Meaning>
+		<Kana>こう</Kana>
+	</record>
+	<record>
+		<ID>842</ID>
+		<Level>25</Level>
+		<Character>満</Character>
+		<Meaning>full</Meaning>
+		<Kana>まん</Kana>
+	</record>
+	<record>
 		<ID>843</ID>
+		<Level>25</Level>
+		<Character>構</Character>
+		<Meaning>set up, care</Meaning>
+		<Kana>こう</Kana>
+	</record>
+	<record>
+		<ID>844</ID>
+		<Level>25</Level>
+		<Character>輩</Character>
+		<Meaning>comrade</Meaning>
+		<Kana>はい</Kana>
+	</record>
+	<record>
+		<ID>845</ID>
 		<Level>26</Level>
 		<Character>激</Character>
 		<Meaning>fierce, violent</Meaning>
 		<Kana>げき</Kana>
 	</record>
 	<record>
-		<ID>844</ID>
+		<ID>846</ID>
 		<Level>26</Level>
 		<Character>豚</Character>
 		<Meaning>pork, pig</Meaning>
 		<Kana>ぶた</Kana>
 	</record>
 	<record>
-		<ID>845</ID>
+		<ID>847</ID>
 		<Level>26</Level>
 		<Character>振</Character>
 		<Meaning>shake, wave</Meaning>
 		<Kana>しん</Kana>
 	</record>
 	<record>
-		<ID>846</ID>
+		<ID>848</ID>
 		<Level>26</Level>
 		<Character>針</Character>
 		<Meaning>needle</Meaning>
 		<Kana>はり</Kana>
-	</record>
-	<record>
-		<ID>847</ID>
-		<Level>26</Level>
-		<Character>再</Character>
-		<Meaning>again</Meaning>
-		<Kana>さ, さい</Kana>
-	</record>
-	<record>
-		<ID>848</ID>
-		<Level>26</Level>
-		<Character>障</Character>
-		<Meaning>hinder</Meaning>
-		<Kana>しょう</Kana>
 	</record>
 	<record>
 		<ID>849</ID>
@@ -5953,407 +5953,407 @@
 	<record>
 		<ID>850</ID>
 		<Level>26</Level>
-		<Character>突</Character>
-		<Meaning>stab, thrust</Meaning>
-		<Kana>とつ</Kana>
+		<Character>再</Character>
+		<Meaning>again</Meaning>
+		<Kana>さ, さい</Kana>
 	</record>
 	<record>
 		<ID>851</ID>
 		<Level>26</Level>
-		<Character>復</Character>
-		<Meaning>restore</Meaning>
-		<Kana>ふく</Kana>
+		<Character>障</Character>
+		<Meaning>hinder</Meaning>
+		<Kana>しょう</Kana>
 	</record>
 	<record>
 		<ID>852</ID>
-		<Level>26</Level>
-		<Character>筆</Character>
-		<Meaning>writing brush</Meaning>
-		<Kana>ひつ</Kana>
-	</record>
-	<record>
-		<ID>853</ID>
-		<Level>26</Level>
-		<Character>較</Character>
-		<Meaning>contrast</Meaning>
-		<Kana>かく</Kana>
-	</record>
-	<record>
-		<ID>854</ID>
-		<Level>26</Level>
-		<Character>往</Character>
-		<Meaning>depart</Meaning>
-		<Kana>おう</Kana>
-	</record>
-	<record>
-		<ID>855</ID>
-		<Level>26</Level>
-		<Character>造</Character>
-		<Meaning>create</Meaning>
-		<Kana>ぞう</Kana>
-	</record>
-	<record>
-		<ID>856</ID>
 		<Level>26</Level>
 		<Character>河</Character>
 		<Meaning>river</Meaning>
 		<Kana>か</Kana>
 	</record>
 	<record>
+		<ID>853</ID>
+		<Level>26</Level>
+		<Character>復</Character>
+		<Meaning>restore</Meaning>
+		<Kana>ふく</Kana>
+	</record>
+	<record>
+		<ID>854</ID>
+		<Level>26</Level>
+		<Character>突</Character>
+		<Meaning>stab, thrust</Meaning>
+		<Kana>とつ</Kana>
+	</record>
+	<record>
+		<ID>855</ID>
+		<Level>26</Level>
+		<Character>筆</Character>
+		<Meaning>writing brush</Meaning>
+		<Kana>ひつ</Kana>
+	</record>
+	<record>
+		<ID>856</ID>
+		<Level>26</Level>
+		<Character>較</Character>
+		<Meaning>contrast</Meaning>
+		<Kana>かく</Kana>
+	</record>
+	<record>
 		<ID>857</ID>
+		<Level>26</Level>
+		<Character>往</Character>
+		<Meaning>depart</Meaning>
+		<Kana>おう</Kana>
+	</record>
+	<record>
+		<ID>858</ID>
+		<Level>26</Level>
+		<Character>造</Character>
+		<Meaning>create</Meaning>
+		<Kana>ぞう</Kana>
+	</record>
+	<record>
+		<ID>859</ID>
 		<Level>26</Level>
 		<Character>怪</Character>
 		<Meaning>suspicious</Meaning>
 		<Kana>かい, け</Kana>
 	</record>
 	<record>
-		<ID>858</ID>
+		<ID>860</ID>
 		<Level>26</Level>
 		<Character>励</Character>
 		<Meaning>encourage</Meaning>
 		<Kana>れい</Kana>
 	</record>
 	<record>
-		<ID>859</ID>
+		<ID>861</ID>
 		<Level>26</Level>
 		<Character>故</Character>
 		<Meaning>circumstance, reason</Meaning>
 		<Kana>こ</Kana>
 	</record>
 	<record>
-		<ID>860</ID>
+		<ID>862</ID>
 		<Level>26</Level>
 		<Character>貯</Character>
 		<Meaning>savings</Meaning>
 		<Kana>ちょ</Kana>
 	</record>
 	<record>
-		<ID>861</ID>
+		<ID>863</ID>
 		<Level>26</Level>
 		<Character>創</Character>
 		<Meaning>create</Meaning>
 		<Kana>そう</Kana>
 	</record>
 	<record>
-		<ID>862</ID>
+		<ID>864</ID>
 		<Level>26</Level>
 		<Character>討</Character>
 		<Meaning>chastise</Meaning>
 		<Kana>とう</Kana>
 	</record>
 	<record>
-		<ID>863</ID>
+		<ID>865</ID>
 		<Level>26</Level>
 		<Character>汗</Character>
 		<Meaning>sweat</Meaning>
 		<Kana>あせ</Kana>
 	</record>
 	<record>
-		<ID>864</ID>
+		<ID>866</ID>
 		<Level>26</Level>
 		<Character>郵</Character>
 		<Meaning>mail</Meaning>
 		<Kana>ゆう</Kana>
 	</record>
 	<record>
-		<ID>865</ID>
+		<ID>867</ID>
 		<Level>26</Level>
 		<Character>従</Character>
 		<Meaning>obey</Meaning>
 		<Kana>じゅう</Kana>
 	</record>
 	<record>
-		<ID>866</ID>
+		<ID>868</ID>
 		<Level>26</Level>
 		<Character>鉛</Character>
 		<Meaning>lead</Meaning>
 		<Kana>えん</Kana>
 	</record>
 	<record>
-		<ID>867</ID>
+		<ID>869</ID>
 		<Level>26</Level>
 		<Character>接</Character>
 		<Meaning>adjoin</Meaning>
 		<Kana>せつ</Kana>
 	</record>
 	<record>
-		<ID>868</ID>
+		<ID>870</ID>
 		<Level>26</Level>
 		<Character>徴</Character>
 		<Meaning>indication, sign</Meaning>
 		<Kana>ちょう</Kana>
 	</record>
 	<record>
-		<ID>869</ID>
+		<ID>871</ID>
 		<Level>26</Level>
 		<Character>刺</Character>
 		<Meaning>stab</Meaning>
 		<Kana>し</Kana>
 	</record>
 	<record>
-		<ID>870</ID>
+		<ID>872</ID>
 		<Level>26</Level>
 		<Character>占</Character>
 		<Meaning>fortune, occupy</Meaning>
 		<Kana>せん</Kana>
 	</record>
 	<record>
-		<ID>871</ID>
+		<ID>873</ID>
 		<Level>26</Level>
 		<Character>独</Character>
 		<Meaning>alone</Meaning>
 		<Kana>どく</Kana>
 	</record>
 	<record>
-		<ID>872</ID>
+		<ID>874</ID>
 		<Level>26</Level>
 		<Character>授</Character>
 		<Meaning>instruct</Meaning>
 		<Kana>じゅ</Kana>
 	</record>
 	<record>
-		<ID>873</ID>
+		<ID>875</ID>
 		<Level>26</Level>
 		<Character>獣</Character>
 		<Meaning>beast, animal</Meaning>
 		<Kana>じゅう</Kana>
 	</record>
 	<record>
-		<ID>874</ID>
+		<ID>876</ID>
 		<Level>26</Level>
 		<Character>印</Character>
 		<Meaning>seal, mark</Meaning>
 		<Kana>いん</Kana>
 	</record>
 	<record>
-		<ID>875</ID>
+		<ID>877</ID>
 		<Level>26</Level>
 		<Character>我</Character>
 		<Meaning>i, me</Meaning>
 		<Kana>が</Kana>
 	</record>
 	<record>
-		<ID>876</ID>
-		<Level>27</Level>
-		<Character>屈</Character>
-		<Meaning>yield</Meaning>
-		<Kana>くつ</Kana>
-	</record>
-	<record>
-		<ID>877</ID>
-		<Level>27</Level>
-		<Character>訪</Character>
-		<Meaning>visit</Meaning>
-		<Kana>ほう</Kana>
-	</record>
-	<record>
 		<ID>878</ID>
-		<Level>27</Level>
-		<Character>誘</Character>
-		<Meaning>invite</Meaning>
-		<Kana>ゆう</Kana>
-	</record>
-	<record>
-		<ID>879</ID>
-		<Level>27</Level>
-		<Character>退</Character>
-		<Meaning>retreat, reject</Meaning>
-		<Kana>たい</Kana>
-	</record>
-	<record>
-		<ID>880</ID>
-		<Level>27</Level>
-		<Character>極</Character>
-		<Meaning>extreme</Meaning>
-		<Kana>きょく, ごく</Kana>
-	</record>
-	<record>
-		<ID>881</ID>
-		<Level>27</Level>
-		<Character>締</Character>
-		<Meaning>tighten</Meaning>
-		<Kana>てい</Kana>
-	</record>
-	<record>
-		<ID>882</ID>
 		<Level>27</Level>
 		<Character>貸</Character>
 		<Meaning>lend</Meaning>
 		<Kana>か</Kana>
 	</record>
 	<record>
-		<ID>883</ID>
-		<Level>27</Level>
-		<Character>途</Character>
-		<Meaning>route</Meaning>
-		<Kana>と</Kana>
-	</record>
-	<record>
-		<ID>884</ID>
+		<ID>879</ID>
 		<Level>27</Level>
 		<Character>濃</Character>
 		<Meaning>thick</Meaning>
 		<Kana>のう</Kana>
 	</record>
 	<record>
-		<ID>885</ID>
-		<Level>27</Level>
-		<Character>端</Character>
-		<Meaning>edge</Meaning>
-		<Kana>たん</Kana>
-	</record>
-	<record>
-		<ID>886</ID>
+		<ID>880</ID>
 		<Level>27</Level>
 		<Character>段</Character>
 		<Meaning>steps, stairs</Meaning>
 		<Kana>だん</Kana>
 	</record>
 	<record>
-		<ID>887</ID>
+		<ID>881</ID>
+		<Level>27</Level>
+		<Character>端</Character>
+		<Meaning>edge</Meaning>
+		<Kana>たん</Kana>
+	</record>
+	<record>
+		<ID>882</ID>
+		<Level>27</Level>
+		<Character>屈</Character>
+		<Meaning>yield</Meaning>
+		<Kana>くつ</Kana>
+	</record>
+	<record>
+		<ID>883</ID>
 		<Level>27</Level>
 		<Character>靴</Character>
 		<Meaning>shoes</Meaning>
 		<Kana>くつ</Kana>
 	</record>
 	<record>
-		<ID>888</ID>
+		<ID>884</ID>
 		<Level>27</Level>
 		<Character>暇</Character>
 		<Meaning>spare time, free time</Meaning>
 		<Kana>か</Kana>
 	</record>
 	<record>
-		<ID>889</ID>
+		<ID>885</ID>
 		<Level>27</Level>
-		<Character>痛</Character>
-		<Meaning>pain</Meaning>
-		<Kana>つう</Kana>
+		<Character>途</Character>
+		<Meaning>route</Meaning>
+		<Kana>と</Kana>
 	</record>
 	<record>
-		<ID>890</ID>
+		<ID>886</ID>
 		<Level>27</Level>
 		<Character>症</Character>
 		<Meaning>symptom</Meaning>
 		<Kana>しょう</Kana>
 	</record>
 	<record>
-		<ID>891</ID>
+		<ID>887</ID>
 		<Level>27</Level>
-		<Character>給</Character>
-		<Meaning>salary</Meaning>
-		<Kana>きゅう</Kana>
+		<Character>誘</Character>
+		<Meaning>invite</Meaning>
+		<Kana>ゆう</Kana>
 	</record>
 	<record>
-		<ID>892</ID>
-		<Level>27</Level>
-		<Character>織</Character>
-		<Meaning>weave</Meaning>
-		<Kana>しき, しょく</Kana>
-	</record>
-	<record>
-		<ID>893</ID>
-		<Level>27</Level>
-		<Character>昇</Character>
-		<Meaning>ascend</Meaning>
-		<Kana>しょう</Kana>
-	</record>
-	<record>
-		<ID>894</ID>
-		<Level>27</Level>
-		<Character>惑</Character>
-		<Meaning>misguided</Meaning>
-		<Kana>わく</Kana>
-	</record>
-	<record>
-		<ID>895</ID>
-		<Level>27</Level>
-		<Character>睡</Character>
-		<Meaning>drowsy</Meaning>
-		<Kana>すい</Kana>
-	</record>
-	<record>
-		<ID>896</ID>
-		<Level>27</Level>
-		<Character>健</Character>
-		<Meaning>healthy</Meaning>
-		<Kana>けん</Kana>
-	</record>
-	<record>
-		<ID>897</ID>
-		<Level>27</Level>
-		<Character>康</Character>
-		<Meaning>health</Meaning>
-		<Kana>こう</Kana>
-	</record>
-	<record>
-		<ID>898</ID>
-		<Level>27</Level>
-		<Character>招</Character>
-		<Meaning>beckon</Meaning>
-		<Kana>しょう</Kana>
-	</record>
-	<record>
-		<ID>899</ID>
-		<Level>27</Level>
-		<Character>腹</Character>
-		<Meaning>belly, abdomen, stomach</Meaning>
-		<Kana>ふく</Kana>
-	</record>
-	<record>
-		<ID>900</ID>
-		<Level>27</Level>
-		<Character>郎</Character>
-		<Meaning>guy</Meaning>
-		<Kana>ろう</Kana>
-	</record>
-	<record>
-		<ID>901</ID>
-		<Level>27</Level>
-		<Character>迫</Character>
-		<Meaning>urge, compel, coerce</Meaning>
-		<Kana>はく</Kana>
-	</record>
-	<record>
-		<ID>902</ID>
+		<ID>888</ID>
 		<Level>27</Level>
 		<Character>胃</Character>
 		<Meaning>stomach</Meaning>
 		<Kana>い</Kana>
 	</record>
 	<record>
-		<ID>903</ID>
+		<ID>889</ID>
 		<Level>27</Level>
-		<Character>迷</Character>
-		<Meaning>astray</Meaning>
-		<Kana>めい</Kana>
+		<Character>給</Character>
+		<Meaning>salary</Meaning>
+		<Kana>きゅう</Kana>
 	</record>
 	<record>
-		<ID>904</ID>
+		<ID>890</ID>
 		<Level>27</Level>
-		<Character>就</Character>
-		<Meaning>settle in</Meaning>
-		<Kana>しゅう</Kana>
+		<Character>織</Character>
+		<Meaning>weave</Meaning>
+		<Kana>しき, しょく</Kana>
 	</record>
 	<record>
-		<ID>905</ID>
+		<ID>891</ID>
+		<Level>27</Level>
+		<Character>締</Character>
+		<Meaning>tighten</Meaning>
+		<Kana>てい</Kana>
+	</record>
+	<record>
+		<ID>892</ID>
+		<Level>27</Level>
+		<Character>昇</Character>
+		<Meaning>ascend</Meaning>
+		<Kana>しょう</Kana>
+	</record>
+	<record>
+		<ID>893</ID>
 		<Level>27</Level>
 		<Character>悩</Character>
 		<Meaning>worry</Meaning>
 		<Kana>なや</Kana>
 	</record>
 	<record>
-		<ID>906</ID>
+		<ID>894</ID>
+		<Level>27</Level>
+		<Character>健</Character>
+		<Meaning>healthy</Meaning>
+		<Kana>けん</Kana>
+	</record>
+	<record>
+		<ID>895</ID>
+		<Level>27</Level>
+		<Character>康</Character>
+		<Meaning>health</Meaning>
+		<Kana>こう</Kana>
+	</record>
+	<record>
+		<ID>896</ID>
+		<Level>27</Level>
+		<Character>郎</Character>
+		<Meaning>guy</Meaning>
+		<Kana>ろう</Kana>
+	</record>
+	<record>
+		<ID>897</ID>
+		<Level>27</Level>
+		<Character>迫</Character>
+		<Meaning>urge, compel, coerce</Meaning>
+		<Kana>はく</Kana>
+	</record>
+	<record>
+		<ID>898</ID>
+		<Level>27</Level>
+		<Character>退</Character>
+		<Meaning>retreat, reject</Meaning>
+		<Kana>たい</Kana>
+	</record>
+	<record>
+		<ID>899</ID>
+		<Level>27</Level>
+		<Character>痛</Character>
+		<Meaning>pain</Meaning>
+		<Kana>つう</Kana>
+	</record>
+	<record>
+		<ID>900</ID>
+		<Level>27</Level>
+		<Character>迷</Character>
+		<Meaning>astray</Meaning>
+		<Kana>めい</Kana>
+	</record>
+	<record>
+		<ID>901</ID>
+		<Level>27</Level>
+		<Character>極</Character>
+		<Meaning>extreme</Meaning>
+		<Kana>きょく, ごく</Kana>
+	</record>
+	<record>
+		<ID>902</ID>
+		<Level>27</Level>
+		<Character>就</Character>
+		<Meaning>settle in</Meaning>
+		<Kana>しゅう</Kana>
+	</record>
+	<record>
+		<ID>903</ID>
+		<Level>27</Level>
+		<Character>惑</Character>
+		<Meaning>misguided</Meaning>
+		<Kana>わく</Kana>
+	</record>
+	<record>
+		<ID>904</ID>
+		<Level>27</Level>
+		<Character>睡</Character>
+		<Meaning>drowsy</Meaning>
+		<Kana>すい</Kana>
+	</record>
+	<record>
+		<ID>905</ID>
 		<Level>27</Level>
 		<Character>怒</Character>
 		<Meaning>angry, anger</Meaning>
 		<Kana>ど</Kana>
 	</record>
 	<record>
+		<ID>906</ID>
+		<Level>27</Level>
+		<Character>招</Character>
+		<Meaning>beckon</Meaning>
+		<Kana>しょう</Kana>
+	</record>
+	<record>
 		<ID>907</ID>
 		<Level>27</Level>
-		<Character>眠</Character>
-		<Meaning>sleep</Meaning>
-		<Kana>みん</Kana>
+		<Character>腹</Character>
+		<Meaning>belly, abdomen, stomach</Meaning>
+		<Kana>ふく</Kana>
 	</record>
 </kanji>

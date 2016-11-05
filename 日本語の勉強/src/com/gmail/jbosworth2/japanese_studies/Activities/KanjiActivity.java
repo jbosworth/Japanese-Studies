@@ -5,24 +5,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class KanjiActivity extends Activity {
-	private InputStream in;
-	private String fn = "kanji.xml";
+	private TextView tv;
 	private XMLReader reader = XMLReader.getInstance();
+	private InputStream in;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,6 +42,10 @@ public class KanjiActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
+	        case R.id.install:
+	        	Intent k = new Intent(this, InstallationActivity.class);
+	        	startActivity(k);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -53,39 +56,31 @@ public class KanjiActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_kanji);
 		
-		if(KanjiDbHelper.getLastUpdate() == null){
-			//Read kanji from XML file and put them into a list
-			try {
-				in = getAssets().open(fn);
-				BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-		        StringBuilder sb = new StringBuilder();
-		        String inline = "";
-		        while ((inline = inputReader.readLine()) != null) {
-		          sb.append(inline);
-		        }
-				reader.readFile(sb, fn);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			//Insert kanji from list into a table
-			String level = "";
-			String meanings = "";
-			KanjiDbHelper kdb = new KanjiDbHelper(getBaseContext());
-			for(Item i : reader.getKanji()){
-				level += i.getLevel();
-				for(String s : i.getMeaning()){
-					meanings += s;
-					meanings += ",";
-				}
-				kdb.insertKanji(level, i.getCharacter(), meanings, i.getKana());
-			}
+		tv = (TextView) findViewById(R.id.ktv);
+		
+		String fn = "kanji.xml";
+		try {
+			in = getAssets().open(fn);
+			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+	        StringBuilder sb = new StringBuilder();
+	        String inline = "";
+	        while ((inline = inputReader.readLine()) != null) {
+	          sb.append(inline);
+	        }
+			reader.readFile(sb, fn);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
 	public void startKanjiReading(View view){
-		Intent intent = new Intent(this, KanjiReadingActivity.class);
-		startActivity(intent);
+		Resources res = getResources();
+		//if(InstallationActivity.isK_installed()){
+			Intent intent = new Intent(this, KanjiReadingActivity.class);
+			startActivity(intent);
+		//}else{
+		//	tv.setText(res.getString(R.string.kinstall));
+		//}
 	}
 	
 	public void startKanjiWriting(View view){

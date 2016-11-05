@@ -34,6 +34,10 @@ public class KanjiReadingActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
+	        case R.id.install:
+	        	Intent k = new Intent(this, InstallationActivity.class);
+	        	startActivity(k);
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -44,7 +48,7 @@ public class KanjiReadingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_kanji_reading);
 		
-		String s = reader.listKanji();
+		String s = reader.listKanji(getBaseContext());
 	    readList = (TextView)findViewById(R.id.krtvid);
 	    readList.setText(s);
 	}
