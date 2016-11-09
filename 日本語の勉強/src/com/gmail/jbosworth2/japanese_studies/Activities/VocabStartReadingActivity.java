@@ -1,5 +1,9 @@
 package com.gmail.jbosworth2.japanese_studies.Activities;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -25,6 +29,8 @@ import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class VocabStartReadingActivity extends Activity {
 	private XMLReader reader = XMLReader.getInstance();
+	private InputStream in;
+	private String fn = "context_sentences.xml";
 	private ArrayList<Item> vocab = reader.getVocab();
 	private MyNumberPicker np1;
 	private MyNumberPicker np2;
@@ -73,6 +79,19 @@ public class VocabStartReadingActivity extends Activity {
 		np2 = (MyNumberPicker) findViewById(R.id.vrrnp2);
 		et = (EditText) findViewById(R.id.vrret);
 		tv = (TextView) findViewById(R.id.vrrtv2);
+		
+		try {
+			in = getAssets().open(fn);
+			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+	        StringBuilder sb = new StringBuilder();
+	        String inline = "";
+	        while ((inline = inputReader.readLine()) != null) {
+	          sb.append(inline);
+	        }
+			reader.readFile(sb, fn);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void startVRA(View view){

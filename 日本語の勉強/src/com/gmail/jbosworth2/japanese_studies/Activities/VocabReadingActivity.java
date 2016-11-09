@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
+import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
@@ -32,11 +33,20 @@ public class VocabReadingActivity extends Activity {
 	private ArrayList<Item> incorrect = new ArrayList<Item>();
 	//Current Item
 	private Item i;
+	//Current Item's context sentence
+	private ContextSentence context;
 	//Random number generator
 	private Random r = new Random();
-	//Booleans to track correct/incorrect responses
+	//Booleans 
+	//to track correct/incorrect responses
 	private boolean m_correct = false;
 	private boolean r_correct = false;
+	//to check if context sentence(s) need to be updated
+	private boolean cs_up = false;
+	//to check if context sentence(s) are shown
+	private boolean show_active = false;
+	//to check if it's safe to show english sentence
+	private boolean show_e = false;
 	//Strings to present to user
 	private String result;
 	private String incorrect_items;
@@ -47,11 +57,13 @@ public class VocabReadingActivity extends Activity {
 	private int numItems;
 	//Views
 	private TextView tv;
+	private TextView tv2;
 	private EditText et1;
 	private EditText et2;
 	private Button b1;
 	private Button b2;
 	private Button b3;
+	private Button b4;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,11 +105,14 @@ public class VocabReadingActivity extends Activity {
 		numItems = VocabStartReadingActivity.getAmount();
 		
 		tv = (TextView) findViewById(R.id.vrtv);
+		tv2 = (TextView) findViewById(R.id.vrtv2);
 		et1 = (EditText) findViewById(R.id.vret1);
 		et2 = (EditText) findViewById(R.id.vret2);
+		b1 = (Button) findViewById(R.id.vrb1);
 		b2 = (Button) findViewById(R.id.vrb2);
 		b3 = (Button) findViewById(R.id.vrb3);
 		
+		tv2.setVisibility(View.INVISIBLE);
 		b2.setEnabled(false);
 		b3.setEnabled(false);
 		
@@ -110,6 +125,7 @@ public class VocabReadingActivity extends Activity {
 			i = in.remove(r.nextInt(in.size()));
 			tv.setText(i.getCharacter());
 			b2.setEnabled(true);
+			show_e = false;
 		}else{
 			finish();
 		}
@@ -158,12 +174,14 @@ public class VocabReadingActivity extends Activity {
 			}
 		}
 		tv.setText(result);
+		show_e = true;
 		out.add(i);
 		b3.setEnabled(true);
 	}
 	
 	public void proceed(View v){
 		b3.setEnabled(false);
+		cs_up = false;
 		review();
 	}
 	
@@ -179,11 +197,41 @@ public class VocabReadingActivity extends Activity {
 		final_result += res.getString(R.string.end_of_review) + "\n" + m_score + "%"
 		+ " " + res.getString(R.string.correct_meanings) + "\n" + r_score + "%"
 		+ " " + res.getString(R.string.correct_readings) + "\n\n" + incorrect_items;
+		show_e = false;
 		tv.setText(final_result);
+		b1.setEnabled(false);
 	}
 	
 	public void returnHome(View v){
 		Intent i = new Intent(this, MainActivity.class);
 		startActivity(i);
+	}
+	
+	public void showContext(View v){
+		searchContext();
+		//Show sentence(s)
+		if(!show_active){
+			tv2.setVisibility(View.VISIBLE);
+			if(!show_e){//show japanese sentence only
+				tv2.setText(context.getJapanese_Sentence());
+			}else{//show both
+				tv2.setText(context.getJapanese_Sentence() + "\n" + context.getEnglish_Sentence());
+			}
+			show_active = true;
+		}else{//hide sentence(s)
+			tv2.setVisibility(View.INVISIBLE);
+			show_active = false;
+		}
+	}
+	
+	public void searchContext(){
+		if(!cs_up){
+			for(ContextSentence cs : reader.getContextSentences()){
+				if(cs.getVocab().equals(i.getCharacter())){
+					context = cs;
+				}
+			}
+			cs_up = true;
+		}
 	}
 }

@@ -17,12 +17,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class VocabActivity extends Activity {
-	private TextView tv;
 	private XMLReader reader = XMLReader.getInstance();
 	private InputStream in;
+	private TextView tv;
+	private Button b2;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,6 +60,9 @@ public class VocabActivity extends Activity {
 		setContentView(R.layout.activity_vocab);
 		
 		tv = (TextView) findViewById(R.id.vtv);
+		b2 = (Button) findViewById(R.id.vb2);
+		
+		b2.setEnabled(false);
 		
 		String fn = "vocab.xml";
 		if(WKVocabDbHelper.getLastUpdate() == null){

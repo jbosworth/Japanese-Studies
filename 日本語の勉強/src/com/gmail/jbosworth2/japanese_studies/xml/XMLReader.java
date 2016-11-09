@@ -3,6 +3,7 @@ package com.gmail.jbosworth2.japanese_studies.xml;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
 
@@ -16,6 +17,7 @@ public class XMLReader {
 	//into these lists as needed.
 	private ArrayList<Item> kanji = new ArrayList<Item>();
 	private static ArrayList<Item> vocab = new ArrayList<Item>();
+	private static ArrayList<ContextSentence> context_sentences = new ArrayList<ContextSentence>();
 		
 	//Singleton XMLReader- only one reader necessary
 	private static final XMLReader INSTANCE = new XMLReader();
@@ -33,35 +35,50 @@ public class XMLReader {
 		return vocab;
 	}
 	
+	public ArrayList<ContextSentence> getContextSentences(){
+		return context_sentences;
+	}
+	
 	/* Reads from a given XML file. It parses and stores kanji and/or vocab within the XMLReader. 
 	 * @param fn should be the name of the input file. For example, 
 	 * "kanji.xml" is what should be passed to read in kanji.
 	 */
 	public void readFile(StringBuilder sb, String fn){
-		//clear lists
-		this.kanji.clear();
-		this.vocab.clear();
-		
 		ArrayList<ArrayList<String>> input = new ArrayList<ArrayList<String>>();
 		XMLFileReader reader = XMLFileReader.getInstance();
-		reader.read(sb);
+		reader.read(sb, fn);
 		input = reader.getReadable();
 		ArrayList<String> meaning = new ArrayList<String>();
 		ArrayList<String> kana = new ArrayList<String>();
 		
-		for(int j=0; j<input.get(0).size(); j++){
-			int ID = Integer.parseInt(input.get(0).get(j));
-			int level = Integer.parseInt(input.get(1).get(j));
-			meaning = parseMR(input.get(3).get(j));
-			kana = parseMR(input.get(4).get(j));
-			
-			Item i = new Item(ID, level, input.get(2).get(j), 
-					meaning, kana);
-
-			if(fn == "kanji.xml"){
-				kanji.add(i);
-			}else if(fn == "vocab.xml"){
-				vocab.add(i);
+		if(fn == "kanji.xml" || fn == "vocab.xml"){
+			//clear lists
+			this.kanji.clear();
+			this.vocab.clear();
+			for(int j=0; j<input.get(0).size(); j++){
+				int ID = Integer.parseInt(input.get(0).get(j));
+				int level = Integer.parseInt(input.get(1).get(j));
+				meaning = parseMR(input.get(3).get(j));
+				kana = parseMR(input.get(4).get(j));
+				
+				Item i = new Item(ID, level, input.get(2).get(j), 
+						meaning, kana);
+	
+				if(fn == "kanji.xml"){
+					kanji.add(i);
+				}else if(fn == "vocab.xml"){
+					vocab.add(i);
+				}
+			}
+		}else if(fn == "context_sentences.xml"){
+			this.context_sentences.clear();
+			for(int j=0; j<input.get(0).size(); j++){
+				int ID = Integer.parseInt(input.get(0).get(j));
+				int level = Integer.parseInt(input.get(1).get(j));
+				
+				ContextSentence s = new ContextSentence(ID, level, input.get(2).get(j), 
+						input.get(3).get(j), input.get(4).get(j));
+				context_sentences.add(s);
 			}
 		}
 	}

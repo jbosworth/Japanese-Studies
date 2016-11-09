@@ -15,7 +15,12 @@
           android:id="@+id/vrtv"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_weight="7" />
+          android:layout_weight="5" />
+        <TextView
+          android:id="@+id/vrtv2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="2" />
         <EditText
           android:id="@+id/vret1"
           android:layout_width="match_parent"
@@ -32,6 +37,12 @@
            	android:orientation="horizontal"
    			android:layout_width="match_parent"
     		android:layout_height="wrap_content">
+	        <Button
+	          android:id="@+id/vrb1"
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:text="@string/context"
+	          android:onClick="showContext" />
 	        <Button
 	          android:id="@+id/vrb2"
 	          android:layout_width="wrap_content"

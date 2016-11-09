@@ -12,11 +12,8 @@
 	<string name="vrri">Select a range of levels and the number of items to be reviewed.</string>
 	<string name="review">Review</string>
 	<string name="numitems">Enter number of items</string>
-	<string name="insert">Insert</string>
-	<string name="continu">Continue</string>
 	<string name="answer">Answer</string>
 	<string name="start">Start</string>
-	<string name="return_home">Home</string>
 	<string name="meaning">Meaning</string>
 	<string name="reading">Reading</string>
 	<string name="choose_language">Choose Language</string>
@@ -24,6 +21,10 @@
 	<string name="english">English</string>
 	<string name="japanese">日本語</string>
 	<!-- VocabReadingActivity -->
+	<string name="context">Context</string>
+	<string name="insert">Insert</string>
+	<string name="continu">Continue</string>
+	<string name="return_home">Home</string>
 	<string name="correct_meaning">Correct Meaning</string>
 	<string name="correct_reading">Correct Reading</string>
 	<string name="correct_meanings">Meanings Correct</string>
