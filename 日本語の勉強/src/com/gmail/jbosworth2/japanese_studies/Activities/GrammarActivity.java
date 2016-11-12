@@ -1,18 +1,14 @@
 package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import com.gmail.jbosworth2.japanese_studies.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends Activity {
-	private Button b3;
+public class GrammarActivity extends Activity{
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
@@ -25,7 +21,7 @@ public class MainActivity extends Activity {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.lang:
-	        	Intent i = new Intent(this, ChangeLocaleActivity.class);
+	            Intent i = new Intent(this, ChangeLocaleActivity.class);
 	            startActivity(i);
 	            return true;
 	        case R.id.return_home:
@@ -44,30 +40,6 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		b3 = (Button) findViewById(R.id.mb3);
-		
-		b3.setEnabled(false);
-	}
-	
-	public void startKanji (View view){
-		Intent intent = new Intent(this, KanjiActivity.class);
-		startActivity(intent);
-	}
-	
-	public void startVocab (View view){
-		Intent intent = new Intent(this, VocabActivity.class);
-		startActivity(intent);
-	}
-	
-	public void startGrammar (View view){
-		Intent intent = new Intent(this, GrammarActivity.class);
-		startActivity(intent);
-	}
-	
-	public void startSearch (View view){
-		Intent intent = new Intent(this, SearchActivity.class);
-		startActivity(intent);
+		setContentView(R.layout.activity_grammar);
 	}
 }

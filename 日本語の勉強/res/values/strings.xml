@@ -4,6 +4,9 @@
     <string name="main_title">Japanese Studies</string>
     <string name="kanji">Kanji</string>
     <string name="vocab">Vocab</string>
+    <string name="grammar">Grammar</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Kanji, Vocab, Grammar Topics</string>
     <string name="read">Read</string>
 	<string name="write">Write</string>
 	<string name="listen">Listen</string>
@@ -36,4 +39,7 @@
 	<string name="installation_head">Please install the necessary resources.</string>
 	<string name="kinstall">Please install kanji.</string>
 	<string name="vinstall">Please install vocab.</string>
+	<!--  Errors -->
+	<string name="skle">To list kanji by level, enter a number between 1 and 60. E.g. "5 qk ql"</string>
+	<string name="skle2">Please enter a number between 1 and 60 to retrieve kanji by level.</string>
 </resources>

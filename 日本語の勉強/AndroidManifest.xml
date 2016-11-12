@@ -39,6 +39,10 @@
         <activity
             android:name=".Activities.VocabListeningActivity" />
         <activity
+            android:name=".Activities.GrammarActivity" />
+        <activity
+            android:name=".Activities.SearchActivity" />
+        <activity
             android:name=".Activities.ChangeLocaleActivity" />
         <activity
             android:name=".Activities.InstallationActivity" />

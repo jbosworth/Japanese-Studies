@@ -4,6 +4,9 @@
     <string name="main_title">日本語の勉強</string>
     <string name="kanji">漢字</string>
     <string name="vocab">単語</string>
+    <string name="grammar">文法</string>
+    <string name="search">検索</string>
+    <string name="search_hint">漢字や単語や文法の話題</string>
     <string name="read">読む</string>
 	<string name="write">書く</string>
 	<string name="listen">聞く</string>
@@ -11,7 +14,7 @@
 	<string name="llid">llid</string>
 	<string name="vrri">いくつかのレベルを抜き出す</string>
 	<string name="review">復習う</string>
-	<string name="numitems">いくつが浚いたいか</string>
+	<string name="numitems">いくつが復習いたいか</string>
 	<string name="answer">答え</string>
 	<string name="start">始めて</string>
 	<string name="meaning">意味</string>
@@ -35,4 +38,7 @@
 	<string name="installation_head">必要な資料を据え付けて下さい</string>
 	<string name="kinstall">漢字を据え付けて下さい</string>
 	<string name="vinstall">単語を据え付けて下さい</string>
+	<!-- Errors -->
+	<string name="skle">レベルを押してください。　例えば,"5 qk ql"。</string>
+	<string name="skle2">漢字を見付けるために１から６０を選んでください</string>
 </resources>

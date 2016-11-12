@@ -113,15 +113,76 @@ public class XMLReader {
 		return s;
 	}
 	
-	public String writingReview(){
-		String s = "";
-		return s;
-	}
-	
 	public Item getRandomKanji(){
 		Random r1 = new Random();
 		Item i = kanji.remove(r1.nextInt(kanji.size()));
 		return i;
+	}
+	
+	public String kanjiByLevel(int level){
+		String result = "";
+		String temp = "";
+		for(Item i : kanji){
+			if(i.getLevel() == level){
+				temp = i.getCharacter() + " " + i.getMeaning() + " " + i.getKana() + "\n";
+				result += temp;
+			}
+		}
+		if(result.equals("")){
+			result = "There are no kanji at this level.";
+		}
+		return result;
+	}
+	
+	public String kanjiByCharacter(String character){
+		String result = "";
+		for(Item i : kanji){
+			if(i.getCharacter().equals(character)){
+				result = i.getMeaning() + " " + i.getKana();
+			}
+		}
+		if(result.equals("")){
+			result = "There is no such kanji in this app.";
+		}
+		return result;
+	}
+	
+	public String kanjiByMeaning(String meaning){
+		String result = "";
+		String temp = "";
+		for(Item i : kanji){
+			for(String s : i.getMeaning()){
+				if(s.equals(meaning)){
+					temp = i.getCharacter() + " " + i.getKana() + "\n";
+					if(!result.contains(temp)){
+						result += temp;
+					}
+				}
+			}
+		}
+		if(result.equals("")){
+			result = "There are no kanji in this app that use that translation.";
+		}
+		return result;
+	}
+	
+	public String kanjiByKana(String kana){
+		String result = "";
+		String temp = "";
+		for(Item i : kanji){
+			for(String s : i.getKana()){
+				if(s.equals(kana)){
+					temp = i.getCharacter() + " " + i.getMeaning() + "\n";
+					if(!result.contains(temp)){
+						result += temp;
+					}
+				}
+			}
+		}
+		if(result.equals("")){
+			result = "There are no kanji in this app with those sounds.";
+		}
+		return result;
 	}
 	
 	//------------Vocab Functions
