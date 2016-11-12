@@ -80,17 +80,20 @@ public class VocabStartReadingActivity extends Activity {
 		et = (EditText) findViewById(R.id.vrret);
 		tv = (TextView) findViewById(R.id.vrrtv2);
 		
-		try {
-			in = getAssets().open(fn);
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder sb = new StringBuilder();
-	        String inline = "";
-	        while ((inline = inputReader.readLine()) != null) {
-	          sb.append(inline);
-	        }
-			reader.readFile(sb, fn);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(!MainActivity.isContextSentencesLoaded()){
+			try {
+				in = getAssets().open(fn);
+				BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+		        StringBuilder sb = new StringBuilder();
+		        String inline = "";
+		        while ((inline = inputReader.readLine()) != null) {
+		          sb.append(inline);
+		        }
+				reader.readFile(sb, fn);
+				MainActivity.setContextSentencesLoaded(true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

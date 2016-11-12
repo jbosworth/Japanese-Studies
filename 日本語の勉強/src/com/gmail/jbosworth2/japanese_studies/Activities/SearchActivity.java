@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
+import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
@@ -79,11 +81,23 @@ public class SearchActivity extends Activity{
 		String result = "";
 		//Parse input for #kanji, #vocab, #grammar
 		if(input.contains(kanji)){
+			String type = "kanji";
+			if(!MainActivity.isKanjiLoaded()){
+				loadFile(type + ".xml");
+				MainActivity.setKanjiLoaded(true);
+			}
+			ArrayList<Item> list = reader.getKanji();
 			String temp = input.replace(kanji, " ");
-			result = searchKanji(temp.trim());
+			result = searchItem(temp.trim(), type, list);
 		}else if(input.contains(vocab)){
+			String type = "vocab";
+			if(!MainActivity.isVocabLoaded()){
+				loadFile(type + ".xml");
+				MainActivity.setVocabLoaded(true);
+			}
+			ArrayList<Item> list = reader.getVocab();
 			String temp = input.replace(vocab, " ");
-			result = searchVocab(temp.trim());
+			result = searchItem(temp.trim(), type, list);
 		}else if(input.contains(grammar)){
 			String temp = input.replace(grammar, " ");
 			result = searchGrammar(temp.trim());
@@ -95,38 +109,32 @@ public class SearchActivity extends Activity{
 		tv.setText(result);
 	}
 	
-	public String searchKanji(String input){
-		loadKanji();
+	public String searchItem(String input, String type, ArrayList<Item> list){
 		String result = "";
-		if(input.contains(level)){//Display all kanji of that level with its character, meaning(s), and kana
+		if(input.contains(level)){//Display all kanji/vocab of a specified level with its character, meaning(s), and kana
 			String temp = input.replace(level, " ");
 			try{
 				int level = Integer.parseInt(temp.trim());
 				if(1 <= level && level <= 60){
-					result = reader.kanjiByLevel(level);
+					result = reader.itemByLevel(level, type, list, res);
 				}else{
-					result = res.getString(R.string.skle2);
+					result = res.getString(R.string.sile2);
 				}
 			}catch(NumberFormatException n){
-				result = res.getString(R.string.skle) + "\n" + temp;
+				result = res.getString(R.string.sile1) + "\n" + temp;
 			}
-		}else if(input.contains(character)){//Display a character's meaning(s) and kana
+		}else if(input.contains(character)){//Display a kanji/vocab's meaning(s) and kana
 			String temp = input.replace(character, " ");
-			result = reader.kanjiByCharacter(temp.trim());
-		}else if(input.contains(meaning)){
+			result = reader.itemByCharacter(temp.trim(), type, list, res);
+		}else if(input.contains(meaning)){//Display all kanji/vocab and their kana that have a specified meaning
 			String temp = input.replace(meaning, " ");
-			result = reader.kanjiByMeaning(temp.trim());
-		}else if(input.contains(kana)){
+			result = reader.itemByMeaning(temp.trim(), type, list, res);
+		}else if(input.contains(kana)){//Display all kanji/vocab and their meanings that have a specified kana
 			String temp = input.replace(kana, " ");
-			result = reader.kanjiByKana(temp.trim());
+			result = reader.itemByKana(temp.trim(), type, list, res);
 		}else{
 			result = searchAll(input);
 		}
-		return result;
-	}
-	
-	public String searchVocab(String input){
-		String result = "";
 		return result;
 	}
 	
@@ -140,8 +148,7 @@ public class SearchActivity extends Activity{
 		return result;
 	}
 	
-	public void loadKanji(){
-		String fn = "kanji.xml";
+	public void loadFile(String fn){
 		try {
 			in = getAssets().open(fn);
 			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));

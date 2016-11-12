@@ -5,9 +5,11 @@ import java.util.Random;
 
 import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
+import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
 
 import android.content.Context;
+import android.content.res.Resources;
 
 
 public class XMLReader {
@@ -15,7 +17,7 @@ public class XMLReader {
 	//Store kanji and vocab in lists to be retrieved by GUI through the use of special functions.
 	//Originally made to hold xml data only- now data is put into SQLite tables and read back
 	//into these lists as needed.
-	private ArrayList<Item> kanji = new ArrayList<Item>();
+	private static ArrayList<Item> kanji = new ArrayList<Item>();
 	private static ArrayList<Item> vocab = new ArrayList<Item>();
 	private static ArrayList<ContextSentence> context_sentences = new ArrayList<ContextSentence>();
 		
@@ -52,9 +54,6 @@ public class XMLReader {
 		ArrayList<String> kana = new ArrayList<String>();
 		
 		if(fn == "kanji.xml" || fn == "vocab.xml"){
-			//clear lists
-			this.kanji.clear();
-			this.vocab.clear();
 			for(int j=0; j<input.get(0).size(); j++){
 				int ID = Integer.parseInt(input.get(0).get(j));
 				int level = Integer.parseInt(input.get(1).get(j));
@@ -71,7 +70,6 @@ public class XMLReader {
 				}
 			}
 		}else if(fn == "context_sentences.xml"){
-			this.context_sentences.clear();
 			for(int j=0; j<input.get(0).size(); j++){
 				int ID = Integer.parseInt(input.get(0).get(j));
 				int level = Integer.parseInt(input.get(1).get(j));
@@ -95,11 +93,96 @@ public class XMLReader {
 	}
 	
 	public void setKanji(ArrayList<Item> kanji){
-		this.kanji = kanji;
+		XMLReader.kanji = kanji;
 	}
 	
 	public void setWKVocab(ArrayList<Item> vocab){
-		this.vocab = vocab;
+		XMLReader.vocab = vocab;
+	}
+	
+
+	//-----SearchActivity Functions------
+	
+	public String itemByLevel(int level, String type, ArrayList<Item> list, Resources res){
+		String result = "";
+		String temp = "";
+		for(Item i : list){
+			if(i.getLevel() == level){
+				temp = i.getCharacter() + " " + i.getMeaning() + " " + i.getKana() + "\n";
+				result += temp;
+			}
+		}
+		if(result.equals("")){
+			if(type.equals("kanji")){
+				result = res.getString(R.string.skle);
+			}else if(type.equals("vocab")){
+				result = res.getString(R.string.svle);
+			}
+		}
+		return result;
+	}
+	
+	public String itemByCharacter(String character, String type, ArrayList<Item> list, Resources res){
+		String result = "";
+		for(Item i : list){
+			if(i.getCharacter().equals(character)){
+				result = i.getMeaning() + " " + i.getKana();
+			}
+		}
+		if(result.equals("")){
+			if(type.equals("kanji")){
+				result = res.getString(R.string.skce);
+			}else if(type.equals("vocab")){
+				result = res.getString(R.string.svce);
+			}
+		}
+		return result;
+	}
+	
+	public String itemByMeaning(String meaning, String type, ArrayList<Item> list, Resources res){
+		String result = "";
+		String temp = "";
+		for(Item i : list){
+			for(String s : i.getMeaning()){
+				if(s.equals(meaning)){
+					temp = i.getCharacter() + " " + i.getKana() + "\n";
+					if(!result.contains(temp)){
+						result += temp;
+					}
+				}
+			}
+		}
+		if(result.equals("")){
+			if(type.equals("kanji")){
+				result = res.getString(R.string.skme);
+			}else if(type.equals("vocab")){
+				result = res.getString(R.string.svme);
+			}
+		}
+		return result;
+	}
+	
+	public String itemByKana(String kana, String type, ArrayList<Item> list, Resources res){
+		String result = "";
+		String temp = "";
+		for(Item i : list){
+			for(String s : i.getKana()){
+				if(s.equals(kana)){
+					temp = i.getCharacter() + " " + i.getMeaning() + "\n";
+					if(!result.contains(temp)){
+						result += temp;
+					}
+				}
+			}
+		}
+		if(result.equals("")){
+			if(type.equals("kanji")){
+				result = res.getString(R.string.skke);
+			}else if(type.equals("vocab")){
+				result = res.getString(R.string.svke);
+			}
+		}
+		return result;
 	}
 	
 	//-----------Kanji Functions
@@ -119,71 +202,6 @@ public class XMLReader {
 		return i;
 	}
 	
-	public String kanjiByLevel(int level){
-		String result = "";
-		String temp = "";
-		for(Item i : kanji){
-			if(i.getLevel() == level){
-				temp = i.getCharacter() + " " + i.getMeaning() + " " + i.getKana() + "\n";
-				result += temp;
-			}
-		}
-		if(result.equals("")){
-			result = "There are no kanji at this level.";
-		}
-		return result;
-	}
-	
-	public String kanjiByCharacter(String character){
-		String result = "";
-		for(Item i : kanji){
-			if(i.getCharacter().equals(character)){
-				result = i.getMeaning() + " " + i.getKana();
-			}
-		}
-		if(result.equals("")){
-			result = "There is no such kanji in this app.";
-		}
-		return result;
-	}
-	
-	public String kanjiByMeaning(String meaning){
-		String result = "";
-		String temp = "";
-		for(Item i : kanji){
-			for(String s : i.getMeaning()){
-				if(s.equals(meaning)){
-					temp = i.getCharacter() + " " + i.getKana() + "\n";
-					if(!result.contains(temp)){
-						result += temp;
-					}
-				}
-			}
-		}
-		if(result.equals("")){
-			result = "There are no kanji in this app that use that translation.";
-		}
-		return result;
-	}
-	
-	public String kanjiByKana(String kana){
-		String result = "";
-		String temp = "";
-		for(Item i : kanji){
-			for(String s : i.getKana()){
-				if(s.equals(kana)){
-					temp = i.getCharacter() + " " + i.getMeaning() + "\n";
-					if(!result.contains(temp)){
-						result += temp;
-					}
-				}
-			}
-		}
-		if(result.equals("")){
-			result = "There are no kanji in this app with those sounds.";
-		}
-		return result;
-	}
 	
 	//------------Vocab Functions
 	public String listVocab(){

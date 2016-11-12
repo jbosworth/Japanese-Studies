@@ -39,6 +39,10 @@
 	<string name="kinstall">漢字を据え付けて下さい</string>
 	<string name="vinstall">単語を据え付けて下さい</string>
 	<!-- Errors -->
-	<string name="skle">レベルを押してください。　例えば,"5 qk ql"。</string>
-	<string name="skle2">漢字を見付けるために１から６０を選んでください</string>
+	<string name="sile1">レベルを押してください。　例えば,"5 qk ql"。</string>
+	<string name="sile2">漢字や単語を見付けるために１から６０を選んでください</string>
+	<string name="skle">このレベルの漢字がない</string>
+	<string name="svle">このレベルの単語がない</string>
+	<string name="skce">この漢字がない</string>
+	<string name="svce">この単語がない</string>
 </resources>

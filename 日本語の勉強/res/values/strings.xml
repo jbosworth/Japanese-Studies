@@ -39,7 +39,15 @@
 	<string name="installation_head">Please install the necessary resources.</string>
 	<string name="kinstall">Please install kanji.</string>
 	<string name="vinstall">Please install vocab.</string>
-	<!--  Errors -->
-	<string name="skle">To list kanji by level, enter a number between 1 and 60. E.g. "5 qk ql"</string>
-	<string name="skle2">Please enter a number between 1 and 60 to retrieve kanji by level.</string>
+	<!--  Search Errors -->
+	<string name="sile1">To list kanji or vocab by level, enter a number between 1 and 60. E.g. "5 qk ql"</string>
+	<string name="sile2">Please enter a number between 1 and 60 to retrieve kanji or vocab by level.</string>
+	<string name="skle">There are no kanji at this level.</string>
+	<string name="svle">There are no vocab at this level.</string>
+	<string name="skce">There is no such kanji in this app.</string>
+	<string name="svce">There is no such vocab in this app.</string>
+	<string name="skme">There are no kanji in this app that use that translation.</string>
+	<string name="svme">There are no vocab words in this app that use that translation.</string>
+	<string name="skke">There are no kanji in this app with those sounds.</string>
+	<string name="svke">There are no vocab words in this app with those sounds.</string>
 </resources>

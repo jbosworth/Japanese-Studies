@@ -22,6 +22,7 @@ import android.widget.TextView;
 public class KanjiActivity extends Activity {
 	private XMLReader reader = XMLReader.getInstance();
 	private InputStream in;
+	private String fn;
 	private TextView tv;
 	private Button b2;
 	
@@ -63,18 +64,21 @@ public class KanjiActivity extends Activity {
 		
 		b2.setEnabled(false);
 		
-		String fn = "kanji.xml";
-		try {
-			in = getAssets().open(fn);
-			BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-	        StringBuilder sb = new StringBuilder();
-	        String inline = "";
-	        while ((inline = inputReader.readLine()) != null) {
-	          sb.append(inline);
-	        }
-			reader.readFile(sb, fn);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if(!MainActivity.isKanjiLoaded()){
+			fn = "kanji.xml";
+			try {
+				in = getAssets().open(fn);
+				BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+		        StringBuilder sb = new StringBuilder();
+		        String inline = "";
+		        while ((inline = inputReader.readLine()) != null) {
+		          sb.append(inline);
+		        }
+				reader.readFile(sb, fn);
+				MainActivity.setKanjiLoaded(true);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

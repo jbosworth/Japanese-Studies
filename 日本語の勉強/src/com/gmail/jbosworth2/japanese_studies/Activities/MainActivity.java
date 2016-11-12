@@ -13,10 +13,14 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 	private Button b3;
+	private static boolean kanjiLoaded;
+	private static boolean vocabLoaded;
+	private static boolean contextSentencesLoaded;
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.menu, menu);
+	    inflater.inflate(R.menu.menu, menu);    
 	    return true;
 	}
 	
@@ -47,10 +51,37 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		b3 = (Button) findViewById(R.id.mb3);
-		
 		b3.setEnabled(false);
+		
+		kanjiLoaded = false;
+	    vocabLoaded = false;
+	    contextSentencesLoaded = false;
 	}
 	
+	public static boolean isKanjiLoaded() {
+		return kanjiLoaded;
+	}
+
+	public static void setKanjiLoaded(boolean kanjiLoaded) {
+		MainActivity.kanjiLoaded = kanjiLoaded;
+	}
+
+	public static boolean isVocabLoaded() {
+		return vocabLoaded;
+	}
+
+	public static void setVocabLoaded(boolean vocabLoaded) {
+		MainActivity.vocabLoaded = vocabLoaded;
+	}
+	
+	public static boolean isContextSentencesLoaded() {
+		return contextSentencesLoaded;
+	}
+
+	public static void setContextSentencesLoaded(boolean contextSentencesLoaded) {
+		MainActivity.contextSentencesLoaded = contextSentencesLoaded;
+	}
+
 	public void startKanji (View view){
 		Intent intent = new Intent(this, KanjiActivity.class);
 		startActivity(intent);
