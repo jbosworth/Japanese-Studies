@@ -14,9 +14,7 @@ import android.content.res.Resources;
 
 public class XMLReader {
 
-	//Store kanji and vocab in lists to be retrieved by GUI through the use of special functions.
-	//Originally made to hold xml data only- now data is put into SQLite tables and read back
-	//into these lists as needed.
+	//Store kanji, vocab, and context sentences in lists to be retrieved by GUI through the use of functions.
 	private static ArrayList<Item> kanji = new ArrayList<Item>();
 	private static ArrayList<Item> vocab = new ArrayList<Item>();
 	private static ArrayList<ContextSentence> context_sentences = new ArrayList<ContextSentence>();
@@ -41,7 +39,7 @@ public class XMLReader {
 		return context_sentences;
 	}
 	
-	/* Reads from a given XML file. It parses and stores kanji and/or vocab within the XMLReader. 
+	/* Reads from a given XML file. It parses and stores kanji, vocab, and/or context sentences within the XMLReader. 
 	 * @param fn should be the name of the input file. For example, 
 	 * "kanji.xml" is what should be passed to read in kanji.
 	 */
@@ -81,6 +79,8 @@ public class XMLReader {
 		}
 	}
 	
+	//Takes a comma-separated string of values from the kanji/vocab meanings/readings
+	//and returns an ArrayList of the values.
 	public ArrayList<String> parseMR(String s){
 		ArrayList<String> result = new ArrayList<String>();
 		if(s != null){
@@ -103,6 +103,11 @@ public class XMLReader {
 
 	//-----SearchActivity Functions------
 	
+	//Retrieves and displays items (kanji or vocab) by Wanikani level and displays the
+	//item's character, meaning(s), and reading(s)
+	//Parameters: level is the level to be retrieved (1-60),
+	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
+	//  and res is the app's resources- used to retrieve predefined strings for error messages.
 	public String itemByLevel(int level, String type, ArrayList<Item> list, Resources res){
 		String result = "";
 		String temp = "";
@@ -122,6 +127,11 @@ public class XMLReader {
 		return result;
 	}
 	
+	//Retrieves and displays items (kanji or vocab) by character(s) and displays the
+	//item's meaning(s) and reading(s)
+	//Parameters: character is the character to be matched and retrieved,
+	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
+	//  and res is the app's resources- used to retrieve predefined strings for error messages.
 	public String itemByCharacter(String character, String type, ArrayList<Item> list, Resources res){
 		String result = "";
 		for(Item i : list){
@@ -139,6 +149,11 @@ public class XMLReader {
 		return result;
 	}
 	
+	//Retrieves and displays items (kanji or vocab) by English meaning and displays the
+	//item's character and reading(s)
+	//Parameters: meaning is the meaning to be matched and retrieved,
+	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
+	//  and res is the app's resources- used to retrieve predefined strings for error messages.
 	public String itemByMeaning(String meaning, String type, ArrayList<Item> list, Resources res){
 		String result = "";
 		String temp = "";
@@ -162,6 +177,11 @@ public class XMLReader {
 		return result;
 	}
 	
+	//Retrieves and displays items (kanji or vocab) by kana reading and displays the
+	//item's character and meaning(s)
+	//Parameters: kana is the kana to be matched and retrieved,
+	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
+	//  and res is the app's resources- used to retrieve predefined strings for error messages.
 	public String itemByKana(String kana, String type, ArrayList<Item> list, Resources res){
 		String result = "";
 		String temp = "";
@@ -184,6 +204,58 @@ public class XMLReader {
 		}
 		return result;
 	}
+	//Retrieves and displays all kanji or vocab
+	//Parameters: list is the list of kanji or vocab
+	public String listAllItems(ArrayList<Item> list){
+		String result = "";
+		for(Item i : list){
+			result += i.getCharacter() + "\n";
+		}
+		return result;
+	}
+	
+	//Retrieves and displays a random kanji or vocab
+	//Parameters: list is the list of kanji or vocab
+	public String randomItem(ArrayList<Item> list){
+		String result = "";
+		Random r = new Random();
+		Item i = list.get(r.nextInt(list.size()));
+		result += i.getCharacter();
+		return result;
+	}
+	
+	//Retrieves and displays context sentences by vocab
+	//Parameters: input is the vocab to be matched and retrieved,
+	//  list is the list of context sentences,
+	//  and res is the app's resources- used to retrieve predefined strings for error messages.
+	public String sentenceByVocab(String input, ArrayList<ContextSentence> list, Resources res){
+		String result = "";
+		String temp = "";
+		for(ContextSentence s : list){
+			if(input.equals(s.getVocab())){
+				temp = s.getJapanese_Sentence();
+				if(!result.contains(temp)){
+					result += temp;
+				}
+			}
+		}
+		if(result.equals("")){
+			result = res.getString(R.string.ssve);
+		}
+		return result;
+	}
+	
+	//Retrieves and displays a random context sentence
+	//Parameters: list is the list of context sentences
+	public String randomSentence(ArrayList<ContextSentence> list){
+		String result = "";
+		Random r = new Random();
+		ContextSentence s = list.get(r.nextInt(list.size()));
+		result += s.getJapanese_Sentence();
+		return result;
+	}
+	
+	
 	
 	//-----------Kanji Functions
 	public String listKanji(Context context){

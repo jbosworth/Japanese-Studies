@@ -50,4 +50,6 @@
 	<string name="svme">There are no vocab words in this app that use that translation.</string>
 	<string name="skke">There are no kanji in this app with those sounds.</string>
 	<string name="svke">There are no vocab words in this app with those sounds.</string>
+	<string name="ssve">There are no sentences with that vocab word.</string>
+	<string name="sae1">No matches found.</string>
 </resources>

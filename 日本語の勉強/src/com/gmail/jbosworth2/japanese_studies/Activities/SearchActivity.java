@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
@@ -24,13 +25,16 @@ import android.widget.TextView;
 public class SearchActivity extends Activity{
 	private static final String kanji = "qk";
 	private static final String vocab = "qv";
+	private static final String context_sentences = "qcs";
 	private static final String grammar = "qg";
 	private static final String level = "ql";
 	private static final String character = "qc";
 	private static final String meaning = "qm";
 	private static final String kana = "qn";
+	private static final String random = "qr";
+	private static final String all = "qa";
 	
-	private XMLReader reader = XMLReader.getInstance();
+	private XMLReader reader;
 	private InputStream in;
 	private Resources res;
 	
@@ -74,6 +78,21 @@ public class SearchActivity extends Activity{
 		tv = (TextView) findViewById(R.id.stv);
 		
 		res = getResources();
+		reader = XMLReader.getInstance();
+		
+		if(!MainActivity.isKanjiLoaded()){//Load kanji if it isn't already
+			loadFile("kanji.xml");
+			MainActivity.setKanjiLoaded(true);
+		}
+		if(!MainActivity.isVocabLoaded()){//Load vocab if it isn't already
+			loadFile("vocab.xml");
+			MainActivity.setVocabLoaded(true);
+		}
+		if(!MainActivity.isContextSentencesLoaded()){//Load context sentences if they aren't already
+			loadFile("context_sentences.xml");
+			MainActivity.setContextSentencesLoaded(true);
+		}
+		reader = XMLReader.getInstance();
 	}
 	
 	public void search(View v){
@@ -82,24 +101,20 @@ public class SearchActivity extends Activity{
 		//Parse input for #kanji, #vocab, #grammar
 		if(input.contains(kanji)){
 			String type = "kanji";
-			if(!MainActivity.isKanjiLoaded()){
-				loadFile(type + ".xml");
-				MainActivity.setKanjiLoaded(true);
-			}
 			ArrayList<Item> list = reader.getKanji();
-			String temp = input.replace(kanji, " ");
+			String temp = input.replace(kanji, "");
 			result = searchItem(temp.trim(), type, list);
 		}else if(input.contains(vocab)){
 			String type = "vocab";
-			if(!MainActivity.isVocabLoaded()){
-				loadFile(type + ".xml");
-				MainActivity.setVocabLoaded(true);
-			}
 			ArrayList<Item> list = reader.getVocab();
-			String temp = input.replace(vocab, " ");
+			String temp = input.replace(vocab, "");
 			result = searchItem(temp.trim(), type, list);
+		}else if(input.contains(context_sentences)){
+			ArrayList<ContextSentence> list = reader.getContextSentences();
+			String temp = input.replace(context_sentences, "");
+			result = searchContextSentences(temp.trim(), list);
 		}else if(input.contains(grammar)){
-			String temp = input.replace(grammar, " ");
+			String temp = input.replace(grammar, "");
 			result = searchGrammar(temp.trim());
 		}else{
 			result = searchAll(input);
@@ -132,8 +147,29 @@ public class SearchActivity extends Activity{
 		}else if(input.contains(kana)){//Display all kanji/vocab and their meanings that have a specified kana
 			String temp = input.replace(kana, " ");
 			result = reader.itemByKana(temp.trim(), type, list, res);
+		}else if(input.contains(all)){//Display all kanji/vocab
+			String temp = input.replace(all, "");
+			result = reader.listAllItems(list);
+		}else if(input.contains(random)){
+			String temp = input.replace(random, "");
+			result = reader.randomItem(list);
 		}else{
-			result = searchAll(input);
+			if(type.equals("kanji")){
+				//searchallkanji
+			}else if(type.equals("vocab")){
+				//searchallvocab
+			}
+		}
+		return result;
+	}
+	
+	public String searchContextSentences(String input, ArrayList<ContextSentence> list){
+		String result = "";
+		if(input.contains(random)){
+			String temp = input.replace(random, "");
+			result = reader.randomSentence(list);
+		}else{
+			result = reader.sentenceByVocab(input.trim(), list, res);
 		}
 		return result;
 	}
@@ -145,6 +181,14 @@ public class SearchActivity extends Activity{
 	
 	public String searchAll(String input){
 		String result = "";
+		//if number between 1 and 60, display items by level
+		//if single word, vocab and kanji lookup (display which is which, e.g. 愛 k. love
+		//	eventually grammar and dictionary, too. Could create a topic list for grammar.
+		
+		//Can create a series of checks, rate result, if "" go to next search.
+		
+		//else
+		result = res.getString(R.string.sae1);
 		return result;
 	}
 	
