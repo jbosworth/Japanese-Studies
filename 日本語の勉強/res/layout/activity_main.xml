@@ -9,38 +9,26 @@
         <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_weight="2"
+          android:layout_weight="4"
           android:text="@string/main_title" />
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
     		android:layout_width="match_parent"
     		android:layout_height="wrap_content"
-    		android:layout_weight="4" >
+    		android:layout_weight="6" >
         	<Button
-          	  android:layout_width="wrap_content"
-          	  android:layout_height="match_parent"
+          	  android:layout_width="match_parent"
+          	  android:layout_height="wrap_content"
           	  android:text="@string/kanji"
           	  android:onClick="startKanji" />
         	<Button
-          	  android:layout_width="wrap_content"
-          	  android:layout_height="match_parent"
+          	  android:layout_width="match_parent"
+          	  android:layout_height="wrap_content"
           	  android:text="@string/vocab"
           	  android:onClick="startVocab" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-    		android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-    		android:layout_weight="4" >
         	<Button
-        	  android:id="@+id/mb3"
-          	  android:layout_width="wrap_content"
-          	  android:layout_height="match_parent"
-          	  android:text="@string/grammar"
-          	  android:onClick="startGrammar" />
-        	<Button
-          	  android:layout_width="wrap_content"
-          	  android:layout_height="match_parent"
+          	  android:layout_width="match_parent"
+          	  android:layout_height="wrap_content"
           	  android:text="@string/search"
           	  android:onClick="startSearch" />
         </LinearLayout>

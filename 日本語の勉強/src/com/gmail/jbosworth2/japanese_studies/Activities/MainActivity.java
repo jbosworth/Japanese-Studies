@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-	private Button b3;
 	private static boolean kanjiLoaded;
 	private static boolean vocabLoaded;
 	private static boolean contextSentencesLoaded;
@@ -49,10 +48,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		b3 = (Button) findViewById(R.id.mb3);
-		b3.setEnabled(false);
-		
+
 		kanjiLoaded = false;
 	    vocabLoaded = false;
 	    contextSentencesLoaded = false;

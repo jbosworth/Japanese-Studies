@@ -6,7 +6,7 @@
     <string name="vocab">Vocab</string>
     <string name="grammar">Grammar</string>
     <string name="search">Search</string>
-    <string name="search_hint">Kanji, Vocab, Grammar Topics</string>
+    <string name="search_hint">Kanji, Vocab, Context Sentences</string>
     <string name="read">Read</string>
 	<string name="write">Write</string>
 	<string name="listen">Listen</string>
@@ -23,6 +23,7 @@
 	<string name="language">Language</string>
 	<string name="english">English</string>
 	<string name="japanese">日本語</string>
+	<string name="list">List</string>
 	<!-- VocabReadingActivity -->
 	<string name="context">Context</string>
 	<string name="insert">Insert</string>
@@ -52,4 +53,6 @@
 	<string name="svke">There are no vocab words in this app with those sounds.</string>
 	<string name="ssve">There are no sentences with that vocab word.</string>
 	<string name="sae1">No matches found.</string>
+	<string name="sae2">No kanji matches found.</string>
+	<string name="sae3">No vocab matches found.</string>
 </resources>

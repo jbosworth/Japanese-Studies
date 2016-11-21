@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".Activities.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,28 +26,50 @@
         </activity>
         <activity
             android:name=".Activities.KanjiActivity"
-            android:label="@string/kanji" />
+            android:label="@string/kanji"
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.KanjiReadingActivity" />
+            android:name=".Activities.KanjiReadingActivity"
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-			android:name=".Activities.KanjiWriting" />
+			android:name=".Activities.KanjiWriting" 
+			android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
 		<activity
 		    android:name=".Activities.VocabActivity"
-		    android:label="@string/vocab" />
+		    android:label="@string/vocab" 
+		    android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
 		<activity
-		    android:name=".Activities.VocabStartReadingActivity" />
+		    android:name=".Activities.VocabStartReadingActivity" 
+		    android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.VocabReadingActivity" />
+            android:name=".Activities.VocabReadingActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.VocabListeningActivity" />
+            android:name=".Activities.VocabListeningActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.GrammarActivity" />
+            android:name=".Activities.GrammarActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.SearchActivity" />
+            android:name=".Activities.SearchActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.ChangeLocaleActivity" />
+            android:name=".Activities.ChangeLocaleActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".Activities.InstallationActivity" />
+            android:name=".Activities.InstallationActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
     </application>
 
 </manifest>

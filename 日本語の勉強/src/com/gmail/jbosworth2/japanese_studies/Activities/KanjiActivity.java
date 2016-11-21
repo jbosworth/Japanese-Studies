@@ -24,7 +24,6 @@ public class KanjiActivity extends Activity {
 	private InputStream in;
 	private String fn;
 	private TextView tv;
-	private Button b2;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,9 +59,6 @@ public class KanjiActivity extends Activity {
 		setContentView(R.layout.activity_kanji);
 		
 		tv = (TextView) findViewById(R.id.ktv);
-		b2 = (Button) findViewById(R.id.kb2);
-		
-		b2.setEnabled(false);
 		
 		if(!MainActivity.isKanjiLoaded()){
 			fn = "kanji.xml";

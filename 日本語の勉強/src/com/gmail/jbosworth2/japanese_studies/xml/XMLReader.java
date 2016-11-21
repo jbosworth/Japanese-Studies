@@ -6,6 +6,7 @@ import java.util.Random;
 import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
+import com.gmail.jbosworth2.japanese_studies.Result;
 import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiDbHelper;
 
 import android.content.Context;
@@ -103,128 +104,144 @@ public class XMLReader {
 
 	//-----SearchActivity Functions------
 	
-	//Retrieves and displays items (kanji or vocab) by Wanikani level and displays the
+	//Retrieves items (kanji or vocab) by Wanikani level and displays the
 	//item's character, meaning(s), and reading(s)
 	//Parameters: level is the level to be retrieved (1-60),
 	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
 	//  and res is the app's resources- used to retrieve predefined strings for error messages.
-	public String itemByLevel(int level, String type, ArrayList<Item> list, Resources res){
-		String result = "";
-		String temp = "";
+	public ArrayList<Result> itemByLevel(int level, String type, ArrayList<Item> list, Resources res){
+		ArrayList<Result> results = new ArrayList<Result>();
+		Result result;
 		for(Item i : list){
 			if(i.getLevel() == level){
-				temp = i.getCharacter() + " " + i.getMeaning() + " " + i.getKana() + "\n";
-				result += temp;
+				result = new Result(i, type, null);
+				results.add(result);
 			}
 		}
-		if(result.equals("")){
+		if(results.size() == 0){
 			if(type.equals("kanji")){
-				result = res.getString(R.string.skle);
+				result = new Result(null, type, res.getString(R.string.skle));
+				results.add(result);
 			}else if(type.equals("vocab")){
-				result = res.getString(R.string.svle);
+				result = new Result(null, type, res.getString(R.string.svle));
+				results.add(result);
 			}
 		}
-		return result;
+		return results;
 	}
 	
-	//Retrieves and displays items (kanji or vocab) by character(s) and displays the
+	//Retrieves items (kanji or vocab) by character(s) and displays the
 	//item's meaning(s) and reading(s)
 	//Parameters: character is the character to be matched and retrieved,
 	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
 	//  and res is the app's resources- used to retrieve predefined strings for error messages.
-	public String itemByCharacter(String character, String type, ArrayList<Item> list, Resources res){
-		String result = "";
+	public ArrayList<Result> itemByCharacter(String character, String type, ArrayList<Item> list, Resources res){
+		ArrayList<Result> results = new ArrayList<Result>();
+		Result result;
 		for(Item i : list){
 			if(i.getCharacter().equals(character)){
-				result = i.getMeaning() + " " + i.getKana();
+				result = new Result(i, type, null);
+				results.add(result);
 			}
 		}
-		if(result.equals("")){
+		if(results.size() == 0){
 			if(type.equals("kanji")){
-				result = res.getString(R.string.skce);
+				result = new Result(null, type, res.getString(R.string.skce));
+				results.add(result);
 			}else if(type.equals("vocab")){
-				result = res.getString(R.string.svce);
+				result = new Result(null, type, res.getString(R.string.svce));
+				results.add(result);
 			}
 		}
-		return result;
+		return results;
 	}
 	
-	//Retrieves and displays items (kanji or vocab) by English meaning and displays the
+	//Retrieves items (kanji or vocab) by English meaning and displays the
 	//item's character and reading(s)
 	//Parameters: meaning is the meaning to be matched and retrieved,
 	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
 	//  and res is the app's resources- used to retrieve predefined strings for error messages.
-	public String itemByMeaning(String meaning, String type, ArrayList<Item> list, Resources res){
-		String result = "";
-		String temp = "";
+	public ArrayList<Result> itemByMeaning(String meaning, String type, ArrayList<Item> list, Resources res){
+		ArrayList<Result> results = new ArrayList<Result>();
+		Result result;
 		for(Item i : list){
 			for(String s : i.getMeaning()){
 				if(s.equals(meaning)){
-					temp = i.getCharacter() + " " + i.getKana() + "\n";
-					if(!result.contains(temp)){
-						result += temp;
+					result = new Result(i, type, null);
+					if(!results.contains(result)){
+						results.add(result);
 					}
 				}
 			}
 		}
-		if(result.equals("")){
+		if(results.size() == 0){
 			if(type.equals("kanji")){
-				result = res.getString(R.string.skme);
+				result = new Result(null, type, res.getString(R.string.skme));
+				results.add(result);
 			}else if(type.equals("vocab")){
-				result = res.getString(R.string.svme);
+				result = new Result(null, type, res.getString(R.string.svme));
+				results.add(result);
 			}
 		}
-		return result;
+		return results;
 	}
 	
-	//Retrieves and displays items (kanji or vocab) by kana reading and displays the
+	//Retrieves items (kanji or vocab) by kana reading and displays the
 	//item's character and meaning(s)
 	//Parameters: kana is the kana to be matched and retrieved,
 	//  type indicates whether items are kanji or vocab, list is the list of kanji or vocab,
 	//  and res is the app's resources- used to retrieve predefined strings for error messages.
-	public String itemByKana(String kana, String type, ArrayList<Item> list, Resources res){
-		String result = "";
-		String temp = "";
+	public ArrayList<Result> itemByKana(String kana, String type, ArrayList<Item> list, Resources res){
+		ArrayList<Result> results = new ArrayList<Result>();
+		Result result;
 		for(Item i : list){
 			for(String s : i.getKana()){
 				if(s.equals(kana)){
-					temp = i.getCharacter() + " " + i.getMeaning() + "\n";
-					if(!result.contains(temp)){
-						result += temp;
+					result = new Result(i, type, null);
+					if(!results.contains(result)){
+						results.add(result);
 					}
 				}
 			}
 		}
-		if(result.equals("")){
+		if(results.size() == 0){
 			if(type.equals("kanji")){
-				result = res.getString(R.string.skke);
+				result = new Result(null, type, res.getString(R.string.skke));
+				results.add(result);
 			}else if(type.equals("vocab")){
-				result = res.getString(R.string.svke);
+				result = new Result(null, type, res.getString(R.string.svke));
+				results.add(result);
 			}
 		}
-		return result;
+		return results;
 	}
-	//Retrieves and displays all kanji or vocab
-	//Parameters: list is the list of kanji or vocab
-	public String listAllItems(ArrayList<Item> list){
-		String result = "";
-		for(Item i : list){
-			result += i.getCharacter() + "\n";
-		}
-		return result;
-	}
-	
-	//Retrieves and displays a random kanji or vocab
-	//Parameters: list is the list of kanji or vocab
-	public String randomItem(ArrayList<Item> list){
-		String result = "";
+	//Retrieves all kanji or vocab
+	//Parameters: list is the list of kanji or vocab, type indicates whether items are kanji or vocab
+	public ArrayList<Result> listAllItems(ArrayList<Item> list, String type){
+		ArrayList<Result> results = new ArrayList<Result>();
+		Result result;
+		
 		Random r = new Random();
-		Item i = list.get(r.nextInt(list.size()));
-		result += i.getCharacter();
-		return result;
+		for(int i=0; i<list.size(); i++){
+			result = new Result(list.remove(r.nextInt(list.size())), type, null);
+			results.add(result);
+		}
+		return results;
 	}
 	
-	//Retrieves and displays context sentences by vocab
+	//Retrieves a random kanji or vocab
+	//Parameters: list is the list of kanji or vocab, type indicates whether items are kanji or vocab
+	public ArrayList<Result> randomItem(ArrayList<Item> list, String type){
+		ArrayList<Result> results = new ArrayList<Result>();
+		Result result;
+		
+		Random r = new Random();
+		result = new Result(list.get(r.nextInt(list.size())), type, null);
+		results.add(result);
+		return results;
+	}
+	
+	//Retrieves context sentences by vocab
 	//Parameters: input is the vocab to be matched and retrieved,
 	//  list is the list of context sentences,
 	//  and res is the app's resources- used to retrieve predefined strings for error messages.
@@ -233,19 +250,30 @@ public class XMLReader {
 		String temp = "";
 		for(ContextSentence s : list){
 			if(input.equals(s.getVocab())){
-				temp = s.getJapanese_Sentence();
+				temp = s.getJapanese_Sentence() + "\n";
 				if(!result.contains(temp)){
 					result += temp;
 				}
 			}
 		}
-		if(result.equals("")){
+		
+		if(result.equals("")){ //If kana is used instead of the proper writing of its characters
+			for(Item i : vocab){
+				for(String s : i.getKana()){
+					if(input.equals(s)){
+						result += sentenceByVocab(i.getCharacter(), list, res);
+					}
+				}
+			}
+		}
+		
+		if(result.equals("") && res != null){
 			result = res.getString(R.string.ssve);
 		}
 		return result;
 	}
 	
-	//Retrieves and displays a random context sentence
+	//Retrieves a random context sentence
 	//Parameters: list is the list of context sentences
 	public String randomSentence(ArrayList<ContextSentence> list){
 		String result = "";

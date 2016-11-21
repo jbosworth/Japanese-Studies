@@ -6,7 +6,7 @@
     <string name="vocab">単語</string>
     <string name="grammar">文法</string>
     <string name="search">検索</string>
-    <string name="search_hint">漢字や単語や文法の話題</string>
+    <string name="search_hint">漢字や単語や文</string>
     <string name="read">読む</string>
 	<string name="write">書く</string>
 	<string name="listen">聞く</string>
@@ -23,6 +23,7 @@
 	<string name="language">言語</string>
 	<string name="english">English</string>
 	<string name="japanese">日本語</string>
+	<string name="list">リスト</string>
 	<string name="context">文脈</string>
 	<string name="insert">入れる</string>
 	<string name="continu">続く</string>
