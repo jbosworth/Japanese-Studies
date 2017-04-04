@@ -6,7 +6,6 @@ import java.util.Random;
 
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.sqlite.WKVocabContract.WKVocab;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,7 +15,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class WKVocabDbHelper extends SQLiteOpenHelper {
 	//XMLReader
-		XMLReader reader = XMLReader.getInstance();
+		//XMLReader reader = XMLReader.getInstance();
 		//WKVocab list to be passed to reader
 		ArrayList<Item> temp = new ArrayList<Item>();
 		ArrayList<Item> vocab = new ArrayList<Item>();
@@ -132,12 +131,12 @@ public class WKVocabDbHelper extends SQLiteOpenHelper {
 		    	int_level = Integer.parseInt(level);
 		    	character = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_CHARACTER));
 		    	meaning = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_MEANING));
-		    	meanings = reader.parseMR(meaning);
+		    	//meanings = reader.parseMR(meaning);
 		    	kana = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_KANA));
-		    	kanas = reader.parseMR(kana);
+		    	//kanas = reader.parseMR(kana);
 		    	//Form item and add to list
-		    	i = new Item(int_id, int_level, character, meanings, kanas);
-		    	temp.add(i);
+		    	//i = new Item(int_id, int_level, character, meanings, kanas);
+		    	//temp.add(i);
 	    	}
 	    	//Read in the rest of the records
 	    	while(c.moveToNext()){
@@ -147,12 +146,12 @@ public class WKVocabDbHelper extends SQLiteOpenHelper {
 	        	int_level = Integer.parseInt(level);
 	        	character = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_CHARACTER));
 	        	meaning = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_MEANING));
-	        	meanings = reader.parseMR(meaning);
+	        	//meanings = reader.parseMR(meaning);
 	        	kana = c.getString(c.getColumnIndexOrThrow(WKVocab.COLUMN_NAME_KANA));
-	        	kanas = reader.parseMR(kana);
+	        	//kanas = reader.parseMR(kana);
 	        	//Form item and add to list
-	        	i = new Item(int_id, int_level, character, meanings, kanas);
-	        	temp.add(i);
+	        	//i = new Item(int_id, int_level, character, meanings, kanas);
+	        	//temp.add(i);
 	    	}
 	    	
 	    	//Choose a specific amount of items at random from list to be stored in another list
@@ -165,7 +164,7 @@ public class WKVocabDbHelper extends SQLiteOpenHelper {
 			}
 	    	
 			//Set list for use in activity
-	    	reader.setWKVocab(vocab);
+	    	//reader.setWKVocab(vocab);
 	    }
 	    
 	    public static Date getLastUpdate(){

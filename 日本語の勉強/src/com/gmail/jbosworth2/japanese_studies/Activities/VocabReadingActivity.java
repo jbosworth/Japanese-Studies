@@ -7,7 +7,6 @@ import java.util.Random;
 import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -25,8 +24,6 @@ import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class VocabReadingActivity extends Activity {
-	//XMLReader
-	XMLReader reader = XMLReader.getInstance();
 	//Pools of items
 	private ArrayList<Item> in = new ArrayList<Item>();
 	private ArrayList<Item> out = new ArrayList<Item>();
@@ -84,10 +81,6 @@ public class VocabReadingActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
-	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -116,7 +109,6 @@ public class VocabReadingActivity extends Activity {
 		b2.setEnabled(false);
 		b3.setEnabled(false);
 		
-		in = reader.getVocab();
 		review();
 	}
 	
@@ -226,12 +218,12 @@ public class VocabReadingActivity extends Activity {
 	
 	public void searchContext(){
 		if(!cs_up){
-			for(ContextSentence cs : reader.getContextSentences()){
-				if(cs.getVocab().equals(i.getCharacter())){
-					context = cs;
-				}
-			}
-			cs_up = true;
+			//for(ContextSentence cs : reader.getContextSentences()){
+			//	if(cs.getVocab().equals(i.getCharacter())){
+			//		context = cs;
+			//	}
+			//}
+			//cs_up = true;
 		}
 	}
 }

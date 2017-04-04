@@ -1,7 +1,6 @@
 package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 
 public class VocabListeningActivity extends Activity {
 	private TextView readList = null;
-	private XMLReader reader = XMLReader.getInstance();
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,10 +31,6 @@ public class VocabListeningActivity extends Activity {
 	        case R.id.return_home:
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
-	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);

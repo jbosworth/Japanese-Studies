@@ -11,20 +11,29 @@ import com.gmail.jbosworth2.japanese_studies.ContextSentence;
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.Result;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.ListActivity;
+import android.app.ListFragment;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class SearchActivity extends Activity{
+public class SearchActivity extends FragmentActivity {
 	private static final String kanji = "qk";
 	private static final String vocab = "qv";
 	private static final String context_sentences = "qcs";
@@ -36,16 +45,20 @@ public class SearchActivity extends Activity{
 	private static final String random = "qr";
 	private static final String all = "qa";
 	
-	private XMLReader reader;
 	private InputStream in;
 	public Resources res;
 	
 	private EditText et;
 	private TextView tv;
+	private ListView lv;
+	private FragmentManager fm;
+	private SearchResultsFragment list;
 	
 	private ArrayList<Result> results;
 	private ArrayList<Result> results2;
 	private String sentence_result;
+	
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,10 +79,6 @@ public class SearchActivity extends Activity{
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
-	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -84,11 +93,31 @@ public class SearchActivity extends Activity{
 		tv = (TextView) findViewById(R.id.stv);
 		
 		res = getResources();
-		reader = XMLReader.getInstance();
 		
 		results = new ArrayList<Result>();
 		results2 = new ArrayList<Result>();
 		sentence_result = "";
+		
+		// Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        //if (findViewById(R.id.fragment_container) != null) {
+
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            //if (savedInstanceState != null) {
+            //    return;
+            //}
+            
+            
+        //}
+		
+		//fm = getFragmentManager();
+       // if (fm.findFragmentById(R.id.fragment_container) == null) {
+       // 	list = new SearchResultsFragment();
+        	//list.setArguments(getIntent().getExtras());
+       // 	fm.beginTransaction().add(R.id.fragment_container, list).commit();
+       // }
 		
 		if(!MainActivity.isKanjiLoaded()){//Load kanji if it isn't already
 			loadFile("kanji.xml");
@@ -102,7 +131,6 @@ public class SearchActivity extends Activity{
 			loadFile("context_sentences.xml");
 			MainActivity.setContextSentencesLoaded(true);
 		}
-		reader = XMLReader.getInstance();
 	}
 	
 	public void displayResults(){
@@ -181,18 +209,18 @@ public class SearchActivity extends Activity{
 		//Parse input for kanji, vocab, grammar, and context sentences
 		if(input.contains(kanji)){
 			String type = "kanji";
-			ArrayList<Item> list = reader.getKanji();
+			//ArrayList<Item> list = reader.getKanji();
 			String temp = input.replace(kanji, "");
-			results = searchItem(temp.trim(), type, list);
+			//results = searchItem(temp.trim(), type, list);
 		}else if(input.contains(vocab)){
 			String type = "vocab";
-			ArrayList<Item> list = reader.getVocab();
+			//ArrayList<Item> list = reader.getVocab();
 			String temp = input.replace(vocab, "");
-			results = searchItem(temp.trim(), type, list);
+			//results = searchItem(temp.trim(), type, list);
 		}else if(input.contains(context_sentences)){
-			ArrayList<ContextSentence> list = reader.getContextSentences();
+			//ArrayList<ContextSentence> list = reader.getContextSentences();
 			String temp = input.replace(context_sentences, "");
-			searchContextSentences(temp.trim(), list);
+			//searchContextSentences(temp.trim(), list);
 		}//else if(input.contains(grammar)){
 		 //	String temp = input.replace(grammar, "");
 		 //	result = searchGrammar(temp.trim());
@@ -202,6 +230,11 @@ public class SearchActivity extends Activity{
 		}
 		
 		displayResults();
+		//ArrayList<Result> list_input = new ArrayList<Result>();
+		//list_input.addAll(results);
+		//list_input.addAll(results2);
+		//list.setResults(list_input);
+		//updateFragment();
 	}
 	
 	public ArrayList<Result> searchItem(String input, String type, ArrayList<Item> list){
@@ -212,7 +245,7 @@ public class SearchActivity extends Activity{
 			try{
 				int level = Integer.parseInt(temp.trim());
 				if(1 <= level && level <= 60){
-					rs = reader.itemByLevel(level, type, list, res);
+					//rs = reader.itemByLevel(level, type, list, res);
 				}else{
 					result = new Result(null, type, res.getString(R.string.sile2));
 					rs.add(result);
@@ -223,17 +256,17 @@ public class SearchActivity extends Activity{
 			}
 		}else if(input.contains(character)){//Display a kanji/vocab's meaning(s) and kana
 			String temp = input.replace(character, " ");
-			rs = reader.itemByCharacter(temp.trim(), type, list, res);
+			//rs = reader.itemByCharacter(temp.trim(), type, list, res);
 		}else if(input.contains(meaning)){//Display all kanji/vocab and their kana that have a specified meaning
 			String temp = input.replace(meaning, " ");
-			rs = reader.itemByMeaning(temp.trim(), type, list, res);
+			//rs = reader.itemByMeaning(temp.trim(), type, list, res);
 		}else if(input.contains(kana)){//Display all kanji/vocab and their meanings that have a specified kana
 			String temp = input.replace(kana, " ");
-			rs = reader.itemByKana(temp.trim(), type, list, res);
+			//rs = reader.itemByKana(temp.trim(), type, list, res);
 		}else if(input.contains(all)){//Display all kanji/vocab
-			rs = reader.listAllItems(list, type);
+			//rs = reader.listAllItems(list, type);
 		}else if(input.contains(random)){
-			rs = reader.randomItem(list, type);
+			//rs = reader.randomItem(list, type);
 		}else{
 			searchAll(input);
 		}
@@ -242,9 +275,9 @@ public class SearchActivity extends Activity{
 	
 	public void searchContextSentences(String input, ArrayList<ContextSentence> list){
 		if(input.contains(random)){
-			sentence_result = reader.randomSentence(list);
+			//sentence_result = reader.randomSentence(list);
 		}else{
-			sentence_result = reader.sentenceByVocab(input.trim(), list, res);
+			//sentence_result = reader.sentenceByVocab(input.trim(), list, res);
 		}
 	}
 	
@@ -255,32 +288,26 @@ public class SearchActivity extends Activity{
 	
 	public void searchAll(String input){
 		Result result;
-		ArrayList<Item> kanji_list = reader.getKanji();
-		ArrayList<Item> vocab_list = reader.getVocab();
-		//if number between 1 and 60, display items by level
-		//
-		
-		//if single word, vocab and kanji lookup (display which is which, e.g. 愛 k. love
-		//results = reader.itemByMeaning(input, "kanji", kanji_list, res);
-		//	eventually grammar and dictionary, too. Could create a topic list for grammar.
+		//ArrayList<Item> kanji_list = reader.getKanji();
+		//ArrayList<Item> vocab_list = reader.getVocab();
 		
 		//Exact match search
-		results = searchItem(input+"ql", "kanji", kanji_list);//First check kanji level
+		//results = searchItem(input+"ql", "kanji", kanji_list);//First check kanji level
 		if(results.get(0).getError() != null){
-			results = reader.itemByCharacter(input, "kanji", kanji_list, res);//Check kanji character
+			//results = reader.itemByCharacter(input, "kanji", kanji_list, res);//Check kanji character
 			if(results.get(0).getError() != null){
-				results = reader.itemByMeaning(input, "kanji", kanji_list, res);//Check kanji meaning
+				//results = reader.itemByMeaning(input, "kanji", kanji_list, res);//Check kanji meaning
 				if(results.get(0).getError() != null){
-					results = reader.itemByKana(input, "kanji", kanji_list, res);// Check kanji reading
+					//results = reader.itemByKana(input, "kanji", kanji_list, res);// Check kanji reading
 					if(results.get(0).getError() != null){//No kanji matches
 						result = new Result(null, null, res.getString(R.string.sae2));
 						results.clear();
 						results.add(result);
-						results2 = reader.itemByCharacter(input, "vocab", vocab_list, res);//Check vocab character
+						//results2 = reader.itemByCharacter(input, "vocab", vocab_list, res);//Check vocab character
 						if(results2.get(0).getError() != null){
-							results2 = reader.itemByMeaning(input, "vocab", vocab_list, res);//Check vocab meaning
+							//results2 = reader.itemByMeaning(input, "vocab", vocab_list, res);//Check vocab meaning
 							if(results2.get(0).getError() != null){
-								results2 = reader.itemByKana(input, "vocab", vocab_list, res);// Check vocab reading
+								//results2 = reader.itemByKana(input, "vocab", vocab_list, res);// Check vocab reading
 								if(results2.get(0).getError() != null){//No vocab matches either
 									result = new Result(null, null, res.getString(R.string.sae3));
 									results2.clear();
@@ -289,7 +316,7 @@ public class SearchActivity extends Activity{
 							}
 						}
 					}else{
-						results2 = reader.itemByKana(input, "vocab", vocab_list, res);//Check vocab reading, too
+						//results2 = reader.itemByKana(input, "vocab", vocab_list, res);//Check vocab reading, too
 						if(results2.get(0).getError() != null){
 							result = new Result(null, null, res.getString(R.string.sae3));
 							results2.clear();
@@ -297,7 +324,7 @@ public class SearchActivity extends Activity{
 						}
 					}
 				}else{
-					results2 = reader.itemByMeaning(input, "vocab", vocab_list, res);//Check vocab meaning, too
+					//results2 = reader.itemByMeaning(input, "vocab", vocab_list, res);//Check vocab meaning, too
 					if(results2.get(0).getError() != null){
 						result = new Result(null, null, res.getString(R.string.sae3));
 						results2.clear();
@@ -305,7 +332,7 @@ public class SearchActivity extends Activity{
 					}
 				}
 			}else{
-				results2 = reader.itemByCharacter(input, "vocab", vocab_list, res);//Check vocab character, too
+				//results2 = reader.itemByCharacter(input, "vocab", vocab_list, res);//Check vocab character, too
 				if(results2.get(0).getError() != null){
 					result = new Result(null, null, res.getString(R.string.sae3));
 					results2.clear();
@@ -313,7 +340,7 @@ public class SearchActivity extends Activity{
 				}
 			}
 		}else{//If it worked for kanji level, it will work for vocab level
-			results2 = searchItem(input+"ql", "vocab", vocab_list);
+			//results2 = searchItem(input+"ql", "vocab", vocab_list);
 		}
 		
 		
@@ -333,10 +360,18 @@ public class SearchActivity extends Activity{
 	        while ((inline = inputReader.readLine()) != null) {
 	          sb.append(inline);
 	        }
-			reader.readFile(sb, fn);
+			//reader.readFile(sb, fn);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	//public void updateFragment(){
+		//if (fm.findFragmentById(R.id.fragment_container) == null) {
+        	//list = new SearchResultsFragment();
+        	//list.setArguments(getIntent().getExtras());
+	//		fm.beginTransaction().remove(list).commit();
+    //    	fm.beginTransaction().add(R.id.fragment_container, list).commit();
+        //}
+	//}
 }

@@ -5,7 +5,6 @@ import java.util.Date;
 
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.sqlite.KanjiContract.Kanji;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -15,7 +14,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class KanjiDbHelper extends SQLiteOpenHelper {
 	//XMLReader
-	XMLReader reader = XMLReader.getInstance();
+	//XMLReader reader = XMLReader.getInstance();
 	//Kanji list to be passed to reader
 	ArrayList<Item> kanji = new ArrayList<Item>();
 	
@@ -127,12 +126,12 @@ public class KanjiDbHelper extends SQLiteOpenHelper {
     	int_level = Integer.parseInt(level);
     	character = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_CHARACTER));
     	meaning = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_MEANING));
-    	meanings = reader.parseMR(meaning);
+    	//meanings = reader.parseMR(meaning);
     	kana = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_KANA));
-    	kanas = reader.parseMR(kana);
+    	//kanas = reader.parseMR(kana);
     	//Form item and add to list
-    	i = new Item(int_id, int_level, character, meanings, kanas);
-    	kanji.add(i);
+    	//i = new Item(int_id, int_level, character, meanings, kanas);
+    	//kanji.add(i);
     	//Read in the rest of the records
     	while(c.moveToNext()){
     		id = c.getLong(c.getColumnIndexOrThrow(Kanji._ID));
@@ -141,14 +140,14 @@ public class KanjiDbHelper extends SQLiteOpenHelper {
         	int_level = Integer.parseInt(level);
         	character = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_CHARACTER));
         	meaning = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_MEANING));
-        	meanings = reader.parseMR(meaning);
+        	//meanings = reader.parseMR(meaning);
         	kana = c.getString(c.getColumnIndexOrThrow(Kanji.COLUMN_NAME_KANA));
-        	kanas = reader.parseMR(kana);
+        	//kanas = reader.parseMR(kana);
         	//Form item and add to list
-        	i = new Item(int_id, int_level, character, meanings, kanas);
-        	kanji.add(i);
+        	//i = new Item(int_id, int_level, character, meanings, kanas);
+        	//kanji.add(i);
     	}
-    	reader.setKanji(kanji);
+    	//reader.setKanji(kanji);
     }
     
     public static Date getLastUpdate(){

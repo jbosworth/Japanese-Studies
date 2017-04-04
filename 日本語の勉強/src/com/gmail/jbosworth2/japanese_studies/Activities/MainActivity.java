@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends Activity {
 	private static boolean kanjiLoaded;
@@ -34,10 +33,6 @@ public class MainActivity extends Activity {
 	        case R.id.return_home:
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
-	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);

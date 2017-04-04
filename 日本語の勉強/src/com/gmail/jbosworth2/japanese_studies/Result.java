@@ -1,7 +1,5 @@
 package com.gmail.jbosworth2.japanese_studies;
 
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
-
 public class Result {
 	private Item item;
 	private String type;
@@ -32,21 +30,21 @@ public class Result {
 	}
 	
 	public void gatherSentences(){
-		XMLReader reader = XMLReader.getInstance();
+		//XMLReader reader = XMLReader.getInstance();
 		String temp = "";
 		if(type.equals("vocab")){
-			temp = reader.sentenceByVocab(item.getCharacter(), reader.getContextSentences(), null);
+			//temp = reader.sentenceByVocab(item.getCharacter(), reader.getContextSentences(), null);
 			sentences = temp;
 		}else if(type.equals("kanji")){
-			for(ContextSentence s : reader.getContextSentences()){
-				if(s.getJapanese_Sentence().contains(item.getCharacter())){
-					temp = s.getJapanese_Sentence();
-					if(!sentences.contains(temp)){
-						sentences += temp;
-						sentences += "\n";
-					}
-				}
-			}
+			//for(ContextSentence s : reader.getContextSentences()){
+				//if(s.getJapanese_Sentence().contains(item.getCharacter())){
+					//temp = s.getJapanese_Sentence();
+					//if(!sentences.contains(temp)){
+					//	sentences += temp;
+					//	sentences += "\n";
+					//}
+				//}
+			//}
 		}
 	}
 }

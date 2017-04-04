@@ -11,7 +11,6 @@ import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.MyNumberPicker;
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.sqlite.WKVocabDbHelper;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -28,10 +27,8 @@ import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class VocabStartReadingActivity extends Activity {
-	private XMLReader reader = XMLReader.getInstance();
 	private InputStream in;
 	private String fn = "context_sentences.xml";
-	private ArrayList<Item> vocab = reader.getVocab();
 	private MyNumberPicker np1;
 	private MyNumberPicker np2;
 	private EditText et;
@@ -61,10 +58,6 @@ public class VocabStartReadingActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
-	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -89,7 +82,7 @@ public class VocabStartReadingActivity extends Activity {
 		        while ((inline = inputReader.readLine()) != null) {
 		          sb.append(inline);
 		        }
-				reader.readFile(sb, fn);
+				//reader.readFile(sb, fn);
 				MainActivity.setContextSentencesLoaded(true);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -112,23 +105,23 @@ public class VocabStartReadingActivity extends Activity {
 			
 			//Choose from range
 			ArrayList<Item> temp = new ArrayList<Item>();
-			for(Item i : vocab){
-				if(startLevel <= i.getLevel() && i.getLevel() <= endLevel){
-					temp.add(i);
-				}
-			}
+			//for(Item i : vocab){
+			//	if(startLevel <= i.getLevel() && i.getLevel() <= endLevel){
+			//		temp.add(i);
+			//	}
+			//}
 			//Clear vocab list
-			vocab.clear();
+			//vocab.clear();
 			
 			//Choose a specific amount of items at random from list to be stored in another list
 			Random r = new Random();
 			if(amount > temp.size()){
 				amount = temp.size();
 			}
-			for(int j=0; j<amount; j++){
-				vocab.add(temp.remove(r.nextInt(temp.size())));
-			}
-			reader.setWKVocab(vocab);
+			//for(int j=0; j<amount; j++){
+			//	vocab.add(temp.remove(r.nextInt(temp.size())));
+			//}
+			//reader.setWKVocab(vocab);
 			//Start Review Activity
 			Intent intent = new Intent(this, VocabReadingActivity.class);
 			startActivity(intent);

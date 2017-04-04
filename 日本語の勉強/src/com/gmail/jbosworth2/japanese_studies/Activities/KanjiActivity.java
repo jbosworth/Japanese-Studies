@@ -1,12 +1,6 @@
 package com.gmail.jbosworth2.japanese_studies.Activities;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import com.gmail.jbosworth2.japanese_studies.R;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,13 +10,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class KanjiActivity extends Activity {
-	private XMLReader reader = XMLReader.getInstance();
-	private InputStream in;
-	private String fn;
 	private TextView tv;
 	
 	@Override
@@ -44,10 +34,6 @@ public class KanjiActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
-	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -59,33 +45,12 @@ public class KanjiActivity extends Activity {
 		setContentView(R.layout.activity_kanji);
 		
 		tv = (TextView) findViewById(R.id.ktv);
-		
-		if(!MainActivity.isKanjiLoaded()){
-			fn = "kanji.xml";
-			try {
-				in = getAssets().open(fn);
-				BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-		        StringBuilder sb = new StringBuilder();
-		        String inline = "";
-		        while ((inline = inputReader.readLine()) != null) {
-		          sb.append(inline);
-		        }
-				reader.readFile(sb, fn);
-				MainActivity.setKanjiLoaded(true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 	
 	public void startKanjiReading(View view){
 		Resources res = getResources();
-		//if(InstallationActivity.isK_installed()){
-			Intent intent = new Intent(this, KanjiReadingActivity.class);
-			startActivity(intent);
-		//}else{
-		//	tv.setText(res.getString(R.string.kinstall));
-		//}
+		Intent intent = new Intent(this, KanjiListActivity.class);
+		startActivity(intent);
 	}
 	
 	public void startKanjiWriting(View view){

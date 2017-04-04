@@ -1,12 +1,10 @@
 package com.gmail.jbosworth2.japanese_studies.Activities;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import com.gmail.jbosworth2.japanese_studies.Item;
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.Review;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,7 +16,6 @@ import android.widget.TextView;
 
 public class KanjiWritingActivity extends Activity {
 	private TextView readList = null;
-	private XMLReader reader = XMLReader.getInstance();
 	//Activity Data
 	private static final int maxLevel = 12;//Max level of kanji to study
 	private static final int numLessons = 10;
@@ -55,10 +52,6 @@ public class KanjiWritingActivity extends Activity {
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
 	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
-	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -70,7 +63,7 @@ public class KanjiWritingActivity extends Activity {
 		setContentView(R.layout.activity_kanji_writing);
 		
 		//Get all kanji, then get all kanji up to level 12 to be studied
-		total = reader.getKanji();
+
 		for(Item i : total){
 			if(i.getLevel() <= maxLevel){
 				pool.add(i);

@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 
 import com.gmail.jbosworth2.japanese_studies.R;
 import com.gmail.jbosworth2.japanese_studies.sqlite.WKVocabDbHelper;
-import com.gmail.jbosworth2.japanese_studies.xml.XMLReader;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class VocabActivity extends Activity {
-	private XMLReader reader = XMLReader.getInstance();
 	private InputStream in;
 	private String fn;
 	private TextView tv;
@@ -45,10 +43,6 @@ public class VocabActivity extends Activity {
 	        case R.id.return_home:
 	        	Intent j = new Intent(this, MainActivity.class);
 	        	startActivity(j);
-	        	return true;
-	        case R.id.install:
-	        	Intent k = new Intent(this, InstallationActivity.class);
-	        	startActivity(k);
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -76,7 +70,7 @@ public class VocabActivity extends Activity {
 			        while ((inline = inputReader.readLine()) != null) {
 			          sb.append(inline);
 			        }
-					reader.readFile(sb, fn);
+					//reader.readFile(sb, fn);
 					MainActivity.setVocabLoaded(true);
 				} catch (IOException e) {
 					e.printStackTrace();
