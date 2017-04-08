@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends Activity {
-	private static boolean kanjiLoaded;
-	private static boolean vocabLoaded;
+	private static boolean kanji;
+	private static boolean vocab;
 	private static boolean contextSentencesLoaded;
 	
 	@Override
@@ -44,25 +44,25 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		kanjiLoaded = false;
-	    vocabLoaded = false;
+		kanji = true;
+	    vocab = true;
 	    contextSentencesLoaded = false;
 	}
 	
-	public static boolean isKanjiLoaded() {
-		return kanjiLoaded;
+	public static boolean getKanji() {
+		return kanji;
 	}
 
-	public static void setKanjiLoaded(boolean kanjiLoaded) {
-		MainActivity.kanjiLoaded = kanjiLoaded;
+	public static void setKanji(boolean kanjiLoaded) {
+		MainActivity.kanji = kanjiLoaded;
 	}
 
-	public static boolean isVocabLoaded() {
-		return vocabLoaded;
+	public static boolean getVocab() {
+		return vocab;
 	}
 
-	public static void setVocabLoaded(boolean vocabLoaded) {
-		MainActivity.vocabLoaded = vocabLoaded;
+	public static void setVocab(boolean vocabLoaded) {
+		MainActivity.vocab = vocabLoaded;
 	}
 	
 	public static boolean isContextSentencesLoaded() {

@@ -5,7 +5,7 @@
     android:orientation="horizontal" >
  
     <TextView
-        android:id="@+id/character"
+        android:id="@+id/character2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
@@ -14,25 +14,19 @@
         android:textStyle="bold" />
  
     <TextView
-        android:id="@+id/meaning"
+        android:id="@+id/kana2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip" />
  
     <TextView
-        android:id="@+id/onyomi"
+        android:id="@+id/meaning2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
         android:textStyle="bold" />
     <TextView
-        android:id="@+id/kunyomi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#5d5d5d"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/level"
+        android:id="@+id/level2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d" />

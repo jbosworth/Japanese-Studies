@@ -48,6 +48,10 @@
 		    android:name=".Activities.VocabStartReadingActivity" 
 		    android:screenOrientation="portrait"
     		android:configChanges="keyboardHidden|orientation|screenSize" />
+		<activity
+            android:name=".Activities.VocabListActivity" 
+            android:screenOrientation="portrait"
+    		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".Activities.VocabReadingActivity" 
             android:screenOrientation="portrait"
@@ -66,10 +70,6 @@
     		android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".Activities.ChangeLocaleActivity" 
-            android:screenOrientation="portrait"
-    		android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name=".Activities.InstallationActivity" 
             android:screenOrientation="portrait"
     		android:configChanges="keyboardHidden|orientation|screenSize" />
     </application>

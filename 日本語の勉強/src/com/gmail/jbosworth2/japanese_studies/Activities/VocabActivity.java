@@ -20,10 +20,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class VocabActivity extends Activity {
-	private InputStream in;
-	private String fn;
-	private TextView tv;
-	private Button b2;
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,29 +50,26 @@ public class VocabActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vocab);
 		
-		tv = (TextView) findViewById(R.id.vtv);
-		b2 = (Button) findViewById(R.id.vb2);
+		//tv = (TextView) findViewById(R.id.vtv);
 		
-		b2.setEnabled(false);
-		
-		if(!MainActivity.isVocabLoaded()){
-			fn = "vocab.xml";
-			//if(WKVocabDbHelper.getLastUpdate() == null){
-				try {
-					in = getAssets().open(fn);
-					BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
-			        StringBuilder sb = new StringBuilder();
-			        String inline = "";
-			        while ((inline = inputReader.readLine()) != null) {
-			          sb.append(inline);
-			        }
-					//reader.readFile(sb, fn);
-					MainActivity.setVocabLoaded(true);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			//}
-		}
+//		if(!MainActivity.isVocabLoaded()){
+//			fn = "vocab.xml";
+//			//if(WKVocabDbHelper.getLastUpdate() == null){
+//				try {
+//					in = getAssets().open(fn);
+//					BufferedReader inputReader = new BufferedReader(new InputStreamReader(in));
+//			        StringBuilder sb = new StringBuilder();
+//			        String inline = "";
+//			        while ((inline = inputReader.readLine()) != null) {
+//			          sb.append(inline);
+//			        }
+//					//reader.readFile(sb, fn);
+//					MainActivity.setVocabLoaded(true);
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
+//			//}
+//		}
 	}
 	
 	public void startVocabReading(View view){
@@ -89,8 +82,8 @@ public class VocabActivity extends Activity {
 		//}
 	}
 	
-	public void startVocabListening(View view){
-		Intent intent = new Intent(this, VocabListeningActivity.class);
+	public void startVocabList(View view){
+		Intent intent = new Intent(this, VocabListActivity.class);
 		startActivity(intent);
 	}
 }

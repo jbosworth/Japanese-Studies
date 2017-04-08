@@ -119,14 +119,14 @@ public class SearchActivity extends FragmentActivity {
        // 	fm.beginTransaction().add(R.id.fragment_container, list).commit();
        // }
 		
-		if(!MainActivity.isKanjiLoaded()){//Load kanji if it isn't already
-			loadFile("kanji.xml");
-			MainActivity.setKanjiLoaded(true);
-		}
-		if(!MainActivity.isVocabLoaded()){//Load vocab if it isn't already
-			loadFile("vocab.xml");
-			MainActivity.setVocabLoaded(true);
-		}
+//		if(!MainActivity.isKanjiLoaded()){//Load kanji if it isn't already
+//			loadFile("kanji.xml");
+//			MainActivity.setKanjiLoaded(true);
+//		}
+//		if(!MainActivity.isVocabLoaded()){//Load vocab if it isn't already
+//			loadFile("vocab.xml");
+//			MainActivity.setVocabLoaded(true);
+//		}
 		if(!MainActivity.isContextSentencesLoaded()){//Load context sentences if they aren't already
 			loadFile("context_sentences.xml");
 			MainActivity.setContextSentencesLoaded(true);

@@ -29,13 +29,13 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-public class KanjiListActivity extends AppCompatActivity  {
-	private String TAG = KanjiListActivity.class.getSimpleName();
+public class VocabListActivity extends AppCompatActivity  {
+	private String TAG = VocabListActivity.class.getSimpleName();
     
     private ProgressDialog pDialog;
     private ListView lv;
  
-    private ArrayList<HashMap<String,String>> kanjiList = new ArrayList<HashMap<String, String>>();
+    private ArrayList<HashMap<String,String>> vocabList = new ArrayList<HashMap<String, String>>();
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -64,21 +64,21 @@ public class KanjiListActivity extends AppCompatActivity  {
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_kanji_list);
+		setContentView(R.layout.activity_vocab_list);
 		
-        lv = (ListView) findViewById(R.id.list);
+        lv = (ListView) findViewById(R.id.list2);
         
      
         /**
          * Async task class to get json by making HTTP call
          */
-        class GetKanji extends AsyncTask<Void, Void, Void> {
+        class GetVocab extends AsyncTask<Void, Void, Void> {
      
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
                 // Showing progress dialog
-                pDialog = new ProgressDialog(KanjiListActivity.this);
+                pDialog = new ProgressDialog(VocabListActivity.this);
                 pDialog.setMessage("Please wait...");
                 pDialog.setCancelable(false);
                 pDialog.show();
@@ -92,7 +92,7 @@ public class KanjiListActivity extends AppCompatActivity  {
                 BufferedReader reader = null;
                 String jsons = "";
                 try {
-                    url = new URL("https://www.wanikani.com/api/user/b40596b8cfe2cfe30368b8e8180a826d/kanji/");
+                    url = new URL("https://www.wanikani.com/api/user/b40596b8cfe2cfe30368b8e8180a826d/vocabulary/");
                     URLConnection con = url.openConnection();
                     reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
                     String line = "";
@@ -121,25 +121,24 @@ public class KanjiListActivity extends AppCompatActivity  {
 				    JSONObject jsonObj = new JSONObject(jsons);
     
 				    // Getting JSON Array node
-				    final JSONArray kanji = jsonObj.getJSONArray("requested_information");
+				    final JSONArray vocab = jsonObj.getJSONArray("requested_information");
     
 				    // looping through All Kanji
 				    runOnUiThread(new Runnable() {
 				        @Override
 				        public void run() {
 				            Toast.makeText(getApplicationContext(),
-				                    "Number of Kanji: " + kanji.length(),
+				                    "Number of Vocab: " + vocab.length(),
 				                    Toast.LENGTH_LONG)
 				                    .show();
 				        }
 				    });
-				    for (int i = 0; i < kanji.length(); i++) {
-				        JSONObject c = kanji.getJSONObject(i);
+				    for (int i = 0; i < vocab.length(); i++) {
+				        JSONObject c = vocab.getJSONObject(i);
     
 				        String character = c.getString("character");
+				        String kana = c.getString("kana");
 				        String meaning = c.getString("meaning");
-				        String onyomi = c.getString("onyomi");
-				        String kunyomi = c.getString("kunyomi");
 				        String level = c.getString("level");
 				        
 				        //String synonyms = "";
@@ -155,19 +154,18 @@ public class KanjiListActivity extends AppCompatActivity  {
 				        //}
     
 				        // tmp hash map for single kanji
-				        HashMap<String, String> kanjim = new HashMap<>();
+				        HashMap<String, String> vocabm = new HashMap<>();
     
 				        // adding each child node to HashMap key => value
-				        kanjim.put("character", character);
-				        kanjim.put("meaning", meaning);
-				        kanjim.put("onyomi", onyomi);
-				        kanjim.put("kunyomi", kunyomi);
-				        kanjim.put("level", level);
+				        vocabm.put("character", character);
+				        vocabm.put("kana", kana);
+				        vocabm.put("meaning", meaning);
+				        vocabm.put("level", level);
 				        //kanjim.put("synonyms", synonyms);
 				        //kanjim.put("srs", srs);
     
 				        // adding kanji to kanji list
-				        kanjiList.add(kanjim);
+				        vocabList.add(vocabm);
 				    }
 				} catch (final JSONException e) {
 				    Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -199,22 +197,22 @@ public class KanjiListActivity extends AppCompatActivity  {
                  * Updating parsed JSON data into ListView
                  * */
                 ListAdapter adapter = new SimpleAdapter(
-                        KanjiListActivity.this, kanjiList,
-                        R.layout.list_item, new String[]{"character", "meaning",
-                        "onyomi", "kunyomi", "level"}, new int[]{R.id.character,
-                        R.id.meaning, R.id.onyomi, R.id.kunyomi, R.id.level});
+                        VocabListActivity.this, vocabList,
+                        R.layout.list_item2, new String[]{"character", "kana",
+                        "meaning", "level"}, new int[]{R.id.character2,
+                        R.id.kana2, R.id.meaning2, R.id.level2});
      
                 lv.setAdapter(adapter);
             }
      
         }
-        if(MainActivity.getKanji()){
-        	new GetKanji().execute();
-        	MainActivity.setKanji(false);
+        if(MainActivity.getVocab()){
+        	new GetVocab().execute();
+        	MainActivity.setVocab(false);
 		}
 	}
 	
 	public ArrayList<HashMap<String, String>> getKanji(){
-		return kanjiList;
+		return vocabList;
 	}
 }
